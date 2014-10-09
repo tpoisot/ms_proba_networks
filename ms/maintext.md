@@ -91,6 +91,10 @@ $\sum \hat k_i = 2\hat L$.
 
 ### Average generality and vulnerability
 
+By simplification of the above, generality $\hat g_i$ and vulnerability
+$\hat v_i$ are given by, respectively, $\sum_j A_{ij}$ and $\sum_j A_{ji}$,
+with their variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
+
 ## Emerging properties
 
 ### Expected trophic level
@@ -130,7 +134,7 @@ probabilistic network.
 
 Primary producers, in a food web, are species with no successors, including
 themselves. Biologically, they are autotrophic organisms, or organisms
-whose preys of substrates have been remove from the network. A species is a
+whose preys or substrates have been remove from the network. A species is a
 primary producer if it manages *not* to establish any outgoing interaction,
 which for species $i$ happens with probability
 
@@ -233,8 +237,8 @@ The probability of the number of *any* motif $\text{m}$ in a network is given by
 \end{equation}
 
 It is indeed possible to have an expression of the variance of this value,
-or of the variance of any three species forming a given motif, but that shit
-be hardcore yo, and so they are better expressed computationally.
+or of the variance of any three species forming a given motif, but their
+expressions become rapidly untractable and are better computer than written.
 
 # Applications
 
