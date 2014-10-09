@@ -95,6 +95,37 @@ $\sum \hat k_i = 2\hat L$.
 
 ### Expected trophic level
 
+### Katz centrality
+
+Centrality can be measured by the degree, as mentionned above. In
+addition, we derive the expected value of centrality according to
+@katz53. This measures generalizes to directed acyclic graphs. Although
+eigenvector centrality is often used in ecology, it cannot be measured on
+probabilistic graphs. Eigenvector centrality requires that the matrix has
+its largest eigenvalues real, which is not the case for *all* probabilistic
+matrices. Katz's centrality is nonetheless a useful replacement, because
+it uses the paths of all lengths between two species instead of focusing on
+the shortest path.
+
+The expected number of paths of length $k$ between $i$ and $j$ is
+$(\mathbf{A}^k)_{ij}$. Based on this, the expected centrality of species $i$ is
+
+\begin{equation}
+C_i = \sum_{k=1}^\infty \sum_{j=1}^n \alpha^k (\mathbf{A}^k)_{ji} .
+\end{equation}
+
+The parameter $\alpha \in [0;1]$ regulates how important long paths are. When
+$\alpha = 0$, only first-order paths count. When $\alpha = 1$, all paths
+are equally important. As $C_i$ is sensitive to the size of the matrix,
+we suggest to normalise it so that
+
+\begin{equation}
+C_i = \frac{C_i}{\mathbf{C}} .
+\end{equation}
+
+This results in the *expected relative centrality* of each node in the
+probabilistic network.
+
 ### Number of primary producers
 
 Primary producers, in a food web, are species with no successors, including
