@@ -185,20 +185,20 @@ path length, but it becomes rapidly untractable.
 ### Nestedness
 
 We use the formula for nestedness proposed by @bast09. They define
-nestedness for each margin of the matrix, as $\nu^{(R)}$ and $\nu^{(C)}$
+nestedness for each margin of the matrix, as $\eta^{(R)}$ and $\eta^{(C)}$
 for, respectively, rows and columns. As per @alme08, we define a global
-statistic for nestedness as $\nu = (\nu^{(R)}+\nu^{(C)})/2$.
+statistic for nestedness as $\eta = (\eta^{(R)}+\eta^{(C)})/2$.
 
 Nestedness, in a probabilistic network, is defined as
 
 \begin{equation}
-\hat{\nu^{(R)}} = \sum_{i<j}\frac{\sum_kA_{ik}A_{jk}}{\text{min}(g_i, g_j)},
+\hat{\eta^{(R)}} = \sum_{i<j}\frac{\sum_kA_{ik}A_{jk}}{\text{min}(g_i, g_j)},
 \end{equation}
 
 where $g_i$ is the expected generality of species $i$. The reciprocal holds
-for $\nu^{(C)}$ when using $v_i$ (the vulnerability) instead of $g_i$.
+for $\eta^{(C)}$ when using $v_i$ (the vulnerability) instead of $g_i$.
 
-The values returned are within $[0;1]$, with $\nu=1$ indicating complete
+The values returned are within $[0;1]$, with $\eta=1$ indicating complete
 nestedness.
 
 ### Katz centrality
@@ -374,9 +374,9 @@ infection assays, and can take values of $0$, $0.5$, and $1.0$.
 Measure           Binary      Bernoulli trials        Probabilistic 
 ------------      -------     ------------------      ------------------
 links             336         $221.58\pm 57.57$       $221.52\pm 57.25$
-$\nu$             0.73        0.528                   0.512
-$\nu^{(R)}$       0.72        0.525                   0.507
-$\nu^{(C)}$       0.75        0.531                   0.518
+$\eta$             0.73        0.528                   0.512
+$\eta^{(R)}$       0.72        0.525                   0.507
+$\eta^{(C)}$       0.75        0.531                   0.518
 
 - connectance
 
