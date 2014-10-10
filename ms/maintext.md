@@ -29,27 +29,27 @@ direct properties are conceptually equivalent to means, whereas emerging
 properties are conceptually equivalent to variances.
 
 In the recent years, the interpretation of the values of network structure
-(as indicators of the action of ecological or evolutionary processes) has been
-somewhat complicated by the observation that network structure varies through
-space, and time; species from the same pool do not interact in a consistent way
-[@pois12c]. Empirical and theoretical studies suggest that the network is not
-the right unit to understand this variation; rather, network variation is an
-emerging property of the response of ecological interactions to environmental
-factors and chance events [@pois14]. Interactions can vary because of local
-mis-matching in phenology [@oles11a], populations fluctuations preventing the
-interaction [@cana14], or a combination of both [@olit14;@cham14]. @olit14
-show that accounting for neutral (population-size driven) and trait-based
-effects allows predicting the variation of interactions, but not the cumulative
-change in network structure.
+(as indicators of the action of ecological or evolutionary processes) has
+been somewhat complicated by the observation that network structure varies
+through space, and time; species from the same pool do not interact in a
+consistent way [@pois12c]. Empirical and theoretical studies suggest that the
+network is not the right unit to understand this variation; rather, network
+variation is an emerging property of the response of ecological interactions
+to environmental factors and chance events [@pois14]. Interactions can
+vary because of local mis-matching in phenology [@oles11a], populations
+fluctuations preventing the interaction [@cana14], or a combination of both
+[@olit14;@cham14]. @olit14 show that accounting for neutral (population-size
+driven) and trait-based effects allows predicting the cumulative change in
+network structure, but not the change at the level of individual interactions.
 
 Taken together, these considerations highlight the need to amend our current
-methodology on ecological network to account for variation at the interaction
-level. Because the methodology to describe networks has first been crafted
-at a time when assuming that interactions did not vary, it is unsuited
-to address the questions that probabilistic networks allows asking. In
-this paper, we show that several direct and emerging core properties of
-ecological networks (both bipartite and unipartite) can be re-formulated in
-a probabilistic context; we conclude by showing how this methodology can be
+methodology on ecological network to give more importance to the variation
+at the interaction level. Because the methodology to describe networks has
+first been crafted at a time when assuming that interactions did not vary,
+it is unsuited to address the questions that probabilistic networks allows
+asking. In this paper, we show that several direct and emerging core properties
+of ecological networks (both bipartite and unipartite) can be re-formulated
+in a probabilistic context; we conclude by showing how this methodology can be
 applied to exploit the information contained in the variability and networks,
 and reduce the computational burden of current methods in network analysis.
 
