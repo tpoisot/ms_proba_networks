@@ -28,10 +28,11 @@ the probabilities of each species interacting with itself. If $\mathbf{A}$
 represents a bipartite network (*e.g.* a pollination network), it will
 most likely not be square. We call $S$ the number of species, and $R$ and
 $C$ respectively the number of rows and columns. $S = R + C$ in unipartite
-networks, and $S = R+C$ in bipartite networks. Note that all of the measures
-defined below can be applied on a bipartite network that has been made
-unipartite; the unipartite transformation of a bipartite matrix $\mathbf{A}$
-is the block matrix
+networks, and $S = R+C$ in bipartite networks.
+
+Note that all of the measures defined below can be applied on a bipartite
+network that has been made unipartite; the unipartite transformation of a
+bipartite matrix $\mathbf{A}$ is the block matrix
 
 \begin{equation}
 \mathbf{B} = 
@@ -56,6 +57,10 @@ additive independent events is the sum of their individual variances, and
 \begin{equation}
 \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
 \end{equation}
+
+As a final note, all of the measures described below can be applied on the
+binary (0/1) versions of the networks, and will give the exact value of the
+non-probabilistic measure. And ain't that nice?
 
 ## Direct properties
 
@@ -97,7 +102,24 @@ with their variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
 
 ## Emerging properties
 
-### Expected trophic level
+### Nestedness
+
+We use the formula for nestedness proposed by @bastXX. They define
+nestedness for each margin of the matrix, as $\nu^{(R)}$ and $\nu^{(C)}$
+for, respectively, rows and columns. As per @almeXX, we define a global
+statistic for nestedness as $\nu = (\nu^{(R)}+\nu^{(C)})/2$.
+
+Nestedness, in a probabilistic network, is defined as
+
+\begin{equation}
+\hat{\nu^{(R)}} = \sum_{i<j}\frac{\sum_kA_{ik}A_{jk}}{\text{min}(g_i, g_j)},
+\end{equation}
+
+where $g_i$ is the expected generality of species $i$. The reciprocal holds
+for $\nu^{(C)}$ when using $v_i$ (the vulnerability) instead of $g_i$.
+
+The values returned are within $[0;1]$, with $\nu=1$ indicating complete
+nestedness.
 
 ### Katz centrality
 
@@ -242,7 +264,40 @@ expressions become rapidly untractable and are better computer than written.
 
 # Applications
 
-## Structure of neutral networks
+## Comparison of probabilistic networks
+
+In this sub-section, we apply the above measures to a bacteria--phage
+interaction network. @poulXX have measured the probability that 24 phages
+can infect 24 strains of bacteria of the *Pseudomonas fluorescens* species
+(group SBW25). Each probability has been observed though three independant
+infection assays, and can take values of $0$, $0.5$, and $1.0$.
+
+Measure           Binary      Bernoulli trials        Probabilistic 
+------------      -------     ------------------      ------------------
+links             336         $221.58\pm 57.57$       $221.52\pm 57.25$
+$\nu$             0.73        0.528                   0.512
+$\nu^{(R)}$       0.72        0.525                   0.507
+$\nu^{(C)}$       0.75        0.531                   0.518
+
+- connectance
+
+- nestedness
+
+As shownd in \autoref{t:poullain}, transforming the probabilistic matrix
+into a binary one (i) overestimates nestedness by $\approx 0.2$, and (ii)
+overestimates the number of links by 115. For the number of links, both
+the probabilistic measures and the average and variance of $10^4$ Bernoulli
+trials were in strong agreement (they differ only by the second decimal place).
+
+Using Bernoulli trials had the effect of slightly over-estimating
+nestedness. The overestimation is significant, but significance testing is
+meaningless when the number of replicates is this large; however, for this
+particular network, it is of little impact (of $0.01$ on average).
+
+Using the probabilistic metrics has one significant advantage over simulating
+binary networks using the interaction probabilities: it is computationally
+trivial. This is particularly desirable when either there is a large sample,
+or a large network.
 
 ## Null-model based hypothesis testing
 

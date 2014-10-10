@@ -27,6 +27,6 @@ Sets the diagonal to 0
 
 =#
 function nodiag(A::Array{Float64,2})
-   return A .* (1.0 .- eye(Float64, size(S)[1]))
+   return A .* (1.0 .- eye(Float64, size(A)[1]))
 end
 
