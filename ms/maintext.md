@@ -406,7 +406,7 @@ the structure of the network.
 
 In this section, we analyse the data of @robe29 using two "classical"
 null models of network structure. Robertson's data are amongst the hardest
-to analyse with the standard null models: the network in unusually large
+to analyse with the standard null models: the network is unusually large
 (1429 animals and 456 plants), and has a low connectance (0.02). Generating
 networks with all species is therefore both statistically difficult and
 computationally costly, providing a good demonstration of the performance
@@ -418,5 +418,10 @@ $\text{P}=Co$. This model controls for connectance, but removes the effect
 of degree distribution. Second, (Type II, @basc03), the probability of
 an interaction between animal $i$ and plant $j$ is $(k_i/R+k_j/C)/2$, the
 average of the richness-standardized degree of both species.
+
+Note that this type of null models will take a binary network, and through some
+rules, turn it into a probabilistic one. Typically, this probabilistic network
+is used as a template to generate Bernoulli trials, measure some of their
+properties, the distribution of which is compared to the empirical network.
 
 # References
