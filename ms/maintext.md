@@ -404,4 +404,19 @@ the structure of the network.
 
 ## Null-model based hypothesis testing
 
+In this section, we analyse the data of @robe29 using two "classical"
+null models of network structure. Robertson's data are amongst the hardest
+to analyse with the standard null models: the network in unusually large
+(1429 animals and 456 plants), and has a low connectance (0.02). Generating
+networks with all species is therefore both statistically difficult and
+computationally costly, providing a good demonstration of the performance
+of probabilistic metrics.
+
+We use the following null models. First (Type I, @fort06), any
+interaction between plant and animals happens with the fixed probability
+$\text{P}=Co$. This model controls for connectance, but removes the effect
+of degree distribution. Second, (Type II, @basc03), the probability of
+an interaction between animal $i$ and plant $j$ is $(k_i/R+k_j/C)/2$, the
+average of the richness-standardized degree of both species.
+
 # References

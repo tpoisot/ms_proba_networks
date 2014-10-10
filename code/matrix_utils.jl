@@ -18,7 +18,7 @@ Generates a random binary matrix based on a probabilistic one
 
 =#
 function make_binary(A::Array{Float64,2})
-   return map((x) -> rand(Bernoulli(x)), A)
+   return float(map((x) -> rand(Bernoulli(x)), A))
 end
 
 #=
