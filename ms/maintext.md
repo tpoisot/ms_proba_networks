@@ -158,8 +158,8 @@ between the two species: this can be done by calculating the probability of
 having 0 paths, then multiplying the resulting array of probabilities. For
 the example of length 2, species $i$ and $j$ are connected through $k$ with
 probability $A_{ik}A_{kj}$, and so this path does not exist with probability
-$1-A_{ik}A_{kj}$. For any pair $i$, $j$, let $\mathbf{m}$ be the vector
-such as $m_{k} = A_{ik}A_{kj}$ for all $k \notin (i,j)$. The probability
+$1-A_{ik}A_{kj}$. For any pair $i$, $j$, let $\mathbf{m}$ be the vector such
+as $m_{k} = A_{ik}A_{kj}$ for all $k \notin (i,j)$ [@mirc76]. The probability
 of not having any path of length 2 is $\prod (1-\mathbf{m})$. Therefore,
 the probability of having a path of length 2 between $i$ and $j$ is
 
@@ -423,5 +423,12 @@ Note that this type of null models will take a binary network, and through some
 rules, turn it into a probabilistic one. Typically, this probabilistic network
 is used as a template to generate Bernoulli trials, measure some of their
 properties, the distribution of which is compared to the empirical network.
+
+# Discussion
+
+- Shortest path (mean trophic level) is an open problem in graph theory,
+cannot be solved analytically (as of now).
+
+- Modularity unlikely to work
 
 # References
