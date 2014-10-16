@@ -1,25 +1,17 @@
 using Gadfly
 using DataFrames
+using PEN
 
-include("proba_utils.jl")
-include("matrix_utils.jl")
-include("degree.jl")
-include("connectance.jl")
-include("katz.jl")
-include("nestedness.jl")
+searchdir(path,key) = filter(x->contains(x,key), readdir(path))
 
-## Read the Robertson data
+data_folder = "../data/pollination/"
 
-function null1(A)
-   return ones(A) .* connectance(A)
-end
+data_files = map((x) -> data_folder * x, searchdir(data_folder, ".txt"))
 
-function null2(A)
-   ki = degree_out(A) ./ size(A)[2]
-   kj = degree_in(A) ./ size(A)[1]
-   return (ki .+ kj')./2.0
-end
+A_list = map(make_binary, map(readdlm, data_files))
+A_1= map(null1, A_list)
+A_2= map(null2l, A_list)
 
-A = readdlm("../data/robertson.txt")
-t1 = null1(A)
-t2 = null2(A)
+## Get connectance for all
+Co = map(connectance, A_list)
+
