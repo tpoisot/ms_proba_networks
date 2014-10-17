@@ -1,16 +1,14 @@
-using Gadfly
-using DataFrames
-
-include("proba_utils.jl")
-include("matrix_utils.jl")
-include("degree.jl")
-include("connectance.jl")
-include("katz.jl")
-include("nestedness.jl")
+using PEN
 
 ## Read the Poullain data
+A = readdlm("../data/poullain.txt")
 
-A = make_unipartite(readdlm("../data/poullain.txt"))
+## Draw them in a PNG file
+draw_matrix(A; file="../figures/poullain.png")
 
-distr_links = float([A |> make_binary |> float |> links for i in 1:1000])
-distr_nest = float([A |> make_binary |> float |> nestedness for i in 1:1000])
+## 1000 Bernoulli trials
+distr_links = [A |> make_bernoulli |> links for i in 1:1000]
+distr_nest = [A |> make_bernoulli |> nestedness for i in 1:1000]
+
+## Average nestedness
+mapslices(mean, hcat(distr_nest...), 2)
