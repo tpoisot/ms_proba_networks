@@ -368,7 +368,7 @@ especially in sparsely connected networks frequently encountered in ecology
 In this sub-section, we apply the above measures to a bacteria--phage
 interaction network. @poul08 have measured the probability that 24 phages
 can infect 24 strains of bacteria of the *Pseudomonas fluorescens* species
-(group SBW25). Each probability has been observed though three independant
+(group SBW25). Each probability has been observed though three independent
 infection assays, and can take values of $0$, $0.5$, and $1.0$.
 
 Measure           Binary      Bernoulli trials        Probabilistic 
