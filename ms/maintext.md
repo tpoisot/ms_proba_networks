@@ -1,5 +1,5 @@
 % The structure of probabilistic networks
-% The Magical Mistery Stouffer Group
+% T. Poisot \and A. Cyrtwill \and D.B. Stouffer
 % Working paper -- Oct. 2014
 
 # Introduction
@@ -344,6 +344,15 @@ It is indeed possible to have an expression of the variance of this value,
 or of the variance of any three species forming a given motif, but their
 expressions become rapidly untractable and are better computer than written.
 
+### Unipartite projection of bipartite networks
+
+As the unipartite projection of a bipartite network is obtained by assigning
+an edge between any two nodes that are connected through at least one
+node of the other mode, it is readily obtained using the formula in the
+*Path length* section. This yields either the probability of an edge in the
+unipartite projection (of the upper or lower nodes), or if using the matrix
+multiplication, the expected number of such nodes.
+
 # Applications
 
 In this section, we will provide an overview of the applications
@@ -405,28 +414,58 @@ the structure of the network.
 ## Null-model based hypothesis testing
 
 In this section, we analyse 59 pollination networks from the literature
-using two "classical" null models of network structure. These data cover a
-wide range a situations, from small to large, and from densely to sparsely
-connected networks. They provide a good demonstration of the performance of
-probabilistic metrics.
+using two "classical" null models of network structure, and two intermediate
+models. These data cover a wide range a situations, from small to large, and
+from densely to sparsely connected networks. They provide a good demonstration
+of the performance of probabilistic metrics.
 
 We use the following null models. First (Type I, @fort06), any
 interaction between plant and animals happens with the fixed probability
 $\text{P}=Co$. This model controls for connectance, but removes the effect
 of degree distribution. Second, (Type II, @basc03), the probability of
 an interaction between animal $i$ and plant $j$ is $(k_i/R+k_j/C)/2$, the
-average of the richness-standardized degree of both species.
+average of the richness-standardized degree of both species. In addition, we
+use the models called Type III in and out [@pois13e], that use respectively the
+row-wise and column-wise probability of an interaction, as a way to understand
+the impact of the degree distribution of upper and lower level species.
 
-Note that this type of null models will take a binary network, and through some
-rules, turn it into a probabilistic one. Typically, this probabilistic network
-is used as a template to generate Bernoulli trials, measure some of their
-properties, the distribution of which is compared to the empirical network.
+Note that this type of null models will take a binary network, and through
+some rules, turn it into a probabilistic one. Typically, this probabilistic
+network is used as a template to generate Bernoulli trials, measure some
+of their properties, the distribution of which is compared to the empirical
+network. This approach is computationally inefficient [@pois14a], especially
+using naive models [@milo03], and as we show in the previous section, can
+yield biased estimates of the true average of nestedness (and presumably
+other properties).
+
+We measured the nestedness of the 59 networks, then generated the
+random networks under the four null models, and calculated the expected
+nestedness. For each null model $i$, the difference $\Delta_N$ in
+nestedness $N$ is expressed as $\Delta_N = N-\mathcal{N}^{(i)}(N)$, where
+$\mathcal{N}^{(i)}(N)$ is the nestedness of null model $i$. Our results are
+presented in \autoref{f:app2}.
+
+**TODO figure**
+
+There are two striking results. First, null models consistently *understimate*
+the nestedness of the 59 pollination networks, as evidence by the fact that
+all $\Delta_N$ values are strictly positive. Second, this understimation
+is *linear* between null models I and II, although null model II is always
+closer to the *actual* nestedness value. The markedly non-random value of the
+null nestednesses when compared to the empirical values calls for a closer
+evaluation of how the results of null models are interpreted (especially
+since Bernoulli simulations revealed a very low variance in the simulated
+nestedness; results not shown).
+
+
+**TODO** One last sentence.
 
 # Discussion
 
-- Shortest path (mean trophic level) is an open problem in graph theory,
-cannot be solved analytically (as of now).
+- What does it mean for probabilities to be independent
 
-- Modularity unlikely to work
+- Consequences for null models now that we have direct estimates
+
+- Synthesis - works for all types of matrices, not just interactions
 
 # References
