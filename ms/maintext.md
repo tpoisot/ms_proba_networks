@@ -1,5 +1,5 @@
 % The structure of probabilistic networks
-% T. Poisot \and A. Cyrtwill \and D.B. Stouffer
+% T. Poisot \and A. Cirtwill \and D. Gravel \and D.B. Stouffer
 % Working paper -- Oct. 2014
 
 # Introduction
@@ -353,6 +353,28 @@ node of the other mode, it is readily obtained using the formula in the
 unipartite projection (of the upper or lower nodes), or if using the matrix
 multiplication, the expected number of such nodes.
 
+## Network comparison
+
+The dissimilarity of a pair of (ecological) networks can be measured using the
+framework set forth by @kole03. Set-theoretical measures of $\beta$-diversity
+compute the dissimilarity between two networks based on the cardinality
+of three sets, $a$, $c$, and $b$, which are respectively the shared items,
+items unique to superset 1, and items unique to superset 2 (the identity of
+which network is 1 or 2 matters for asymmetric measures). Following @pois12c,
+the dissimilarity of two networks can be measured as either $\beta_{WN}$
+(all interactions), or $\beta_{OS}$ (interactions involving only common
+species), with $\beta_{OS} \leq \beta_{WN}$.
+
+Within our framework, these measures can be applied to probabilistic
+networks. The expected values of $\bar a$, $\bar c$, and $\bar
+b$ are, respectively, $\sum \mathbf{A}_1\diamond\mathbf{A}_2$,
+$\sum \mathbf{A}_1\diamond(1-\mathbf{A}_2)$, and $\sum
+(1-\mathbf{A}_1)\diamond\mathbf{A}_2$. Whether $\beta_{OS}$ or $\beta_{WN}$
+is measured requires to alter the matrices $\mathbf{A}_1$ and $\mathbf{A}_2$.
+To measure $\beta_{OS}$, one must remove all unique species; to measure
+$\beta_{WN}$, one must expand the two matrices so that they have the same
+species at the same place, and give a weight of 0 to the added interactions.
+
 # Applications
 
 In this section, we will provide an overview of the applications
@@ -380,22 +402,21 @@ can infect 24 strains of bacteria of the *Pseudomonas fluorescens* species
 (group SBW25). Each probability has been observed though three independent
 infection assays, and can take values of $0$, $0.5$, and $1.0$.
 
+Measuring the structure of the Binary, Bernoulli trials, and Probabilistic
+network gives the following result:
+
 Measure           Binary      Bernoulli trials        Probabilistic 
 ------------      -------     ------------------      ------------------
 links             336         $221.58\pm 57.57$       $221.52\pm 57.25$
-$\eta$             0.73        0.528                   0.512
-$\eta^{(R)}$       0.72        0.525                   0.507
-$\eta^{(C)}$       0.75        0.531                   0.518
+$\eta$            0.73        0.528                   0.512
+$\eta^{(R)}$      0.72        0.525                   0.507
+$\eta^{(C)}$      0.75        0.531                   0.518
 
-- connectance
-
-- nestedness
-
-As shown in \autoref{t:poullain}, transforming the probabilistic matrix
-into a binary one (i) overestimates nestedness by $\approx 0.02$, and (ii)
-overestimates the number of links by 115. For the number of links, both
-the probabilistic measures and the average and variance of $10^4$ Bernoulli
-trials were in strong agreement (they differ only by the second decimal place).
+As these results show, transforming the probabilistic matrix into a binary
+one (i) overestimates nestedness by $\approx 0.02$, and (ii) overestimates
+the number of links by 115. For the number of links, both the probabilistic
+measures and the average and variance of $10^4$ Bernoulli trials were in
+strong agreement (they differ only by the second decimal place).
 
 Using Bernoulli trials had the effect of slightly over-estimating
 nestedness. The overestimation is statistically significant from a purely
@@ -440,12 +461,36 @@ other properties).
 
 We measured the nestedness of the 59 networks, then generated the
 random networks under the four null models, and calculated the expected
-nestedness. For each null model $i$, the difference $\Delta_N$ in
-nestedness $N$ is expressed as $\Delta_N = N-\mathcal{N}^{(i)}(N)$, where
-$\mathcal{N}^{(i)}(N)$ is the nestedness of null model $i$. Our results are
-presented in \autoref{f:app2}.
+nestedness. For each null model $i$, the difference $\Delta^{(i)}_N$ in
+nestedness $N$ is expressed as $\Delta^{(i)}_N = N-\mathcal{N}^{(i)}(N)$,
+where $\mathcal{N}^{(i)}(N)$ is the nestedness of null model $i$. Our results
+are presented in \autoref{f:app2}.
 
-**TODO figure**
+\begin{figure}[bp]
+   \begin{tikzpicture}
+      \begin{groupplot}
+      [group style={columns=2, horizontal sep=2cm},
+      xmin=0, xmax=0.6, ymin=0, ymax=0.6]
+         \nextgroupplot[xlabel=$\Delta^{(1)}_N$, ylabel=$\Delta^{(2)}_N$]
+         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
+         \addplot [only marks] table [x = d1, y = d2] {figures/app2.dat};
+         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{A}};
+         \nextgroupplot[xlabel=$\Delta^{(3i)}_N$, ylabel=$\Delta^{(3o)}_N$]
+         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
+         \addplot [only marks] table [x = d3i, y = d3o] {figures/app2.dat};
+         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{B}};
+      \end{groupplot}
+   \end{tikzpicture}
+
+   \caption{Results of the null model analysis of 59 plant-pollination
+   networks. \textbf{A}. There is a consistent tendency for (i) both models I
+   and II to estimate less nestedness than in the empirical network, although
+   null model II yields more accurate estimates. \textbf{B}. Models III in
+   and III out also estimate less nestedness than the empirical network,
+   but neither has a systematic bias.}
+
+   \label{f:app2}
+\end{figure}
 
 There are two striking results. First, null models consistently *understimate*
 the nestedness of the 59 pollination networks, as evidence by the fact that
@@ -455,10 +500,23 @@ closer to the *actual* nestedness value. The markedly non-random value of the
 null nestednesses when compared to the empirical values calls for a closer
 evaluation of how the results of null models are interpreted (especially
 since Bernoulli simulations revealed a very low variance in the simulated
-nestedness; results not shown).
+nestedness). Interestingly, models III in and III out made overall *less*
+mistakes at estimating nestedness -- resp. $0.129$ and $0.123$, compared to
+resp. $0.219$ and $0.156$ for model I and II. Although the error is overall
+sensible to model type (Kruskal-Wallis $\chi^2$ = 35.80, d.f. = 3, $p \leq
+10^{-4}$), the three pairs of models that where significantly different after
+control for multiple comparison are I and II, I and III in, and I and III out
+(model II is not different from either models III).
 
-
-**TODO** One last sentence.
+In short, this analysis reveals that (i) the estimated value of a network
+measure under randomisation scenarios can be obtained through the analysis
+of the probabilistic matrix, instead of the analysis of simulated Bernoulli
+networks; (ii) Different models have different systematic biases, with models
+of the type III performing overall better for nestedness than any other
+models. This can be explained by the fact that nestedness of a network,
+as expressed by @bast09, is the average of a row-wise and column-wise
+nestedness. These depend on the species degree, and as such should be well
+predicted by models III.
 
 # Discussion
 
