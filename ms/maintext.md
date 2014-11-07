@@ -4,65 +4,67 @@
 
 # Introduction
 
-Ecological networks are an efficient way to represent the interactions between
-individual, populations, or species. Historically, their study has focused on
-(i) linking their structure to community or ecosystem-level properties such as
-stability [@mcca14], the maintenance of species richness [@bast09;@haer14],
-ecosystem functioning [@theb03;@duff02], and (ii) describing the overall
-structure of networks, with a particular attention on food webs [@dunn06]
-and plant-pollinator interactions [@basc03;@jord87]. To a large extent,
-the description of network structure enabled questions about how it ties
-into functional properties, and it is no surprise that the methodology to
-describe networks is large.
+Ecological networks are an efficient way to represent the interactions
+between individuals, populations, or species. Historically, their study
+has focused on describing their structure, with a particular attention on
+food webs [@dunn06] and plant-pollinator interactions [@basc03;@jord87],
+and linking this structure to community or ecosystem-level properties such as
+stability [@mcca14], the maintenance of species richness [@bast09;@haer14], or
+ecosystem functioning [@theb03;@duff02]. To a large extent, the description
+of ecological networks resulted in the emergence of questions about how
+functions emerged from structure, and this stimulated the development of a
+dense methodological literature.
 
-Most measures of network structure function in the following way. Given a
-network as input, they return a *property* based on one or several *units*
-within this network. Some of the properties are *direct* properties (they only
-require knowledge of the unit on which they are applied), and some others are
-*emerging* properties (they require knowledge of higher-order structures). For
-example, connectance, the proportion of realized interactions, is a direct
-property of a network. The degree of a node (how many interactions it is
-involved in) is a direct property of the node, whereas the degree distribution
-is an emerging property of all nodes. Establishing a difference between
-direct and emerging properties is important when interpreting their values:
-direct properties are conceptually equivalent to means, whereas emerging
-properties are conceptually equivalent to variances.
+Given a network as input, measures of network structure return a *property*
+based on one or several *units* from this network. Some of the properties
+are *direct* properties (they only require knowledge of the unit on which
+they are applied), whereas others are *emerging* (they require knowledge of
+higher-order structures). For example, connectance, the proportion of realized
+interactions, is a direct property of a network. The degree of a node (how
+many interactions it is involved in) is a direct property of the node. The
+nestedness of a network, on the other hand, is an emerging property that is not
+directly predictable from the degree of all nodes. Establishing a difference
+between direct and emerging properties is important when interpreting their
+values; direct properties are conceptually equivalent to means, in that
+they are the first "moment" of network units, whereas emerging properties
+are conceptually equivalent to variances or other higher-order "moments".
 
 In the recent years, the interpretation of the values of network structure
-(as indicators of the action of ecological or evolutionary processes) has
-been somewhat complicated by the observation that network structure varies
-through space, and time; species from the same pool do not interact in a
-consistent way [@pois12c]. Empirical and theoretical studies suggest that the
-network is not the right unit to understand this variation; rather, network
-variation is an emerging property of the response of ecological interactions
-to environmental factors and chance events [@pois14]. Interactions can
-vary because of local mis-matching in phenology [@oles11a], populations
+(as indicators of the action of ecological or evolutionary processes)
+has been somewhat complicated by the observation that network structure
+varies through space and time, because species from the same pool do not
+interact in a consistent way [@pois12c]. Empirical and theoretical studies
+suggest that the network is not the right unit to understand this variation;
+rather, network variation is an emerging property of the response of ecological
+interactions to environmental factors and chance events [@pois14]. Interactions
+can vary because of local mis-matching in phenology [@oles11a], populations
 fluctuations preventing the interaction [@cana14], or a combination of both
 [@olit14;@cham14]. @olit14 show that accounting for neutral (population-size
 driven) and trait-based effects allows predicting the cumulative change in
 network structure, but not the change at the level of individual interactions.
 
 Taken together, these considerations highlight the need to amend our current
-methodology on ecological network to give more importance to the variation
-at the interaction level. Because the methodology to describe networks has
-first been crafted at a time when assuming that interactions did not vary,
-it is unsuited to address the questions that probabilistic networks allows
-asking. In this paper, we show that several direct and emerging core properties
-of ecological networks (both bipartite and unipartite) can be re-formulated
-in a probabilistic context; we conclude by showing how this methodology can be
-applied to exploit the information contained in the variability and networks,
+methodology for the description of ecological networks, to give more importance
+to variation at the interaction level. Because the methodological corpus
+available to describe ecological networks has first been crafted at a time when
+it was assumed that interactions were invariants, it is unsuited to address
+the questions that probabilistic networks allow us to ask. In this paper, we
+show that several direct and emerging core properties of ecological networks
+(both bipartite and unipartite) can be re-formulated in a probabilistic
+context [@yeak12;@pois14]; we conclude by showing how this methodology can be
+applied to exploit the information contained in the variability of networks,
 and reduce the computational burden of current methods in network analysis.
 
 # Metrics
 
-Throughout this section, we will assume the following notation. $\mathbf{A}$
-is a matrix wherein $A_{ij}$ is $\text{P}(ij)$, *i.e.* the probability that
-species $i$ establishes an interaction with species $j$. If $\mathbf{A}$
-represents a unipartite network (*e.g.* a food web), it is a square matrix and
+Throughout this paper, we use the following notation. $\mathbf{A}$ is a matrix
+wherein $A_{ij}$ is $\text{P}(ij)$, *i.e.* the probability that species $i$
+establishes an interaction with species $j$. If $\mathbf{A}$ represents a
+unipartite network (*e.g.* a food web), it is a square matrix and contains
 the probabilities of each species interacting with itself. If $\mathbf{A}$
-represents a bipartite network (*e.g.* a pollination network), it will
-most likely not be square. We call $S$ the number of species, and $R$ and
-$C$ respectively the number of rows and columns. $S = R + C$ in unipartite
+represents a bipartite network (*e.g.* a pollination network), it will not
+necessarily be square. We call $S$ the number of species, and $R$ and $C$
+respectively the number of rows and columns. $S = R = C$ in unipartite
 networks, and $S = R+C$ in bipartite networks.
 
 Note that all of the measures defined below can be applied on a bipartite
@@ -80,14 +82,14 @@ bipartite matrix $\mathbf{A}$ is the block matrix
 where $0_{(C,R)}$ is a matrix of $C$ rows and $R$ columns filled with $0$s,
 etc.
 
-We assume that all interactions are independent (so that $\text{P}(ij|kl)
-= \text{P}(ij)\text{P}(kl)$ for any species), and can be represented as
-Bernoulli trials (so that $0 \leq \text{P}(ij) \leq 1$). The later condition
-allows to derive estimates for the *variance* of the measures, since (i)
-the variance of a single event $X_i$ of probability $p$ is $\text{var}(X)
-= p(1-p)$, its expected value is $\text{E}(X)=p$, (ii) the variance of
-additive independent events is the sum of their individual variances, and
-(iii) the variance of multiplicative independent events is
+We assume that all interactions are independent (so that $\text{P}(ij|kl) =
+\text{P}(ij)\text{P}(kl)$ for any species), and can be represented as Bernoulli
+trials (so that $0 \leq \text{P}(ij) \leq 1$). The later condition allows to
+derive estimates for the *variance* ($\text{var}(X) = p(1-p)$), and expected
+values ($\text{E}(X)=p$). We cant therefore estimate the variance of most
+properties, using the fact that the variance of additive independent events
+is the sum of their individual variances, and the variance of multiplicative
+independent events is
 
 \begin{equation}
 \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
@@ -95,16 +97,17 @@ additive independent events is the sum of their individual variances, and
 
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks, and will give the exact value of the
-non-probabilistic measure. And ain't that nice?
+non-probabilistic measure. This property is desirable, as it ensure that
+our framework has high generality.
 
 ## Direct properties
 
 ### Connectance and number of interactions
 
-Connectance is the proportion of realized upon possible interactions, defined
-as $Co = L/(R\times C)$, where $L$ is the total number of interactions. As
-all interactions in a probabilistic network are assumed to be indpendent,
-the expected value of $L$, is
+Connectance (or network density) is the proportion of possible interactions
+that are realized, defined as $Co = L/(R\times C)$, where $L$ is the total
+number of interactions. As all interactions in a probabilistic network are
+assumed to be independent, the expected value of $L$, is
 
 \begin{equation}
 \hat L = \sum A_{ij}, 
@@ -118,8 +121,8 @@ The variance of the number of interactions is $\text{var}(\hat L) = \sum
 ### Node degree
 
 The degree distribution of a network is the distribution of the number of
-interactions established and received by each node. The expected degree of
-species $i$ is
+interactions established (number of successors) and received (number of
+predecessors) by each node. The expected degree of species $i$ is
 
 \begin{equation}
 \hat k_i = \sum_j(A_{ij} + A_{ji})
@@ -139,29 +142,30 @@ with their variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
 
 ### Path length
 
-Networks can be used to describe indirect interactions between species,
-through the use of paths. The existence of a path of length 2 between species
-$i$ and $j$ mean that they are connected through at least one additional
-species $k$. In a probabilistic network, unless some elements are $0$,
-all pairs of species $i$ and $j$ are connected through a path of length
-1, with probability $A_{ij}$. The expected number of paths of length $k$
-between species $i$ and $j$ is given by
+Networks can be used to describe indirect interactions between species through
+the use of paths. The existence of a path of length 2 between species $i$
+and $j$ mean that they are connected through at least one additional species
+$k$. In a probabilistic network, unless some elements are $0$, all pairs of
+species $i$ and $j$ are connected through a path of length 1, with probability
+$A_{ij}$. The expected number of paths of length $k$ between species $i$
+and $j$ is given by
 
 \begin{equation}
-\hat{n^{(2)}_{ij}} = \left(\mathbf{A}^k\right)_{ij},
+\hat{n^{(k)}_{ij}} = \left(\mathbf{A}^k\right)_{ij},
 \end{equation}
 
 where $\mathbf{A}^k$ is the matrix multiplied by itself $k$ times.
 
 It is possible to calculate the probability of having at least one path
-between the two species: this can be done by calculating the probability of
-having 0 paths, then multiplying the resulting array of probabilities. For
-the example of length 2, species $i$ and $j$ are connected through $k$ with
-probability $A_{ik}A_{kj}$, and so this path does not exist with probability
-$1-A_{ik}A_{kj}$. For any pair $i$, $j$, let $\mathbf{m}$ be the vector such
-as $m_{k} = A_{ik}A_{kj}$ for all $k \notin (i,j)$ [@mirc76]. The probability
-of not having any path of length 2 is $\prod (1-\mathbf{m})$. Therefore,
-the probability of having a path of length 2 between $i$ and $j$ is
+of length $k$ between the two species: this can be done by calculating the
+probability of having no path of length $k$, then multiplying the resulting
+array of probabilities. For the example of length 2, species $i$ and $j$
+are connected through $g$ with probability $A_{ig}A_{gj}$, and so this path
+does not exist with probability $1-A_{ig}A_{gj}$. For any pair $i$, $j$,
+let $\mathbf{m}$ be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g
+\notin (i,j)$ [@mirc76]. The probability of not having any path of length
+2 is $\prod (1-\mathbf{m})$. Therefore, the probability of having a path of
+length 2 between $i$ and $j$ is
 
 \begin{equation}
 \hat{p}^{(2)}_{ij} = 1 - \prod (1-\mathbf{m}) .
@@ -178,9 +182,18 @@ generate the expression for having at least one path of length 3:
 
 where $\mathbf{m}$ is the vector of all $A_{ix}A_{xy}A_{yj}$ for $x\notin
 (i,j), y\neq x$. This gives the probability of having at least one path from
-$i$ to $j$, passing through any pair of nodes $x$ and $j$, without having any
+$i$ to $j$, passing through any pair of nodes $x$ and $y$, without having any
 shorter path. In theory, this approach can be generalized up to an arbitrary
 path length, but it becomes rapidly untractable.
+
+### Unipartite projection of bipartite networks
+
+As the unipartite projection of a bipartite network is obtained by assigning
+an edge between any two nodes that are connected through at least one
+node of the other mode, it is readily obtained using the formula in the
+*Path length* section. This yields either the probability of an edge in the
+unipartite projection (of the upper or lower nodes), or if using the matrix
+multiplication, the expected number of such nodes.
 
 ### Nestedness
 
@@ -201,18 +214,17 @@ for $\eta^{(C)}$ when using $v_i$ (the vulnerability) instead of $g_i$.
 The values returned are within $[0;1]$, with $\eta=1$ indicating complete
 nestedness.
 
-### Katz centrality
+### Centrality
 
-Although a rough estimate of centrality is the node degree, as described
-above, it is often needed to measure centrality within the context of a larger
-neighborhood. In addition, we derive the expected value of centrality according
-to @katz53. This measures generalizes to directed acyclic graphs. Although
-eigenvector centrality is often used in ecology, it cannot be measured on
-probabilistic graphs. Eigenvector centrality requires that the matrix has
-its largest eigenvalues real, which is not the case for *all* probabilistic
-matrices. Katz's centrality is nonetheless a useful replacement, because
-it uses the paths of all lengths between two species instead of focusing on
-the shortest path.
+Although node degree is a rough first order estimate of centrality, but
+other measures are often needed. We derive the expected value of centrality
+according to @katz53. This measures generalizes to directed acyclic graphs
+(whereas other do not). Although eigenvector centrality is often used in
+ecology, it cannot be measured on probabilistic graphs. Eigenvector centrality
+requires the matrix's largest eigenvalues to be real, which is not the case
+for *all* probabilistic matrices. The measure proposed by Katz is a useful
+replacement, because it uses the paths of all lengths between two species
+instead of focusing on the shortest path.
 
 The expected number of paths of length $k$ between $i$ and $j$ is
 $(\mathbf{A}^k)_{ij}$. Based on this, the expected centrality of species $i$ is
@@ -222,23 +234,23 @@ C_i = \sum_{k=1}^\infty \sum_{j=1}^n \alpha^k (\mathbf{A}^k)_{ji} .
 \end{equation}
 
 The parameter $\alpha \in [0;1]$ regulates how important long paths are. When
-$\alpha = 0$, only first-order paths count. When $\alpha = 1$, all paths
-are equally important. As $C_i$ is sensitive to the size of the matrix,
-we suggest to normalise it so that
+$\alpha = 0$, only first-order paths are accounted for (and the centrality
+is equal to generality). When $\alpha = 1$, paths of all length are equally
+important. As $C_i$ is sensitive to the size of the matrix, we suggest
+normalizing by $\mathbf{C} = \sum C$, so that
 
 \begin{equation}
 C_i = \frac{C_i}{\mathbf{C}} .
 \end{equation}
 
 This results in the *expected relative centrality* of each node in the
-probabilistic network. Note that when using only $k = 1$, and $\alpha = 1$,
-the raw value of Katz's centrality is the species generality.
+probabilistic network. 
 
 ### Number of primary producers
 
 Primary producers, in a food web, are species with no successors, including
 themselves. Biologically, they are autotrophic organisms, or organisms
-whose preys or substrates have been remove from the network. A species is a
+whose preys or substrates have been removeb from the network. A species is a
 primary producer if it manages *not* to establish any outgoing interaction,
 which for species $i$ happens with probability
 
@@ -278,6 +290,9 @@ do, engage in cannibalism.
 Predicting the number of species with no interaction (or whether any species
 will have at least one interaction) is useful to predict whether species
 will be able to integrate themselves in an existing network, for example.
+Note that from a methodological point of view, this can be a helpful *a
+priori* measure to determine whether null models of networks will have a
+lot of species with no interactions, and so will require intensive sampling.
 
 A species has no interactions with probability
 
@@ -300,10 +315,6 @@ A_{ij}(1-A_{ij})A_{ji}(1-A_{ji})+A_{ij}(1-A_{ij})A_{ji}^2+A_{ji}(1-A_{ji})A_{ij}
 \right)
 \end{equation}
 
-Note that from a methodological point of view, this can be a helpful *a
-priori* measure to determine whether null models of networks will have a
-lot of species with no interactions, and so will require intensive sampling.
-
 ### Self-predation
 
 Self-predation (the existence of an interaction of a species onto
@@ -315,8 +326,8 @@ is the element-wise product operation.
 
 ### Motifs
 
-Motifs are sets of pre-determined interactions between a fixed number of specie
-[@milo02], such as for example one predator sharing two preys. As there is
+Motifs are sets of pre-determined interactions between a fixed number of species
+[@milo02], such as for example one predator sharing two preys. As there are
 an arbitrarily large number of motifs, we will illustrate the formulae with
 only two examples.
 
@@ -334,7 +345,8 @@ in which $i$ and $j$ consume $k$, and $i$ consumes $j$, is
 \text{P}(i,j,k\in\text{omniv.}) = A_{ij}(1-A_{ji})A_{ik}(1-A_{ki})A_{jk}(1-A_{kj})
 \end{equation}
 
-The probability of the number of *any* motif $\text{m}$ in a network is given by
+The probability of the number of *any* motif $\text{m}$ with three species
+in a network is given by
 
 \begin{equation}
 \hat{N_\text{m}} = \sum_i \sum_{j\neq i} \sum_{k\neq j} P(i,j,k \in \text{m})
@@ -344,26 +356,18 @@ It is indeed possible to have an expression of the variance of this value,
 or of the variance of any three species forming a given motif, but their
 expressions become rapidly untractable and are better computer than written.
 
-### Unipartite projection of bipartite networks
-
-As the unipartite projection of a bipartite network is obtained by assigning
-an edge between any two nodes that are connected through at least one
-node of the other mode, it is readily obtained using the formula in the
-*Path length* section. This yields either the probability of an edge in the
-unipartite projection (of the upper or lower nodes), or if using the matrix
-multiplication, the expected number of such nodes.
-
 ## Network comparison
 
 The dissimilarity of a pair of (ecological) networks can be measured using the
 framework set forth by @kole03. Set-theoretical measures of $\beta$-diversity
-compute the dissimilarity between two networks based on the cardinality
-of three sets, $a$, $c$, and $b$, which are respectively the shared items,
-items unique to superset 1, and items unique to superset 2 (the identity of
-which network is 1 or 2 matters for asymmetric measures). Following @pois12c,
-the dissimilarity of two networks can be measured as either $\beta_{WN}$
-(all interactions), or $\beta_{OS}$ (interactions involving only common
-species), with $\beta_{OS} \leq \beta_{WN}$.
+compute the dissimilarity between two networks based on the cardinality of
+three sets, $a$, $c$, and $b$, which are respectively the shared items, items
+unique to superset (network) 1, and items unique to superset 2 (the identity
+of which network is 1 or 2 matters for asymmetric measures). Supersets can
+be the species within each network, or the interactions between species.
+Following @pois12c, the dissimilarity of two networks can be measured
+as either $\beta_{WN}$ (all interactions), or $\beta_{OS}$ (interactions
+involving only common species), with $\beta_{OS} \leq \beta_{WN}$.
 
 Within our framework, these measures can be applied to probabilistic
 networks. The expected values of $\bar a$, $\bar c$, and $\bar
@@ -377,22 +381,23 @@ species at the same place, and give a weight of 0 to the added interactions.
 
 # Applications
 
-In this section, we will provide an overview of the applications
-of probabilistic network measures. The current way of dealing with
-probabilistic interactions is (i) to ignore it entirely or (ii) to generate
-random networks. Probabilistic metrics are an alternative to that. When
-ignoring the probabilistic nature of interactions, what we call *Binary*
-from here on, every non-zero element of the network is assumed to be 1. This
-leads to over-representation of some rare-events, and increases the number
-of interactions.
+In this section, we will provide an overview of the applications of
+probabilistic network measures. The current way of dealing with probabilistic
+interactions are either to ignore variability entirely or to generate random
+networks. Probabilistic metrics are a mathematically rigorous alternative to
+that. When ignoring the probabilistic nature of interactions, what we call
+*Binary* from here on, every non-zero element of the network is assumed to
+be 1. This leads to over-representation of some rare events, and increases
+the number of interactions.
 
 When generating random networks, what we call *Bernoulli trials* from here on,
 a binary network is generated by doing a Bernoulli trial with probability
-$A_{ij}$, for each element of the matrix. This is problematic because (i)
+$A_{ij}$, for each element of the matrix. This is problematic because
 higher order structures involving rare events will be under-represented in
-the sample, and (ii) naive approaches are likely to generate free species,
+the sample, and most naive approaches are likely to generate free species,
 especially in sparsely connected networks frequently encountered in ecology
-[@milo03;@pois14a].
+[@milo03;@pois14a] -- on the other hand, non-naive approaches break the
+assumption of independence between interactions.
 
 ## Comparison of probabilistic networks
 
@@ -413,7 +418,7 @@ $\eta^{(R)}$      0.72        0.525                   0.507
 $\eta^{(C)}$      0.75        0.531                   0.518
 
 As these results show, transforming the probabilistic matrix into a binary
-one (i) overestimates nestedness by $\approx 0.02$, and (ii) overestimates
+one (i) overestimates nestedness by $\approx 0.2$, and (ii) overestimates
 the number of links by 115. For the number of links, both the probabilistic
 measures and the average and variance of $10^4$ Bernoulli trials were in
 strong agreement (they differ only by the second decimal place).
@@ -435,10 +440,10 @@ the structure of the network.
 ## Null-model based hypothesis testing
 
 In this section, we analyse 59 pollination networks from the literature
-using two "classical" null models of network structure, and two intermediate
-models. These data cover a wide range a situations, from small to large, and
-from densely to sparsely connected networks. They provide a good demonstration
-of the performance of probabilistic metrics.
+using two "classical" null models of network structure, and two models
+with intermediate constraints. These data cover a wide range a situations,
+from small to large, and from densely to sparsely connected networks. They
+provide a good demonstration of the performance of probabilistic metrics.
 
 We use the following null models. First (Type I, @fort06), any
 interaction between plant and animals happens with the fixed probability
@@ -452,7 +457,7 @@ the impact of the degree distribution of upper and lower level species.
 
 Note that this type of null models will take a binary network, and through
 some rules, turn it into a probabilistic one. Typically, this probabilistic
-network is used as a template to generate Bernoulli trials, measure some
+network is used as a template to generate Bernoulli trials and measure some
 of their properties, the distribution of which is compared to the empirical
 network. This approach is computationally inefficient [@pois14a], especially
 using naive models [@milo03], and as we show in the previous section, can
@@ -492,9 +497,9 @@ are presented in \autoref{f:app2}.
    \label{f:app2}
 \end{figure}
 
-There are two striking results. First, null models consistently *understimate*
-the nestedness of the 59 pollination networks, as evidence by the fact that
-all $\Delta_N$ values are strictly positive. Second, this understimation
+There are two striking results. First, null models consistently *underestimate*
+the nestedness of the 59 pollination networks, as evidenced by the fact that
+all $\Delta_N$ values are strictly positive. Second, this underestimation
 is *linear* between null models I and II, although null model II is always
 closer to the *actual* nestedness value. The markedly non-random value of the
 null nestednesses when compared to the empirical values calls for a closer
@@ -503,10 +508,10 @@ since Bernoulli simulations revealed a very low variance in the simulated
 nestedness). Interestingly, models III in and III out made overall *less*
 mistakes at estimating nestedness -- resp. $0.129$ and $0.123$, compared to
 resp. $0.219$ and $0.156$ for model I and II. Although the error is overall
-sensible to model type (Kruskal-Wallis $\chi^2$ = 35.80, d.f. = 3, $p \leq
-10^{-4}$), the three pairs of models that where significantly different after
-control for multiple comparison are I and II, I and III in, and I and III out
-(model II is not different from either models III).
+sensitive to model type (Kruskal-Wallis $\chi^2$ = 35.80, d.f. = 3, $p \leq
+10^{-4}$), the three pairs of models that where significantly different
+after controlling for multiple comparisons are I and II, I and III in,
+and I and III out (model II is not different from either models III in or out).
 
 In short, this analysis reveals that (i) the estimated value of a network
 measure under randomisation scenarios can be obtained through the analysis
