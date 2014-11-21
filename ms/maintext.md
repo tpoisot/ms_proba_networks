@@ -7,7 +7,8 @@
 Ecological networks are an efficient way to represent biotic interactions
 between individuals, populations, or species. Historically, their study
 focused on describing their structure, with a particular attention on
-food webs [@dunn06] and plant-pollinator interactions [@basc03;@jord87]. The ultimate outcome of this line of research
+food webs [@dunn06] and plant-pollinator interactions [@basc03;@jord87].
+The ultimate outcome of this line of research
 was linking this structure to community or ecosystem-level properties such as
 stability [@mcca14], coexistence [@bast09;@haer14], or
 ecosystem functioning [@theb03;@duff02]. To a large extent, the description
@@ -33,7 +34,8 @@ are conceptually equivalent to variances or other higher-order moments.
 In the recent years, the interpretation of the values of network structure
 (as indicators of the action of ecological or evolutionary processes)
 has been somewhat complicated by the observation that network structure
-varies through space and time. This happens because, in contrary to a long-standing assumption in network studies, species from the same pool do not
+varies through space and time. This happens because, in contrary to a long-standing
+assumption in network studies, species from the same pool do not
 interact in a consistent way [@pois12c]. Empirical and theoretical studies
 suggest that the network is not the right unit to understand this variation;
 rather, network variation is an emerging property of the response of ecological
@@ -43,7 +45,8 @@ fluctuations preventing the interaction [@cana14], or a combination of both
 [@olit14;@cham14]. @olit14 show that accounting for neutral (population-size
 driven) and trait-based effects allows predicting the cumulative change in
 network structure, but not the change at the level of individual interactions.
-In addition, @carstensen show that within a meta-community, not all interactions are equally variable: some are highly consistent, whereas others are extremely rare.
+In addition, @carstensen show that within a meta-community, not all interactions are
+equally variable: some are highly consistent, whereas others are extremely rare.
 
 Taken together, these considerations highlight the need to amend our current
 methodology for the description of ecological networks, to give more importance
@@ -100,8 +103,8 @@ independent events is
 
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks, and will give the exact value of the
-non-probabilistic measure. This property is desirable, as it ensure that
-our framework has high generality.
+non-probabilistic measure. This property is desirable, as it allows our framework to be
+used on any network data, whether they are probabilistic or binary.
 
 ## Direct properties
 
@@ -526,12 +529,35 @@ as expressed by @bast09, is the average of a row-wise and column-wise
 nestedness. These depend on the species degree, and as such should be well
 predicted by models III.
 
-# Discussion
+# Implications for data collection
 
-- What does it mean for probabilities to be independent
+We developped and presented a set of measures that provide estimates of network structure,
+using the probability that each interaction is observed or happens, in a way that do not
+require time-consuming simulations. Our framework is set up in such ways that the probability
+of interactions are considered to be independant. Estimating interaction
+probabilities based on species abundances [@canard;@olito] do not, for example,
+yield non-independant probabilities: changing the abundance of one species changes
+all probabilities in the network. They are not Bernoulli events either, as the sum
+of all probabilities derived this way sums to unity. On the other hand, "cafeteria
+experiments" [@loyd;@perez] give truely independant probabilities of interactions;
+even a simple criteria, such as the frequency of interactions when the two species
+are put together, is a way of estimating probability. Using the approach outline by @oikospaper, 
+both sources of information (species abundance and the outcome of experiments) can be combined to
+estimate the probability that interactions will happen in empirical communities. This
+effort requires improved communications between scientists collecting data and scientists
+developping methodology to analyse them.
 
-- Consequences for null models now that we have direct estimates
+Another way to obtain approximation of the probability of interactions is too use spatially
+replicated sampling. Some studies [@tylianakis;@carstensen;@olito] surveyed the existence of
+interactions at different locations, and a simple approach of dividing the number of observations
+of an interaction by the number of co-occurence of the species involved will provide a (somewhat crude) estimate
+of the probability of this interaction. This approach requires extensive sampling, especially since 
+interactions are harder to observe than species [@ele;@luisjo]. Yet it enables the re-analysis of existing datasets
+in a probabilistic context.
 
-- Synthesis - works for all types of matrices, not just interactions
+Understanding the structure of ecological networks, and whether it relates to ecosystem properties, is emerging as a key challenge for community ecology. 
+A proper estimation of this structure requires tools that adress all forms of complexity, the most oft-neglected yet
+pervasive of which is the fact that interactions are variable. By developping this metrics, we allow future 
+analyses of network structure to account for this phenomenon.
 
 # References
