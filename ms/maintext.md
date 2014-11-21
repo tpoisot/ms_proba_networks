@@ -4,21 +4,22 @@
 
 # Introduction
 
-Ecological networks are an efficient way to represent the interactions
+Ecological networks are an efficient way to represent biotic interactions
 between individuals, populations, or species. Historically, their study
-has focused on describing their structure, with a particular attention on
-food webs [@dunn06] and plant-pollinator interactions [@basc03;@jord87],
-and linking this structure to community or ecosystem-level properties such as
-stability [@mcca14], the maintenance of species richness [@bast09;@haer14], or
+focused on describing their structure, with a particular attention on
+food webs [@dunn06] and plant-pollinator interactions [@basc03;@jord87]. The ultimate outcome of this line of research
+was linking this structure to community or ecosystem-level properties such as
+stability [@mcca14], coexistence [@bast09;@haer14], or
 ecosystem functioning [@theb03;@duff02]. To a large extent, the description
 of ecological networks resulted in the emergence of questions about how
 functions emerged from structure, and this stimulated the development of a
-dense methodological literature.
+riche methodological literature.
 
 Given a network as input, measures of network structure return a *property*
 based on one or several *units* from this network. Some of the properties
 are *direct* properties (they only require knowledge of the unit on which
-they are applied), whereas others are *emerging* (they require knowledge of
+they are applied), whereas others are *emerging* (they require knowledge of,
+and describe,
 higher-order structures). For example, connectance, the proportion of realized
 interactions, is a direct property of a network. The degree of a node (how
 many interactions it is involved in) is a direct property of the node. The
@@ -26,13 +27,13 @@ nestedness of a network, on the other hand, is an emerging property that is not
 directly predictable from the degree of all nodes. Establishing a difference
 between direct and emerging properties is important when interpreting their
 values; direct properties are conceptually equivalent to means, in that
-they are the first "moment" of network units, whereas emerging properties
-are conceptually equivalent to variances or other higher-order "moments".
+they are the first moment of network units, whereas emerging properties
+are conceptually equivalent to variances or other higher-order moments.
 
 In the recent years, the interpretation of the values of network structure
 (as indicators of the action of ecological or evolutionary processes)
 has been somewhat complicated by the observation that network structure
-varies through space and time, because species from the same pool do not
+varies through space and time. This happens because, in contrary to a long-standing assumption in network studies, species from the same pool do not
 interact in a consistent way [@pois12c]. Empirical and theoretical studies
 suggest that the network is not the right unit to understand this variation;
 rather, network variation is an emerging property of the response of ecological
@@ -42,10 +43,11 @@ fluctuations preventing the interaction [@cana14], or a combination of both
 [@olit14;@cham14]. @olit14 show that accounting for neutral (population-size
 driven) and trait-based effects allows predicting the cumulative change in
 network structure, but not the change at the level of individual interactions.
+In addition, @carstensen show that within a meta-community, not all interactions are equally variable: some are highly consistent, whereas others are extremely rare.
 
 Taken together, these considerations highlight the need to amend our current
 methodology for the description of ecological networks, to give more importance
-to variation at the interaction level. Because the methodological corpus
+to the variation of individual interactions. Because the methodological corpus
 available to describe ecological networks has first been crafted at a time when
 it was assumed that interactions were invariants, it is unsuited to address
 the questions that probabilistic networks allow us to ask. In this paper, we
@@ -53,7 +55,8 @@ show that several direct and emerging core properties of ecological networks
 (both bipartite and unipartite) can be re-formulated in a probabilistic
 context [@yeak12;@pois14]; we conclude by showing how this methodology can be
 applied to exploit the information contained in the variability of networks,
-and reduce the computational burden of current methods in network analysis.
+and reduce the computational burden of current methods in network analysis. We provide 
+a free and open source implementation of this set of measures in a Julia library.
 
 # Metrics
 
