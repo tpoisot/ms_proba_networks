@@ -1,4 +1,4 @@
-using PEN
+using ProbaNet
 
 ## Read the Poullain data
 A = readdlm("../data/poullain.txt")

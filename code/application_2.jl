@@ -1,6 +1,6 @@
 using Gadfly
 using DataFrames
-using PEN
+using ProbaNet
 
 searchdir(path,key) = filter(x->contains(x,key), readdir(path))
 
