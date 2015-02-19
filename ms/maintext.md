@@ -1,5 +1,5 @@
 % The structure of probabilistic networks
-% T. Poisot \and A. Cirtwill \and D. Gravel \and D.B. Stouffer
+% T. Poisot \and A. Cirtwill \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
 % Working paper -- Jan. 2015
 
 # Introduction
@@ -10,26 +10,27 @@ on describing their structure, with a particular attention on food webs
 [@dunn06] and plant-pollinator interactions [@basc03;@jord87]. The key result of
 this line of research was linking this structure to community or ecosystem-level
 properties such as stability [@mcca14], coexistence [@bast09;@haer14], or
-ecosystem functioning [@theb03;@duff02]. To a large extent, the description of
-ecological networks resulted in the emergence of questions about how functions
-emerged from structure, and this stimulated the development of a rich
-methodological literature, defining a wide array of structural properties.
+ecosystem functioning [@theb03;@duff02;@pois12]. To a large extent, the
+description of ecological networks resulted in the emergence of questions about
+how functions emerged from structure, and this stimulated the development of a
+rich methodological literature, defining a wide array of structural properties.
 
 Given a network as input, measures of network structure return a *property*
 based on one or several *units* from this network. Some of the properties are
 *direct* properties (they only require knowledge of the unit on which they are
 applied), whereas others are *emerging* (they require knowledge of, and
-describe, higher-order structures). For example, connectance, the proportion of
-realized interactions, is a direct property of a network. The degree of a node
-(how many interactions it is involved in) is a direct property of the node. The
-nestedness of a network, on the other hand, is an emerging property that is not
-directly predictable from the degree of all nodes. Establishing a difference
-between direct and emerging properties is important when interpreting their
-values; direct properties are conceptually equivalent to means, in that they are
-the first moment of network units, whereas emerging properties are conceptually
-equivalent to variances or other higher-order moments.
+describe, higher-order structures). For example, connectance, the realized
+proportion of potential interactions, is a direct property of a network. The
+degree of a node (how many interactions it is involved in) is a direct property
+of the node. The nestedness of a network (that is, the extent to which
+specialists and generalists overlap), on the other hand, is an emerging property
+that is not directly predictable from the degree of all nodes. Establishing a
+difference between direct and emerging properties is important when interpreting
+their values; direct properties are conceptually equivalent to means, in that
+they are the first moment of network units, whereas emerging properties are
+conceptually equivalent to variances or other higher-order moments.
 
-In the recent years, the interpretation of the values of network structure (as
+In the recent years, the interpretation of the properties of network structure (as
 indicators of the action of ecological or evolutionary processes) has been
 somewhat complicated by the observation that network structure varies through
 space and time. This happens because, contrary to a long-standing assumption of
@@ -42,7 +43,7 @@ mismatching in phenology [@oles11a], populations fluctuations preventing the
 interaction [@cana14], or a combination of both [@olit14;@cham14]. @olit14 show
 that accounting for neutral (population-size driven) and trait-based effects
 allows the prediction of the cumulative change in network structure, but not of
-the change at the level of individual interactions. In addition, @carstensen
+the change at the level of individual interactions. In addition, @cars14
 show that within a meta-community, not all interactions are equally variable:
 some are highly consistent, whereas others are extremely rare.
 
@@ -58,7 +59,8 @@ probabilistic context [@yeak12;@pois14]; we conclude by showing how this
 methodology can be applied to exploit the information contained in the
 variability of networks, and to reduce the computational burden of current
 methods in network analysis. We provide a free and open-source implementation of
-this set of measures in a library for the `julia` language.
+this set of measures in a library for the `julia` language, available at
+`http://github.com/PoisotLab/ProbaNet.jl`.
 
 # Metrics
 
@@ -103,7 +105,8 @@ independent events is
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks and will give the exact value of the
 non-probabilistic measure. This property is desirable as it allows our framework
-to be used on any network data, whether they are probabilistic or binary.
+to be used on any network, whether they are represented in a probabilistic or
+binary way.
 
 ## Direct properties
 
@@ -193,19 +196,21 @@ path length, but it becomes rapidly untractable.
 
 ### Unipartite projection of bipartite networks
 
-As the unipartite projection of a bipartite network is obtained by assigning
-an edge between any two nodes that are connected through at least one
-node of the other mode, it is readily obtained using the formula in the
-*Path length* section. This yields either the probability of an edge in the
-unipartite projection (of the upper or lower nodes), or if using the matrix
-multiplication, the expected number of such nodes.
+The unipartite projection of a bipartite network is obtained by linking any two
+nodes of one mode that are connected through at least one node of the other
+mode. It is readily obtained using the formula in the *Path length* section.
+This yields either the probability of an edge in the unipartite projection (of
+the upper or lower nodes), or if using the matrix multiplication, the expected
+number of such nodes.
 
 ### Nestedness
 
-We use the formula for nestedness proposed by @bast09. They define
-nestedness for each margin of the matrix, as $\eta^{(R)}$ and $\eta^{(C)}$
-for, respectively, rows and columns. As per @alme08, we define a global
-statistic for nestedness as $\eta = (\eta^{(R)}+\eta^{(C)})/2$.
+Nestedness is an important measure of (bipartite) network structure that tells
+the extent to which the interactions of specialists and generalists overlap. We
+use the formula for nestedness proposed by @bast09. They define nestedness for
+each margin of the matrix, as $\eta^{(R)}$ and $\eta^{(C)}$ for, respectively,
+rows and columns. As per @alme08, we define a global statistic for nestedness as
+$\eta = (\eta^{(R)}+\eta^{(C)})/2$.
 
 Nestedness, in a probabilistic network, is defined as
 
@@ -221,12 +226,12 @@ nestedness.
 
 ### Centrality
 
-Although node degree is a rough first order estimate of centrality, but other
+Although node degree is a rough first order estimate of centrality, other
 measures are often needed. We derive the expected value of centrality according
 to @katz53. This measures generalizes to directed acyclic graphs (whereas other
 do not). Although eigenvector centrality is often used in ecology, it cannot be
 measured on probabilistic graphs. Eigenvector centrality requires the matrix's
-largest eigenvalues to be real, which is not the case for *all* probabilistic
+largest eigenvalues to be real, which is not the case for all probabilistic
 matrices. The measure proposed by Katz is a useful replacement, because it uses
 the paths of all length between two species instead of focusing on the shortest
 path.
@@ -240,7 +245,9 @@ C_i = \sum_{k=1}^\infty \sum_{j=1}^n \alpha^k (\mathbf{A}^k)_{ji} .
 
 The parameter $\alpha \in [0;1]$ regulates how important long paths are. When
 $\alpha = 0$, only first-order paths are accounted for (and the centrality is
-equal to generality). When $\alpha = 1$, paths of all length are equally
+equal to generality).
+%DG: to the degree or generality?
+ When $\alpha = 1$, paths of all length are equally
 important. As $C_i$ is sensitive to the size of the matrix, we suggest
 normalizing by $\mathbf{C} = \sum C$, so that
 
@@ -251,37 +258,34 @@ C_i = \frac{C_i}{\mathbf{C}} .
 This results in the *expected relative centrality* of each node in the
 probabilistic network.
 
-### Number of primary producers
+### Species with no outgoing links
 
-Primary producers, in a food web, are species with no successors, including
-themselves. Biologically, they are autotrophic organisms, or organisms
-whose preys or substrates have been removed from the network. A species is a
-primary producer if it manages *not* to establish any outgoing interaction,
-which for species $i$ happens with probability
+Estimating the number of species with no outgoing links (successors) can be
+useful when predicting whether, *e.g.*, predators will go extinct. A species has
+no successots if it manages *not* to establish any outgoing interaction, which
+for species $i$ happens with probability
 
 \begin{equation}
 \prod_j (1-A_{ij}).
 \end{equation}
 
-The number of expected primary producers is therefore the sum of the above
-across all species:
+The number of expected such species is therefore the sum of the above across all
+species:
 
 \begin{equation}
 \hat{PP} = \sum_i \left(\prod_j (1-A_{ij})\right).
 \end{equation}
 
-The variance in the number of expected primary producers is
+and its variance is
 
 \begin{equation}
 \text{var}(\hat{PP}) = \sum_i \left( \prod_j(1-A_{ij}^2) - \prod_j(1-A_{ij})^2 \right)
 \end{equation}
 
-### Number of top predators
+### Species with no incoming links
 
-Top-predators can loosely be defined as species that have no predecessors in the
-network: they are establishing links with other species, but no species are
-establishing links with them. Using the same approach as for the number of
-primary producers, the expected number of top-predators is therefore
+Using the same approach as for the number of species with no outgoing links, the
+expected number of species with no incoming links is therefore
 
 \begin{equation}
 \hat{TP} = \sum_i\left(\prod_{j \neq i}(1-A_{ji})\right)
@@ -320,14 +324,14 @@ A_{ij}(1-A_{ij})A_{ji}(1-A_{ji})+A_{ij}(1-A_{ij})A_{ji}^2+A_{ji}(1-A_{ji})A_{ij}
 \right)
 \end{equation}
 
-### Self-predation
+### Self-loops
 
-Self-predation (the existence of an interaction of a species onto
-itself) is only meaningful in unipartite networks. The expected
-proportion of species with self-loops is very simply defined as
-$\text{Tr}(\mathbf{A})$, that is, the sum of all diagonal elements. The
-variance is $\text{Tr}(\mathbf{A}\diamond(1-\mathbf{A}))$, where $\diamond$
-is the element-wise product operation.
+Self-loops (the existence of an interaction of a species onto itself) is only
+meaningful in unipartite networks. The expected proportion of species with
+self-loops is very simply defined as $\text{Tr}(\mathbf{A})$, that is, the sum
+of all diagonal elements. The variance is
+$\text{Tr}(\mathbf{A}\diamond(1-\mathbf{A}))$, where $\diamond$ is the
+element-wise product operation.
 
 ### Motifs
 
@@ -364,7 +368,7 @@ become rapidly untractable and are better computed than written.
 ## Network comparison
 
 The dissimilarity of a pair of (ecological) networks can be measured using the
-framework set forth by @kole03. Set-theoretical measures of $\beta$-diversity
+framework set forth by @kole03. Measures of $\beta$-diversity
 compute the dissimilarity between two networks based on the cardinality of three
 sets, $a$, $c$, and $b$, which are respectively the shared items, items unique
 to superset (network) 1, and items unique to superset 2 (the identity of which
@@ -393,7 +397,9 @@ networks. Probabilistic metrics are a mathematically rigorous alternative to
 both. When ignoring the probabilistic nature of interactions, what we call
 *Binary* from here on, every non-zero element of the network is assumed to be 1.
 This leads to over-representation of some rare events, and increases the number
-of interactions.
+of interactions. An alternative is to consider only the interactions above a given
+threshold, which leads to an under-representation of rare events and decreases the
+number of interactions.
 
 When generating random networks, what we call *Bernoulli trials* from here on, a
 binary network is generated by doing a Bernoulli trial with probability
@@ -409,8 +415,8 @@ assumption of independence between interactions.
 In this sub-section, we apply the above measures to a bacteria--phage
 interaction network. @poul08 have measured the probability that 24 phages can
 infect 24 strains of bacteria of the *Pseudomonas fluorescens* species (group
-SBW25). Each probability has been observed though three independent infection
-assays, and can take values of $0$, $0.5$, and $1.0$.
+SBW25). Each probability has been observed though independent infection assays,
+and can take values of $0$, $0.5$, and $1.0$.
 
 Measuring the structure of the Binary, Bernoulli trials, and Probabilistic
 network gives the following result:
@@ -443,11 +449,12 @@ approach severely mis-represents the structure of the network.
 
 ## Null-model based hypothesis testing
 
-In this section, we analyse 59 pollination networks from the literature
-using two "classical" null models of network structure, and two models
-with intermediate constraints. These data cover a wide range a situations,
-from small to large, and from densely to sparsely connected networks. They
-provide a good demonstration of the performance of probabilistic metrics.
+In this section, we analyse 59 pollination networks from the literature using
+two "classical" null models of network structure, and two models with
+intermediate constraints. These data cover a wide range a situations, from small
+to large, and from densely to sparsely connected networks. They provide a good
+demonstration of the performance of probabilistic metrics. Data come from the
+*InteractionWeb Database*, and were queried on Nov. 2014.
 
 We use the following null models. First (Type I, @fort06), any
 interaction between plant and animals happens with the fixed probability
@@ -455,17 +462,25 @@ $\text{P}=Co$. This model controls for connectance, but removes the effect
 of degree distribution. Second, (Type II, @basc03), the probability of
 an interaction between animal $i$ and plant $j$ is $(k_i/R+k_j/C)/2$, the
 average of the richness-standardized degree of both species. In addition, we
-use the models called Type III in and out [@pois13e], that use respectively the
+use the models called Type III in and out [@pois13e], that uses respectively the
 row-wise and column-wise probability of an interaction, as a way to understand
 the impact of the degree distribution of upper and lower level species.
 
-Note that these null models will take a binary network, and through some rules,
+Note that these null models will take a binary network, and through some rules
 turn it into a probabilistic one. Typically, this probabilistic network is used
 as a template to generate Bernoulli trials and measure some of their properties,
 the distribution of which is compared to the empirical network. This approach is
 computationally inefficient [@pois14a], especially using naive models [@milo03],
 and as we show in the previous section, can yield biased estimates of the true
 average of nestedness (and presumably other properties).
+
+%DG: there is something I don't get in the logic here. You mean that you randomize
+% the network according to some rules, do it many times, compute a probabilistic network
+% and then do a Bernouilli trial out of it? Why are these last two steps necessary? I
+% figure it's not what you meant, but some rewording would help clarifying your thoughts
+% After a couple of readings I realize that you need to better explain how to i) generate
+$ the null expectation analytically instead of trials and ii) test for hypotheses
+$ It is critical, because otherwise the comparison you are doing below is confusing.
 
 We measured the nestedness of the 59 networks, then generated the
 random networks under the four null models, and calculated the expected
@@ -500,14 +515,23 @@ are presented in \autoref{f:app2}.
    \label{f:app2}
 \end{figure}
 
-There are two striking results. First, null models consistently *underestimate*
+There are two striking results.
+%DG: strange way to report teh different between the null model and the data.
+% Makes more sense to say the data is consistently more nested than the null expectation
+First, null models consistently *underestimate*
 the nestedness of the 59 pollination networks, as evidenced by the fact that all
-$\Delta_N$ values are strictly positive. Second, this underestimation is
+$\Delta_N$ values are strictly positive.
+%DG: not clear what you mean by linear
+Second, this underestimation is
 *linear* between null models I and II, although null model II is always closer
-to the *actual* nestedness value. The markedly non-random value of the null
+to the *actual* nestedness value.
+%DG: what do you mean by non-random value of the null model???
+The markedly non-random value of the null
 nestednesses when compared to the empirical values calls for a closer evaluation
 of how the results of null models are interpreted (especially since Bernoulli
 simulations revealed a very low variance in the simulated nestedness).
+%DG: here the mistake comes from the comparison of random trials and the analytical
+% null expectation?
 Interestingly, models III in and III out made overall *fewer* mistakes at
 estimating nestedness -- resp. $0.129$ and $0.123$, compared to resp. $0.219$
 and $0.156$ for model I and II. Although the error is overall sensitive to model
@@ -516,8 +540,8 @@ pairs of models that where significantly different after controlling for
 multiple comparisons are I and II, I and III in, and I and III out (model II is
 not different from either models III in or out).
 
-In short, this analysis reveals that (i) the estimated value of a network
-measure under randomisation scenarios can be obtained through the analysis
+In short, this analysis reveals that (i) the null expectation of a network
+property under randomisation scenarios can be obtained through the analysis
 of the probabilistic matrix, instead of the analysis of simulated Bernoulli
 networks; (ii) Different models have different systematic biases, with models
 of the type III performing overall better for nestedness than any other
@@ -528,7 +552,7 @@ predicted by models III.
 
 # Implications for data collection
 
-We developed and presented a set of measures that provide estimates of network
+We developed and presented a set of measures to quantify the expected network
 structure, using the probability that each interaction is observed or happens,
 in a way that do not require time-consuming simulations. Our framework is set up
 in such a way that the probabilities of interactions are considered to be
@@ -546,21 +570,21 @@ happen in empirical communities. This effort requires improved communications
 between scientists collecting data and scientists developing methodology to
 analyse them.
 
-Another way to obtain approximation of the probability of interactions is too
-use spatially replicated sampling. Some studies [@tylianakis;@carstensen;@olito]
-surveyed the existence of interactions at different locations, and a simple
-approach of dividing the number of observations of an interaction by the number
-of co-occurence of the species involved will provide a (somewhat crude) estimate
-of the probability of this interaction. This approach requires extensive
-sampling, especially since interactions are harder to observe than species
-[@ele;@luisjo], yet it enables the re-analysis of existing datasets in a
-probabilistic context.
+Another way to obtain approximation of the probability of interactions is to use
+spatially replicated sampling. Some studies
+[@tylianakis;@carstensen;@olito;@trojelsgaard] surveyed the existence of
+interactions at different locations, and a simple approach of dividing the
+number of observations of an interaction by the number of co-occurence of the
+species involved will provide a (somewhat crude) estimate of the probability of
+this interaction. This approach requires extensive sampling, especially since
+interactions are harder to observe than species [@ele;@luisjo], yet it enables
+the re-analysis of existing datasets in a probabilistic context.
 
 Understanding the structure of ecological networks, and whether it relates to
 ecosystem properties, is emerging as a key challenge for community ecology. A
-proper estimation of this structure requires tools that adress all forms of
+proper estimation of this structure requires tools that address all forms of
 complexity, the most oft-neglected yet pervasive of which is the fact that
-interactions are variable. By developping these metrics, we allow future analyses
+interactions are variable. By developing these metrics, we allow future analyses
 of network structure to account for this phenomenon.
 
 # References

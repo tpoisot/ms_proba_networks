@@ -1,7 +1,7 @@
 md=ms/maintext.md
 pdf=ms/probabilistic_measures.pdf
-refs=ms/ref.bib
-csl=/home/tp/vrac/styles/methods-in-ecology-and-evolution.csl
+refs=/home/tpoisot/.pandoc/default.bib
+csl=/home/tpoisot/.pandoc/styles/methods-in-ecology-and-evolution.csl
 
 ALL: $(pdf) data
 
