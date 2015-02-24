@@ -224,6 +224,30 @@ for $\eta^{(C)}$ when using $v_i$ (the vulnerability) instead of $g_i$.
 The values returned are within $[0;1]$, with $\eta=1$ indicating complete
 nestedness.
 
+### Modularity
+
+Modularity represents the extent to which networks are compartmentalized, *i.e.*
+the tendency for subsets of species to be strongly connected together, while
+they are weakly connected to the rest of the network [@stou11a]. Modularity is
+measured as the proportion of interactions between nodes of an arbitrary number
+of modules, as opposed to the random expectation. Assuming a vector $\mathbf{s}$
+which, for each node in the network, holds the value of the module it belongs
+to (an integer in $[1,c]$), @newm04a proposed a general measure of modularity, which is
+
+$$\mathcal{Q} = \sum_{m=1}^{c}\left(e_{mm} - a_m^2\right)$$
+
+, where $c$ is the number of modules,
+
+$$e_{mm} = \sum_{ij}\frac{\mathbf{A}_{ij}}{2c} \delta(\mathbf{s}_i,\mathbf{s}_j)$$
+
+, and
+
+$$a_m = \sum_{n}e_{mn}$$,
+
+with $\delta$ being Kronecker's function, returning $1$ if its arguments are
+equal, and $0$ otherwise. This formula can be *directly* applied to
+probabilistic networks.
+
 ### Centrality
 
 Although node degree is a rough first order estimate of centrality, other
