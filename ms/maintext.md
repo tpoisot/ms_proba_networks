@@ -431,7 +431,7 @@ $A_{ij}$, for each element of the matrix. This is problematic because higher
 order structures involving rare events will be under-represented in the sample,
 and because most naive approaches are likely to generate free species,
 especially in sparsely connected networks frequently encountered in ecology
-[@milo03;@pois14a] -- on the other hand, non-naive approaches break the
+[@milo03; @pois14a] -- on the other hand, non-naive approaches break the
 assumption of independence between interactions.
 
 ## Comparison of probabilistic networks
@@ -580,23 +580,22 @@ We developed and presented a set of measures to quantify the expected network
 structure, using the probability that each interaction is observed or happens,
 in a way that do not require time-consuming simulations. Our framework is set up
 in such a way that the probabilities of interactions are considered to be
-independant. Estimating interaction probabilities based on species abundances
-[@canard;@olito] do not, for example, yield non-independant probabilities:
+independent. Estimating interaction probabilities based on species abundances
+[@cana14; @olit14] do not, for example, yield non-independant probabilities:
 changing the abundance of one species changes all probabilities in the network.
 They are not Bernoulli events either, as the sum of all probabilities derived
-this way sums to unity. On the other hand, "cafeteria experiments"
-[@loyd;@perez] give truly independant probabilities of interactions; even a
-simple criteria, such as the frequency of interactions when the two species are
-put together, is a way of estimating probability. Using the approach outline by
-@oikospaper, both sources of information (species abundance and the outcome of
-experiments) can be combined to estimate the probability that interactions will
-happen in empirical communities. This effort requires improved communications
-between scientists collecting data and scientists developing methodology to
-analyse them.
+this way sums to unity. On the other hand, "cafeteria experiments" give truly
+independant probabilities of interactions; even a simple criteria, such as the
+frequency of interactions when the two species are put together, is a way of
+estimating probability. Using the approach outline by @oikospaper, both sources
+of information (species abundance and the outcome of experiments) can be
+combined to estimate the probability that interactions will happen in empirical
+communities. This effort requires improved communications between scientists
+collecting data and scientists developing methodology to analyse them.
 
 Another way to obtain approximation of the probability of interactions is to use
 spatially replicated sampling. Some studies
-[@tylianakis;@carstensen;@olito;@trojelsgaard] surveyed the existence of
+[@tyli07; @cars14; @olit14; @troj15] surveyed the existence of
 interactions at different locations, and a simple approach of dividing the
 number of observations of an interaction by the number of co-occurence of the
 species involved will provide a (somewhat crude) estimate of the probability of
