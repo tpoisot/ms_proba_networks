@@ -7,13 +7,14 @@
 Ecological networks are an efficient way to represent biotic interactions
 between individuals, populations, or species. Historically, their study focused
 on describing their structure, with a particular attention on food webs
-[@dunn06] and plant-pollinator interactions [@basc03;@jord87]. The key result of
-this line of research was linking this structure to community or ecosystem-level
-properties such as stability [@mcca14], coexistence [@bast09;@haer14], or
-ecosystem functioning [@theb03;@duff02;@pois12]. To a large extent, the
-description of ecological networks resulted in the emergence of questions about
-how functions emerged from structure, and this stimulated the development of a
-rich methodological literature, defining a wide array of structural properties.
+[@dunn06] and plant-pollinator interactions [@basc03; @jord87]. The key result
+of this line of research was linking this structure to community or
+ecosystem-level properties such as stability [@mcca14], coexistence [@bast09;
+@haer14], or ecosystem functioning [@theb03; @duff02; @pois12]. To a large
+extent, the description of ecological networks resulted in the emergence of
+questions about how functions emerged from structure, and this stimulated the
+development of a rich methodological literature, defining a wide array of
+structural properties.
 
 Given a network as input, measures of network structure return a *property*
 based on one or several *units* from this network. Some of the properties are
@@ -30,8 +31,8 @@ their values; direct properties are conceptually equivalent to means, in that
 they are the first moment of network units, whereas emerging properties are
 conceptually equivalent to variances or other higher-order moments.
 
-In the recent years, the interpretation of the properties of network structure (as
-indicators of the action of ecological or evolutionary processes) has been
+In the recent years, the interpretation of the properties of network structure
+(as indicators of the action of ecological or evolutionary processes) has been
 somewhat complicated by the observation that network structure varies through
 space and time. This happens because, contrary to a long-standing assumption of
 network studies, species from the same pool do not interact in a consistent way
@@ -40,12 +41,12 @@ the right unit to understand this variation; rather, network variation is an
 emerging property of the response of ecological interactions to environmental
 factors and chance events [@pois14]. Interactions can vary because of local
 mismatching in phenology [@oles11a], populations fluctuations preventing the
-interaction [@cana14], or a combination of both [@olit14;@cham14]. @olit14 show
+interaction [@cana14], or a combination of both [@olit14; @cham14]. @olit14 show
 that accounting for neutral (population-size driven) and trait-based effects
 allows the prediction of the cumulative change in network structure, but not of
-the change at the level of individual interactions. In addition, @cars14
-show that within a meta-community, not all interactions are equally variable:
-some are highly consistent, whereas others are extremely rare.
+the change at the level of individual interactions. In addition, @cars14 show
+that within a meta-community, not all interactions are equally variable: some
+are highly consistent, whereas others are extremely rare.
 
 Taken together, these considerations highlight the need to amend our current
 methodology for the description of ecological networks, in order to give more
@@ -55,7 +56,7 @@ crafted at a time when it was assumed that interactions were invariants, it is
 unsuited to address the questions that probabilistic networks allow us to ask.
 In this paper, we show that several direct and emerging core properties of
 ecological networks (both bipartite and unipartite) can be re-formulated in a
-probabilistic context [@yeak12;@pois14]; we conclude by showing how this
+probabilistic context [@yeak12; @pois14]; we conclude by showing how this
 methodology can be applied to exploit the information contained in the
 variability of networks, and to reduce the computational burden of current
 methods in network analysis. We provide a free and open-source implementation of
