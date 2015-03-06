@@ -152,12 +152,12 @@ variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
 ### Path length
 
 Networks can be used to describe indirect interactions between species through
-the use of paths. The existence of a path of length 2 between species $i$
-and $j$ means that they are connected through at least one additional species
-$k$. In a probabilistic network, unless some elements are $0$, all pairs of
-species $i$ and $j$ are connected through a path of length 1, with probability
-$A_{ij}$. The expected number of paths of length $k$ between species $i$
-and $j$ is given by
+the use of paths. The existence of a path of length 2 between species $i$ and
+$j$ means that they are connected through at least one additional species $k$.
+In a probabilistic network, unless some elements are $0$, all pairs of species
+$i$ and $j$ are connected through a path of length 1, with probability $A_{ij}$.
+The expected number of paths of length $k$ between species $i$ and $j$ is given
+by
 
 \begin{equation}
 \hat{n^{(k)}_{ij}} = \left(\mathbf{A}^k\right)_{ij},
@@ -165,16 +165,15 @@ and $j$ is given by
 
 where $\mathbf{A}^k$ is the matrix multiplied by itself $k$ times.
 
-It is possible to calculate the probability of having at least one path
-of length $k$ between the two species: this can be done by calculating the
+It is possible to calculate the probability of having at least one path of
+length $k$ between the two species: this can be done by calculating the
 probability of having no path of length $k$, then multiplying the resulting
-array of probabilities. For the example of length 2, species $i$ and $j$
-are connected through $g$ with probability $A_{ig}A_{gj}$, and so this path
-does not exist with probability $1-A_{ig}A_{gj}$. For any pair $i$, $j$,
-let $\mathbf{m}$ be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g
-\notin (i,j)$ [@mirc76]. The probability of not having any path of length
-2 is $\prod (1-\mathbf{m})$. Therefore, the probability of having a path of
-length 2 between $i$ and $j$ is
+array of probabilities. For the example of length 2, species $i$ and $j$ are
+connected through $g$ with probability $A_{ig}A_{gj}$, and so this path does not
+exist with probability $1-A_{ig}A_{gj}$. For any pair $i$, $j$, let $\mathbf{m}$
+be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g \notin (i,j)$ [@mirc76].
+The probability of not having any path of length 2 is $\prod (1-\mathbf{m})$.
+Therefore, the probability of having a path of length 2 between $i$ and $j$ is
 
 \begin{equation}
 \hat{p}^{(2)}_{ij} = 1 - \prod (1-\mathbf{m}) .
@@ -199,10 +198,11 @@ path length, but it becomes rapidly untractable.
 
 The unipartite projection of a bipartite network is obtained by linking any two
 nodes of one mode that are connected through at least one node of the other
-mode. It is readily obtained using the formula in the *Path length* section.
-This yields either the probability of an edge in the unipartite projection (of
-the upper or lower nodes), or if using the matrix multiplication, the expected
-number of such nodes.
+mode; for example, to plants are connected if they share at least one
+pollinator. It is readily obtained using the formula in the *Path length*
+section. This yields either the probability of an edge in the unipartite
+projection (of the upper or lower nodes), or if using the matrix multiplication,
+the expected number of such nodes.
 
 ### Nestedness
 
@@ -361,9 +361,9 @@ element-wise product operation.
 ### Motifs
 
 Motifs are sets of pre-determined interactions between a fixed number of species
-[@milo02], such as for example one predator sharing two preys. As there are
-an arbitrarily large number of motifs, we will illustrate the formulae with
-only two examples.
+[@milo02], such as for example one predator sharing two preys. As there are an
+arbitrarily large number of motifs, we will illustrate the formulae with only
+two examples.
 
 The probability that three species form an apparent competition motif (one
 predator, two preys) where $i$ is the predator, $j$ and $k$ are the preys, is
@@ -393,13 +393,13 @@ become rapidly untractable and are better computed than written.
 ## Network comparison
 
 The dissimilarity of a pair of (ecological) networks can be measured using the
-framework set forth by @kole03. Measures of $\beta$-diversity
-compute the dissimilarity between two networks based on the cardinality of three
-sets, $a$, $c$, and $b$, which are respectively the shared items, items unique
-to superset (network) 1, and items unique to superset 2 (the identity of which
-network is 1 or 2 matters for asymmetric measures). Supersets can be the species
-within each network, or the interactions between species. Following @pois12c,
-the dissimilarity of two networks can be measured as either $\beta_{WN}$ (all
+framework set forth by @kole03. Measures of $\beta$-diversity compute the
+dissimilarity between two networks based on the cardinality of three sets, $a$,
+$c$, and $b$, which are respectively the shared items, items unique to superset
+(network) 1, and items unique to superset 2 (the identity of which network is 1
+or 2 matters for asymmetric measures). Supersets can be the species within each
+network, or the interactions between species. Following @pois12c, the
+dissimilarity of two networks can be measured as either $\beta_{WN}$ (all
 interactions), or $\beta_{OS}$ (interactions involving only common species),
 with $\beta_{OS} \leq \beta_{WN}$.
 
@@ -422,9 +422,9 @@ networks. Probabilistic metrics are a mathematically rigorous alternative to
 both. When ignoring the probabilistic nature of interactions, what we call
 *Binary* from here on, every non-zero element of the network is assumed to be 1.
 This leads to over-representation of some rare events, and increases the number
-of interactions. An alternative is to consider only the interactions above a given
-threshold, which leads to an under-representation of rare events and decreases the
-number of interactions.
+of interactions. An alternative is to consider only the interactions above a
+given threshold, which leads to an under-representation of rare events and
+decreases the number of interactions.
 
 When generating random networks, what we call *Bernoulli trials* from here on, a
 binary network is generated by doing a Bernoulli trial with probability
@@ -446,12 +446,12 @@ and can take values of $0$, $0.5$, and $1.0$.
 Measuring the structure of the Binary, Bernoulli trials, and Probabilistic
 network gives the following result:
 
-Measure           Binary      Bernoulli trials        Probabilistic
-------------      -------     ------------------      ------------------
-links             336         $221.58\pm 57.57$       $221.52\pm 57.25$
-$\eta$            0.73        0.528                   0.512
-$\eta^{(R)}$      0.72        0.525                   0.507
-$\eta^{(C)}$      0.75        0.531                   0.518
+| Measure      | Binary | Bernoulli trials  | Probabilistic     |
+|:-------------|:-------|:------------------|:------------------|
+| links        | 336    | $221.58\pm 57.57$ | $221.52\pm 57.25$ |
+| $\eta$       | 0.73   | 0.528             | 0.512             |
+| $\eta^{(R)}$ | 0.72   | 0.525             | 0.507             |
+| $\eta^{(C)}$ | 0.75   | 0.531             | 0.518             |
 
 As these results show, transforming the probabilistic matrix into a binary one
 (i) overestimates nestedness by $\approx 0.2$, and (ii) overestimates the number
@@ -475,21 +475,21 @@ approach severely mis-represents the structure of the network.
 ## Null-model based hypothesis testing
 
 In this section, we analyse 59 pollination networks from the literature using
-two "classical" null models of network structure, and two models with
-intermediate constraints. These data cover a wide range a situations, from small
-to large, and from densely to sparsely connected networks. They provide a good
+two usual null models of network structure, and two models with intermediate
+constraints. These data cover a wide range a situations, from small to large,
+and from densely to sparsely connected networks. They provide a good
 demonstration of the performance of probabilistic metrics. Data come from the
 *InteractionWeb Database*, and were queried on Nov. 2014.
 
-We use the following null models. First (Type I, @fort06), any
-interaction between plant and animals happens with the fixed probability
-$\text{P}=Co$. This model controls for connectance, but removes the effect
-of degree distribution. Second, (Type II, @basc03), the probability of
-an interaction between animal $i$ and plant $j$ is $(k_i/R+k_j/C)/2$, the
-average of the richness-standardized degree of both species. In addition, we
-use the models called Type III in and out [@pois13e], that uses respectively the
-row-wise and column-wise probability of an interaction, as a way to understand
-the impact of the degree distribution of upper and lower level species.
+We use the following null models. First (Type I, @fort06), any interaction
+between plant and animals happens with the fixed probability $\text{P}=Co$. This
+model controls for connectance, but removes the effect of degree distribution.
+Second, (Type II, @basc03), the probability of an interaction between animal $i$
+and plant $j$ is $(k_i/R+k_j/C)/2$, the average of the richness-standardized
+degree of both species. In addition, we use the models called Type III in and
+out [@pois13e], that uses respectively the row-wise and column-wise probability
+of an interaction, as a way to understand the impact of the degree distribution
+of upper and lower level species.
 
 Note that these null models will take a binary network, and through some rules
 turn it into a probabilistic one. Typically, this probabilistic network is used
@@ -595,14 +595,14 @@ communities. This effort requires improved communications between scientists
 collecting data and scientists developing methodology to analyse them.
 
 Another way to obtain approximation of the probability of interactions is to use
-spatially replicated sampling. Some studies
-[@tyli07; @cars14; @olit14; @troj15] surveyed the existence of
-interactions at different locations, and a simple approach of dividing the
-number of observations of an interaction by the number of co-occurence of the
-species involved will provide a (somewhat crude) estimate of the probability of
-this interaction. This approach requires extensive sampling, especially since
-interactions are harder to observe than species [@ele;@luisjo], yet it enables
-the re-analysis of existing datasets in a probabilistic context.
+spatially replicated sampling. Some studies [@tyli07; @cars14; @olit14; @troj15]
+surveyed the existence of interactions at different locations, and a simple
+approach of dividing the number of observations of an interaction by the number
+of co-occurence of the species involved will provide a (somewhat crude) estimate
+of the probability of this interaction. This approach requires extensive
+sampling, especially since interactions are harder to observe than species
+[@ele;@luisjo], yet it enables the re-analysis of existing datasets in a
+probabilistic context.
 
 Understanding the structure of ecological networks, and whether it relates to
 ecosystem properties, is emerging as a key challenge for community ecology. A
@@ -610,5 +610,8 @@ proper estimation of this structure requires tools that address all forms of
 complexity, the most oft-neglected yet pervasive of which is the fact that
 interactions are variable. By developing these metrics, we allow future analyses
 of network structure to account for this phenomenon.
+
+**Acknowledgements:** This work was funded by a CIEE working group grant to TP,
+DG, and DBS. TP is funded by a starting grant from the Université de Montréal.
 
 # References
