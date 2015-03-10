@@ -118,18 +118,19 @@ bipartite matrix $\mathbf{A}$ is the block matrix
 \end{pmatrix},
 \end{equation}
 
-where $0_{(C,R)}$ is a matrix of $C$ rows and $R$ columns filled with $0$s, etc.
-Note that for centrality to be relevant in bipartite networks, this matrix
-should be made symmetric: $\mathbf{B}_{ij}=\mathbf{B}_{ji}$.
+where $0_{(C,R)}$ is a matrix of $C$ rows and $R$ columns (noted $C\times R$)
+filled with $0$s, etc. Note that for centrality to be relevant in bipartite
+networks, this matrix should be made symmetric:
+$\mathbf{B}_{ij}=\mathbf{B}_{ji}$.
 
-We assume that all interactions are independent (so that $\text{P}(ij|kl) =
-\text{P}(ij)\text{P}(kl)$ for any species), and can be represented as Bernoulli
-trials (so that $0 \leq \text{P}(ij) \leq 1$). The later condition allows to
-derive estimates for the *variance* ($\text{var}(X) = p(1-p)$), and expected
-values ($\text{E}(X)=p$). We can therefore estimate the variance of most
-properties, using the fact that the variance of additive independent events is
-the sum of their individual variances, and that the variance of multiplicative
-independent events is
+We will also assume that all interactions are independent (so that
+$\text{P}(ij|kl) = \text{P}(ij)\text{P}(kl)$ for any species), and can be
+represented as a series of Bernoulli trials (so that $0 \leq \text{P}(ij) \leq
+1$). The latter condition allows us to derive estimates for the *variance*
+($\text{var}(X) = p(1-p)$), and expected values ($\text{E}(X)=p$). We can
+therefore estimate the variance of most properties, using the fact that the
+variance of additive independent events is the sum of their individual
+variances, and that the variance of multiplicative independent events is
 
 \begin{equation}
 \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
@@ -137,9 +138,9 @@ independent events is
 
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks and will give the exact value of the
-non-probabilistic measure. This property is desirable as it allows our framework
-to be used on any network, whether they are represented in a probabilistic or
-binary way.
+non-probabilistic measure. This property is particularly desirable as it allows
+our framework to be used on any network, whether they are represented in a
+probabilistic or binary way.
 
 ## Direct properties
 
