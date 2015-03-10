@@ -1,6 +1,31 @@
 % The structure of probabilistic networks
 % T. Poisot \and A. Cirtwill \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
-% Working paper -- Jan. 2015
+% Mar. 2015
+
+# Abstract
+
+1. There is a growing realization among community ecologists that interactions
+between species vary in space and time. Yet, our current numerical framework to
+analyze the structure of interactions, largely based on graph-theoretical
+approaches, is unsuited to this type of data. Since the variation of species
+interactions holds much information, there is a need to develop new metrics to
+exploit it.
+2. We present analytical expressions of key network metrics, using a
+probabilistic framework. Our approach is based on modeling each interaction as a
+Bernoulli event, and using basic calculus to express the expected value, and
+when mathematically tractable, its variance. We provide a free and open-source
+implementation of these measures.
+3. We show that our approach allows to overcome limitations of both neglecting
+the variation of interactions (over-estimation of rare events) and using
+simulations (extremely high computational demand). We present a few case studies
+that highlight how these measures can be used.
+4. We conclude this contribution by discussing how the sampling and data
+representation of ecological network can be adapted to better allow the
+application of a fully probabilistic numerical framework.
+
+**Keywords:** ecological networks, connectance, degree distribution, nestedness, modularity
+
+\clearpage
 
 # Introduction
 
@@ -19,16 +44,16 @@ structural properties.
 Given a network as input, measures of network structure return a *property*
 based on one or several *units* from this network. Some of the properties are
 *direct* properties (they only require knowledge of the unit on which they are
-applied), whereas others are *emerging* (they require knowledge of, and
+applied), whereas others are *emergent* (they require knowledge of, and
 describe, higher-order structures). For example, connectance, the realized
 proportion of potential interactions, is a direct property of a network. The
 degree of a node (how many interactions it is involved in) is a direct property
 of the node. The nestedness of a network (that is, the extent to which
-specialists and generalists overlap), on the other hand, is an emerging property
+specialists and generalists overlap), on the other hand, is an emergent property
 that is not directly predictable from the degree of all nodes. Establishing a
-difference between direct and emerging properties is important when interpreting
+difference between direct and emergent properties is important when interpreting
 their values; direct properties are conceptually equivalent to means, in that
-they are the first moment of network units, whereas emerging properties are
+they are the first moment of network units, whereas emergent properties are
 conceptually equivalent to variances or other higher-order moments.
 
 In the recent years, the interpretation of the properties of network structure
@@ -38,7 +63,7 @@ space and time. This happens because, contrary to a long-standing assumption of
 network studies, species from the same pool do not interact in a consistent way
 [@pois12c]. Empirical and theoretical studies suggest that the network is not
 the right unit to understand this variation; rather, network variation is an
-emerging property of the response of ecological interactions to environmental
+emergent property of the response of ecological interactions to environmental
 factors and chance events [@pois14]. Interactions can vary because of local
 mismatching in phenology [@oles11a], populations fluctuations preventing the
 interaction [@cana14], or a combination of both [@olit14; @cham14]. @olit14 show
@@ -54,7 +79,7 @@ importance to the variation of individual interactions. Because the
 methodological corpus available to describe ecological networks had first been
 crafted at a time when it was assumed that interactions were invariants, it is
 unsuited to address the questions that probabilistic networks allow us to ask.
-In this paper, we show that several direct and emerging core properties of
+In this paper, we show that several direct and emergent core properties of
 ecological networks (both bipartite and unipartite) can be re-formulated in a
 probabilistic context [@yeak12; @pois14]; we conclude by showing how this
 methodology can be applied to exploit the information contained in the
@@ -147,7 +172,7 @@ By simplification of the above, generality $\hat g_i$ and vulnerability $\hat
 v_i$ are given by, respectively, $\sum_j A_{ij}$ and $\sum_j A_{ji}$, with their
 variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
 
-## Emerging properties
+## emergent properties
 
 ### Path length
 
@@ -507,12 +532,12 @@ average of nestedness (and presumably other properties).
 $ the null expectation analytically instead of trials and ii) test for hypotheses
 $ It is critical, because otherwise the comparison you are doing below is confusing.
 
-We measured the nestedness of the 59 networks, then generated the
-random networks under the four null models, and calculated the expected
-nestedness. For each null model $i$, the difference $\Delta^{(i)}_N$ in
-nestedness $N$ is expressed as $\Delta^{(i)}_N = N-\mathcal{N}^{(i)}(N)$,
-where $\mathcal{N}^{(i)}(N)$ is the nestedness of null model $i$. Our results
-are presented in \autoref{f:app2}.
+We measured the nestedness of the 59 networks, then generated the random
+networks under the four null models, and calculated the expected nestedness. For
+each null model $i$, the difference $\Delta^{(i)}_N$ in nestedness $N$ is
+expressed as $\Delta^{(i)}_N = N-\mathcal{N}^{(i)}(N)$, where
+$\mathcal{N}^{(i)}(N)$ is the nestedness of null model $i$. Our results are
+presented in \autoref{f:app2}.
 
 \begin{figure}[bp]
    \begin{tikzpicture}
@@ -605,7 +630,7 @@ sampling, especially since interactions are harder to observe than species
 probabilistic context.
 
 Understanding the structure of ecological networks, and whether it relates to
-ecosystem properties, is emerging as a key challenge for community ecology. A
+ecosystem properties, is emergent as a key challenge for community ecology. A
 proper estimation of this structure requires tools that address all forms of
 complexity, the most oft-neglected yet pervasive of which is the fact that
 interactions are variable. By developing these metrics, we allow future analyses

@@ -1,4 +1,4 @@
-using ProbaNet
+using ProbabilisticNetwork
 
 ## Read the Poullain data
 A = readdlm("../data/poullain.txt")

@@ -1,6 +1,6 @@
 using Gadfly
 using DataFrames
-using ProbaNet
+using ProbabilisticNetwork
 
 searchdir(path,key) = filter(x->contains(x,key), readdir(path))
 
