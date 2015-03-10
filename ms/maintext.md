@@ -99,11 +99,11 @@ language, available at `http://github.com/PoisotLab/ProbabilisticNetwork.jl`.
 Throughout this paper, we use the following notation. $\mathbf{A}$ is a matrix
 wherein $A_{ij}$ is $\text{P}(ij)$, *i.e.* the probability that species $i$
 establishes an interaction with species $j$. If $\mathbf{A}$ represents a
-unipartite network (*e.g.* a food web), it is a square matrix and contains
-the probabilities of each species interacting with itself. If $\mathbf{A}$
-represents a bipartite network (*e.g.* a pollination network), it will not
-necessarily be square. We call $S$ the number of species, and $R$ and $C$
-respectively the number of rows and columns. $S = R = C$ in unipartite
+unipartite network (*e.g.* a food web), it is a square matrix and contains the
+probabilities of each species interacting with all others, including itself. If
+$\mathbf{A}$ represents a bipartite network (*e.g.* a pollination network), it
+will not necessarily be square. We call $S$ the number of species, and $R$ and
+$C$ respectively the number of rows and columns. $S = R = C$ in unipartite
 networks, and $S = R+C$ in bipartite networks.
 
 Note that all of the measures defined below can be applied on a bipartite
@@ -118,8 +118,9 @@ bipartite matrix $\mathbf{A}$ is the block matrix
 \end{pmatrix},
 \end{equation}
 
-where $0_{(C,R)}$ is a matrix of $C$ rows and $R$ columns filled with $0$s,
-etc.
+where $0_{(C,R)}$ is a matrix of $C$ rows and $R$ columns filled with $0$s, etc.
+Note that for centrality to be relevant in bipartite networks, this matrix
+should be made symmetric: $\mathbf{B}_{ij}=\mathbf{B}_{ji}$.
 
 We assume that all interactions are independent (so that $\text{P}(ij|kl) =
 \text{P}(ij)\text{P}(kl)$ for any species), and can be represented as Bernoulli
