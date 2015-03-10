@@ -50,11 +50,12 @@ proportion of potential interactions, is a direct property of a network. The
 degree of a node (how many interactions it is involved in) is a direct property
 of the node. The nestedness of a network (that is, the extent to which
 specialists and generalists overlap), on the other hand, is an emergent property
-that is not directly predictable from the degree of all nodes. Establishing a
-difference between direct and emergent properties is important when interpreting
-their values; direct properties are conceptually equivalent to means, in that
-they are the first moment of network units, whereas emergent properties are
-conceptually equivalent to variances or other higher-order moments.
+that is not directly predictable from the degree of all nodes. Though the
+difference may appear to be semantics, establishing a difference between direct
+and emergent properties is important when interpreting their values; direct
+properties are conceptually equivalent to means, in that they tend to be the
+first moment of network units, whereas emergent properties are conceptually
+equivalent to variances or other higher-order moments.
 
 In the recent years, the interpretation of the properties of network structure
 (as indicators of the action of ecological or evolutionary processes) has been
@@ -66,12 +67,17 @@ the right unit to understand this variation; rather, network variation is an
 emergent property of the response of ecological interactions to environmental
 factors and chance events [@pois14]. Interactions can vary because of local
 mismatching in phenology [@oles11a], populations fluctuations preventing the
-interaction [@cana14], or a combination of both [@olit14; @cham14]. @olit14 show
-that accounting for neutral (population-size driven) and trait-based effects
-allows the prediction of the cumulative change in network structure, but not of
-the change at the level of individual interactions. In addition, @cars14 show
-that within a meta-community, not all interactions are equally variable: some
-are highly consistent, whereas others are extremely rare.
+interaction [@cana14], or a combination of both [@olit14; @cham14]. For example,
+@olit14 show that accounting for neutral (population-size driven) and
+trait-based effects allows the prediction of the cumulative change in network
+structure, but not of the change at the level of individual interactions. In
+addition, @cars14 show that within a meta-community, not all interactions are
+equally variable: some are highly consistent, whereas others are extremely rare.
+These empirical results all point to the fact that species interactions cannot
+always be adequately modeled as yes-no events; since it is well established that
+they do vary, it is necessary to represent them as probabilities. To the
+question of *Do these two species interact?*, we should substitute the question
+of *How likely is it that they will interact?*.
 
 Taken together, these considerations highlight the need to amend our current
 methodology for the description of ecological networks, in order to give more
@@ -84,11 +90,11 @@ ecological networks (both bipartite and unipartite) can be re-formulated in a
 probabilistic context [@yeak12; @pois14]; we conclude by showing how this
 methodology can be applied to exploit the information contained in the
 variability of networks, and to reduce the computational burden of current
-methods in network analysis. We provide a free and open-source implementation of
-this set of measures in a library for the `julia` language, available at
-`http://github.com/PoisotLab/ProbaNet.jl`.
+methods in network analysis. We also provide a free and open-source (MIT
+license) implementation of this suite of measures in a library for the `julia`
+language, available at `http://github.com/PoisotLab/ProbabilisticNetwork.jl`.
 
-# Metrics
+# Suite of probabilistic network metrics
 
 Throughout this paper, we use the following notation. $\mathbf{A}$ is a matrix
 wherein $A_{ij}$ is $\text{P}(ij)$, *i.e.* the probability that species $i$
