@@ -155,10 +155,8 @@ assumed to be independent, the expected value of $L$, is
 \hat L = \sum A_{ij},
 \end{equation}
 
-and ${\hat{Co}} = \hat L / (R\times C)$.
-
-The variance of the number of interactions is $\text{var}(\hat L) = \sum
-(A_{ij}(1-A_{ij}))$.
+and ${\hat{Co}} = \hat L / (R\times C)$. Likewise, the variance of the number of
+interactions is $\text{var}(\hat L) = \sum (A_{ij}(1-A_{ij}))$.
 
 ### Node degree
 
@@ -200,13 +198,14 @@ where $\mathbf{A}^k$ is the matrix multiplied by itself $k$ times.
 
 It is possible to calculate the probability of having at least one path of
 length $k$ between the two species: this can be done by calculating the
-probability of having no path of length $k$, then multiplying the resulting
-array of probabilities. For the example of length 2, species $i$ and $j$ are
-connected through $g$ with probability $A_{ig}A_{gj}$, and so this path does not
-exist with probability $1-A_{ig}A_{gj}$. For any pair $i$, $j$, let $\mathbf{m}$
-be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g \notin (i,j)$ [@mirc76].
-The probability of not having any path of length 2 is $\prod (1-\mathbf{m})$.
-Therefore, the probability of having a path of length 2 between $i$ and $j$ is
+probability of having no path of length $k$, then taking the running product of
+the resulting array of probabilities. For the example of length 2, species $i$
+and $j$ are connected through $g$ with probability $A_{ig}A_{gj}$, and so this
+path does not exist with probability $1-A_{ig}A_{gj}$. For any pair $i$, $j$,
+let $\mathbf{m}$ be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g \notin
+(i,j)$ [@mirc76]. The probability of not having any path of length 2 is $\prod
+(1-\mathbf{m})$. Therefore, the probability of having a path of length 2 between
+$i$ and $j$ is
 
 \begin{equation}
 \hat{p}^{(2)}_{ij} = 1 - \prod (1-\mathbf{m}) .
