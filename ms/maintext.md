@@ -35,7 +35,7 @@ on describing their structure, with a particular attention on food webs
 [@dunn06] and plant-pollinator interactions [@basc03; @jord87]. The key result
 of this line of research was linking this structure to community or
 ecosystem-level properties such as stability [@mcca14], coexistence [@bast09;
-@haer14], or ecosystem functioning [@theb03; @duff02; @pois12]. To a large
+@haer14], or ecosystem functioning [@theb03; @duff02; @pois13b]. To a large
 extent, the description of ecological networks resulted in the emergence of
 questions about how functions emerged from structure, and this stimulated the
 development of a rich methodological literature, defining a wide array of
@@ -84,16 +84,21 @@ variability entirely or to generate random networks. Probabilistic metrics are a
 mathematically rigorous alternative to both. When ignoring the probabilistic
 nature of interactions (henceforth *binary* networks), every non-zero element of
 the network is assumed to be 1. This leads to over-representation of some rare
-events, and increases the number of interactions. An alternative is to consider
-only the interactions above a given threshold, which leads to an
-under-representation of rare events and decreases the effective number of
-interactions. Taken together, these considerations highlight the need to amend
-our current methodology for the description of ecological networks, in order to
-give more importance to the variation of individual interactions. Because the
-methodological corpus available to describe ecological networks had first been
-crafted at a time when it was assumed that interactions were invariants, it is
-unsuited to address the questions that probabilistic networks allow us to ask.
-
+events, and increases the number of interactions; as a result, this changes the
+estimated value of different network properties, in a way that is not understood
+at all. An alternative is to consider only the interactions above a given
+threshold, which leads to an under-representation of rare events and decreases
+the effective number of interactions (in addition to the problem that there is
+no robust criterion to decide on a treshold). More importantly, this introduces
+the risk of removing species that establish a lot of interactions that each have
+a low probability. Taken together, these considerations highlight the need to
+amend our current methodology for the description of ecological networks, in
+order to give more importance to the variation of individual interactions ---
+current measures neglect the variability of interactions, and are therefore
+discarding valuable ecological information. Because the methodological corpus
+available to describe ecological networks had first been crafted at a time when
+it was assumed that interactions were invariants, it is unsuited to address the
+questions that probabilistic networks allow us to ask.
 
 In this paper, we show that several direct and emergent core properties of
 ecological networks (both bipartite and unipartite) can be re-formulated in a
@@ -147,10 +152,19 @@ variances, and that the variance of multiplicative independent events is
 \end{equation}
 
 As a final note, all of the measures described below can be applied on the
-binary (0/1) versions of the networks and will give the exact value of the
-non-probabilistic measure. This property is particularly desirable as it allows
-our framework to be used on any network, whether they are represented in a
-probabilistic or binary way.
+binary (0/1) versions of the networks in which case they effectively are the
+non-probabilistic version of the measure. This property is particularly
+desirable as it allows our framework to be used on any network, whether they are
+represented in a probabilistic or binary way. Nonetheless, this approach is
+different from using *weighted* networks, in that it answers a completely
+different question. Probabilistic networks describe the probability that any
+interaction will happen, whereas weighted networks describe the effect of the
+interaction when it happens. Actually, the weight of each interaction is best
+viewed as a second modeling step, focusing only on the non-zero cases (*i.e.*
+the interactions that are realized); this is similar to the method now
+frequently used in species distribution models, where the species presence is
+modeled first, and its abundance second, using a (possibly) different set of
+predictors [@boul12a].
 
 ## Direct properties
 
@@ -313,9 +327,7 @@ C_i = \sum_{j=1}^n \sum_{k=1}^\infty \alpha^k (\mathbf{A}^k)_{ji} .
 
 The parameter $\alpha \in [0;1]$ regulates how important long paths are. When
 $\alpha = 0$, only first-order paths are accounted for (and the centrality is
-equal to generality).
-%DG: to the degree or generality?
- When $\alpha = 1$, paths of all length are equally
+equal to the degree). When $\alpha = 1$, paths of all length are equally
 important. As $C_i$ is sensitive to the size of the matrix, we suggest
 normalizing by $\mathbf{C} = \sum C$, so that
 
@@ -324,7 +336,7 @@ C_i = \frac{C_i}{\mathbf{C}} .
 \end{equation}
 
 This results in the *expected relative centrality* of each node in the
-probabilistic network.
+probabilistic network, which sums to unity.
 
 ### Species with no outgoing links
 
@@ -609,22 +621,38 @@ as expressed by @bast09, is the average of a row-wise and column-wise
 nestedness. These depend on the species degree, and as such should be well
 predicted by models III.
 
-# Implications for data collection
+# Discussion
 
+Understanding the structure of ecological networks, and whether it relates to
+ecosystem properties, is emergent as a key challenge for community ecology. A
+proper estimation of this structure requires tools that address all forms of
+complexity, the most oft-neglected yet pervasive of which is the fact that
+interactions are variable. By developing these metrics, we allow future analyses
+of network structure to account for this phenomenon. There are two main
+considerations highlighted by this methodological development. First, in what
+way are probabilistic data independent; second, what are the implications for
+data collection.
+
+## Non-independance of interactions
+
+<!-- TODO reword -- non-independance -->
 We developed and presented a set of measures to quantify the expected network
 structure, using the probability that each interaction is observed or happens,
 in a way that do not require time-consuming simulations. Our framework is set up
 in such a way that the probabilities of interactions are considered to be
-independent. Estimating interaction probabilities based on species abundances
-[@cana14; @olit14] do not, for example, yield independent probabilities:
-changing the abundance of one species changes all probabilities in the network.
-They are not Bernoulli events either, as the sum of all probabilities derived
-this way sums to unity. On the other hand, "cafeteria experiments" give truly
-independent probabilities of interactions; even a simple criteria, such as the
-frequency of interactions when the two species are put together, is a way of
-estimating probability. Using the approach outline by @pois14, both sources of
-information (species abundance and the outcome of experiments) can be combined
-to estimate the probability that interactions will happen in empirical
+independent.
+
+Estimating interaction probabilities based on species abundances [@cana14;
+@olit14] do not, for example, yield independent probabilities: changing the
+abundance of one species changes all probabilities in the network. They are not
+Bernoulli events either, as the sum of all probabilities derived this way sums
+to unity. On the other hand, "cafeteria experiments" (in which two species are
+directly exposed to one another to observe whether or not an interaction occurs)
+give truly independent probabilities of interactions; even a simple criteria,
+such as the frequency of interactions when the two species are put together, is
+a way of estimating probability. Using the approach outline by @pois14, both
+sources of information (species abundance and the outcome of experiments) can be
+combined to estimate the probability that interactions will happen in empirical
 communities. This effort requires improved communications between scientists
 collecting data and scientists developing methodology to analyze them.
 
@@ -638,12 +666,9 @@ sampling, especially since interactions are harder to observe than species
 [@pois12c; @gila14a], yet it enables the re-analysis of existing datasets in a
 probabilistic context.
 
-Understanding the structure of ecological networks, and whether it relates to
-ecosystem properties, is emergent as a key challenge for community ecology. A
-proper estimation of this structure requires tools that address all forms of
-complexity, the most oft-neglected yet pervasive of which is the fact that
-interactions are variable. By developing these metrics, we allow future analyses
-of network structure to account for this phenomenon.
+## Implications for data collection
+
+<!-- TODO write this part -->
 
 **Acknowledgements:** This work was funded by a CIEE working group grant to TP,
 DG, and DBS. TP is funded by a starting grant from the Université de Montréal.
