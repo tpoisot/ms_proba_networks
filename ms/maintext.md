@@ -418,14 +418,14 @@ meaningful in unipartite networks. The expected proportion of species with
 self-loops is very simply defined as $\text{Tr}(\mathbf{A})$, that is, the sum
 of all diagonal elements. The variance is
 $\text{Tr}(\mathbf{A}\diamond(1-\mathbf{A}))$, where $\diamond$ is the
-element-wise product operation.
+element-wise product operation (Hadamard product).
 
 ### Motifs
 
 Motifs are sets of pre-determined interactions between a fixed number of species
-[@milo02; @stou07], such as for example one predator sharing two preys. As there are an
-arbitrarily large number of motifs, we will illustrate the approach with only
-two examples.
+[@milo02; @stou07], such as for example one predator sharing two preys. As there
+are an arbitrarily large number of motifs, we will illustrate the approach with
+only two examples.
 
 The probability that three species form an apparent competition motif (one
 predator, two prey) where $i$ is the predator, $j$ and $k$ are the prey, is
