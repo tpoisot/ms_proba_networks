@@ -1,5 +1,5 @@
 % The structure of probabilistic networks
-% T. Poisot \and A. Cirtwill \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
+% T. Poisot \and A.R. Cirtwill \and K. Cazelles \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
 % Mar. 2015
 
 # Abstract
@@ -204,7 +204,7 @@ By simplification of the above, generality $\hat g_i$ and vulnerability $\hat
 v_i$ are given by, respectively, $\sum_j A_{ij}$ and $\sum_j A_{ji}$, with their
 variances $\sum_j A_{ij}(1-A_{ij})$ and $\sum_j A_{ji}(1-A_{ji})$.
 
-## emergent properties
+## Emergent properties
 
 ### Path length
 
@@ -266,10 +266,11 @@ the expected number of such nodes.
 
 Nestedness is an important measure of (bipartite) network structure that tells
 the extent to which the interactions of specialists and generalists overlap. We
-use the formula for nestedness proposed by @bast09. They define nestedness for
-each margin of the matrix, as $\eta^{(R)}$ and $\eta^{(C)}$ for, respectively,
-rows and columns. As per @alme08, we define a global statistic for nestedness as
-$\eta = (\eta^{(R)}+\eta^{(C)})/2$.
+use the formula for nestedness proposed by @bast09; this measure is a correction
+of NODF [@alme08] for ties in species degree. Nestedness for each margin of the
+matrix is defined as $\eta^{(R)}$ and $\eta^{(C)}$ for, respectively, rows and
+columns. As per @alme08, we define a global statistic for nestedness as $\eta =
+(\eta^{(R)}+\eta^{(C)})/2$.
 
 Nestedness, in a probabilistic network, is defined as
 
@@ -621,14 +622,20 @@ different after controlling for multiple comparisons are I and II, I and III in,
 and I and III out (model II is not different from either models III in or out).
 
 In short, this analysis reveals that (i) the null expectation of a network
-property under randomization scenarios can be obtained through the analysis
-of the probabilistic matrix, instead of the analysis of simulated Bernoulli
-networks; (ii) Different models have different systematic biases, with models
-of the type III performing overall better for nestedness than any other
-models. This can be explained by the fact that nestedness of a network,
-as expressed by @bast09, is the average of a row-wise and column-wise
-nestedness. These depend on the species degree, and as such should be well
-predicted by models III.
+property under randomization scenarios can be obtained through the analysis of
+the probabilistic matrix, instead of the analysis of simulated Bernoulli
+networks; (ii) Different models have different systematic biases, with models of
+the type III performing overall better for nestedness than any other models.
+This can be explained by the fact that nestedness of a network, as expressed by
+@bast09, is the average of a row-wise and column-wise nestedness. These depend
+on the species degree, and as such should be well predicted by models III. The
+novelty of this approach is that, instead of having to evaluate the measure for
+thousands of replicates, an *unbiased* estimate of its mean can be obtained in a
+fraction of the time using the measures described here. This is particularly
+important since, as demonstrated by @chag15, the generation of null
+randomization is subject to biases in the range of connectance where most
+ecological networks are. Our approach is essentially a bias-free, time-effective
+way of estimating the expected value of a network property.
 
 # Discussion
 

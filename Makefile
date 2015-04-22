@@ -21,6 +21,7 @@ diff.pdf: $(md)
 	pandoc sub1.md -o sub.tex $(pflags)
 	latexdiff sub.tex rev.tex > diff.tex
 	pdflatex diff
+	pdflatex diff
 	rm *.tex
 	rm sub1.md
 	rm diff.aux
