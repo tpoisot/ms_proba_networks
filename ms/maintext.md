@@ -10,15 +10,18 @@ analyze the structure of interactions, largely based on graph-theoretical
 approaches, is unsuited to this type of data. Since the variation of species
 interactions holds much information, there is a need to develop new metrics to
 exploit it.
+
 2. We present analytical expressions of key network metrics, using a
 probabilistic framework. Our approach is based on modeling each interaction as a
 Bernoulli event, and using basic calculus to express the expected value, and
 when mathematically tractable, its variance. We provide a free and open-source
 implementation of these measures.
+
 3. We show that our approach allows to overcome limitations of both neglecting
 the variation of interactions (over-estimation of rare events) and using
 simulations (extremely high computational demand). We present a few case studies
 that highlight how these measures can be used.
+
 4. We conclude this contribution by discussing how the sampling and data
 representation of ecological network can be adapted to better allow the
 application of a fully probabilistic numerical framework.
@@ -65,19 +68,19 @@ network studies, species from the same pool do not interact in a consistent way
 [@pois12c]. Empirical and theoretical studies suggest that the network is not
 the right unit to understand this variation; rather, network variation is an
 emergent property of the response of ecological interactions to environmental
-factors and chance events [@pois14]. Interactions can vary because of local
-mismatching in phenology [@oles11a], populations fluctuations preventing the
-interaction [@cana14], or a combination of both [@olit14; @cham14]. For example,
-@olit14 show that accounting for neutral (population-size driven) and
-trait-based effects allows the prediction of the cumulative change in network
-structure, but not of the change at the level of individual interactions. In
-addition, @cars14 show that within a meta-community, not all interactions are
-equally variable: some are highly consistent, whereas others are extremely rare.
-These empirical results all point to the fact that species interactions cannot
-always be adequately modeled as yes-no events; since it is well established that
-they do vary, it is necessary to represent them as probabilities. To the
-question of *Do these two species interact?*, we should substitute the question
-of *How likely is it that they will interact?*.
+factors and chance events [@pois15a]. Interactions can vary because of local
+mismatching in phenology [@oles11a; @maru14; @vize14], populations fluctuations
+preventing the interaction [@cana14], or a combination of both [@olit14;
+@cham14]. For example, @olit14 show that accounting for neutral (population-size
+driven) and trait-based effects allows the prediction of the cumulative change
+in network structure, but not of the change at the level of individual
+interactions. In addition, @cars14 show that within a meta-community, not all
+interactions are equally variable: some are highly consistent, whereas others
+are extremely rare. These empirical results all point to the fact that species
+interactions cannot always be adequately modeled as yes-no events; since it is
+well established that they do vary, it is necessary to represent them as
+probabilities. To the question of *Do these two species interact?*, we should
+substitute the question of *How likely is it that they will interact?*.
 
 The current way of dealing with probabilistic interactions are either to ignore
 variability entirely or to generate random networks. Probabilistic metrics are a
@@ -102,12 +105,10 @@ questions that probabilistic networks allow us to ask.
 
 In this paper, we show that several direct and emergent core properties of
 ecological networks (both bipartite and unipartite) can be re-formulated in a
-probabilistic context [@yeak12; @pois14]; we conclude by showing how this
+probabilistic context [@yeak12; @pois15a]; we conclude by showing how this
 methodology can be applied to exploit the information contained in the
 variability of networks, and to reduce the computational burden of current
-methods in network analysis. We also provide a free and open-source (MIT
-license) implementation of this suite of measures in a library for the `julia`
-language, available at `http://github.com/PoisotLab/ProbabilisticNetwork.jl`.
+methods in network analysis.
 
 # Suite of probabilistic network metrics
 
@@ -122,8 +123,9 @@ $C$ respectively the number of rows and columns. $S = R = C$ in unipartite
 networks, and $S = R+C$ in bipartite networks.
 
 Note that all of the measures defined below can be applied on a bipartite
-network that has been made unipartite; the unipartite transformation of a
-bipartite matrix $\mathbf{A}$ is the block matrix
+network that has been made unipartite. The only bipartite-only measure is
+nestedness. The unipartite transformation of a bipartite matrix $\mathbf{A}$ is
+the block matrix
 
 \begin{equation}
 \mathbf{B} =
@@ -153,15 +155,15 @@ variances, and that the variance of multiplicative independent events is
 
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks in which case they effectively are the
-non-probabilistic version of the measure. This property is particularly
-desirable as it allows our framework to be used on any network, whether they are
-represented in a probabilistic or binary way. Nonetheless, this approach is
-different from using *weighted* networks, in that it answers a completely
-different question. Probabilistic networks describe the probability that any
-interaction will happen, whereas weighted networks describe the effect of the
-interaction when it happens. Actually, the weight of each interaction is best
-viewed as a second modeling step, focusing only on the non-zero cases (*i.e.*
-the interactions that are realized); this is similar to the method now
+non-probabilistic version of the measure as usually calculated. This property is
+particularly desirable as it allows our framework to be used on any network,
+whether they are represented in a probabilistic or binary way. Nonetheless, this
+approach is different from using *weighted* networks, in that it answers a
+completely different question. Probabilistic networks describe the probability
+that any interaction will happen, whereas weighted networks describe the effect
+of the interaction when it happens. Actually, the weight of each interaction is
+best viewed as a second modeling step, focusing only on the non-zero cases
+(*i.e.* the interactions that are realized); this is similar to the method now
 frequently used in species distribution models, where the species presence is
 modeled first, and its abundance second, using a (possibly) different set of
 predictors [@boul12a].
@@ -303,13 +305,14 @@ $$a_m = \sum_{n}e_{mn}$$,
 
 with $\delta$ being Kronecker's function, returning $1$ if its arguments are
 equal, and $0$ otherwise. This formula can be *directly* applied to
-probabilistic networks.
+probabilistic networks. Modularity takes values in $[0;1]$, where $1$ indicates
+perfect modularity.
 
 ### Centrality
 
 Although node degree is a rough first order estimate of centrality, other
 measures are often needed. We derive the expected value of centrality according
-to @katz53. This measures generalizes to directed acyclic graphs (whereas other
+to @katz53. This measure generalizes to directed acyclic graphs (whereas other
 do not). For example, although eigenvector centrality is often used in ecology,
 it cannot be measured on probabilistic graphs. Eigenvector centrality requires
 the matrix's largest eigenvalues to be real, which is not the case for all
@@ -341,9 +344,11 @@ probabilistic network, which sums to unity.
 ### Species with no outgoing links
 
 Estimating the number of species with no outgoing links (successors) can be
-useful when predicting whether, *e.g.*, predators will go extinct. A species has
-no successors if it manages *not* to establish any outgoing interaction, which
-for species $i$ happens with probability
+useful when predicting whether, *e.g.*, predators will go extinct.
+Alternatively, when prior information about traits are available, this can
+allows predicting the invasion success of a species in a novel community. A
+species has no successors if it manages *not* to establish any outgoing
+interaction, which for species $i$ happens with probability
 
 \begin{equation}
 \prod_j (1-A_{ij}).
@@ -494,7 +499,10 @@ In this sub-section, we apply the above measures to a bacteria--phage
 interaction network. @poul08 have measured the probability that 24 phages can
 infect 24 strains of bacteria of the *Pseudomonas fluorescens* species (group
 SBW25). Each probability has been observed though independent infection assays,
-and can take values of $0$, $0.5$ (interaction is variable), and $1.0$.
+and can take values of $0$, $0.5$ (interaction is variable), and $1.0$. We have
+generated a "Binary" network by setting all interactions with a probability
+higher than 0 to unity, to simulate the results that would have been obtained in
+the absence of estimates of interaction probability.
 
 Measuring the structure of the Binary, Bernoulli trials, and Probabilistic
 network gives the following result:
@@ -506,11 +514,12 @@ network gives the following result:
 | $\eta^{(R)}$ | 0.72   | 0.525             | 0.507             |
 | $\eta^{(C)}$ | 0.75   | 0.531             | 0.518             |
 
-As these results show, transforming the probabilistic matrix into a binary one
-(i) overestimates nestedness by $\approx 0.2$, and (ii) overestimates the number
-of links by 115. For the number of links, both the probabilistic measures and
-the average and variance of $10^4$ Bernoulli trials were in strong agreement
-(they differ only by the second decimal place).
+As these results show, treating all interactions as having the same probability,
+*i.e.* removing the information about variability, (i) overestimates nestedness
+by $\approx 0.2$, and (ii) overestimates the number of links by 115. For the
+number of links, both the probabilistic measures and the average and variance of
+$10^4$ Bernoulli trials were in strong agreement (they differ only by the second
+decimal place).
 
 Using Bernoulli trials had the effect of slightly over-estimating nestedness.
 The overestimation is statistically significant from a purely frequentist point
@@ -669,6 +678,16 @@ probabilistic context.
 ## Implications for data collection
 
 <!-- TODO write this part -->
+
+# Implementation
+
+We provide these measures in a free and open-source (MIT license) library for
+the `julia` language, available at
+`http://github.com/PoisotLab/ProbabilisticNetwork.jl`. The code can be cited
+using the following DOI: **TODO**. A user guide, and API reference, can be found
+at `http://probabilisticnetworkjl.readthedocs.org/en/latest/`. The code library
+undergoes automated testing and coverage analysis, the results of which can be
+accessed from the *GitHub* page given above.
 
 **Acknowledgements:** This work was funded by a CIEE working group grant to TP,
 DG, and DBS. TP is funded by a starting grant from the Université de Montréal.
