@@ -1,3 +1,5 @@
+#! /usr/bin/env julia
+
 using ProbabilisticNetwork
 
 # Read the Poullain data
@@ -12,3 +14,11 @@ distr_nest = [A |> make_bernoulli |> nestedness for i in 1:1000]
 
 # Average nestedness
 mapslices(mean, hcat(distr_nest...), 2)
+
+# Motif 1
+m1 = [0.0 1.0 1.0; 0.0 0.0 0.0; 0.0 0.0 0.0]
+println(motif(make_unipartite(A), m1))
+
+# Bernoulli trials
+nm1 = map((x) -> motif(make_unipartite(x), m1), nullmodel(A, n=50))
+nm1prime = map((x) -> motif(make_unipartite(x), m1'), nullmodel(A, n=50))
