@@ -38,11 +38,11 @@ on describing their structure, with a particular attention on food webs
 [@dunn06] and plant-pollinator interactions [@basc03; @jord87]. The key result
 of this line of research was linking this structure to community or
 ecosystem-level properties such as stability [@mcca14], coexistence [@bast09;
-@haer14], or ecosystem functioning [@theb03; @duff02; @pois13b]. To a large
-extent, the description of ecological networks resulted in the emergence of
-questions about how functions and properties of communities emerged from their
-structure, and this stimulated the development of a rich methodological
-literature, defining a wide array of structural properties.
+@haer14], or ecosystem functioning [@duff02]. To a large extent, the description
+of ecological networks resulted in the emergence of questions about how
+functions and properties of communities emerged from their structure, and this
+stimulated the development of a rich methodological literature, defining a wide
+array of structural properties.
 
 Given a network (*i.e.* a structure where nodes, most often species, are linked
 by edges, representing ecological interactions) as input, measures of network
@@ -527,19 +527,27 @@ Measuring the structure of the Binary, Bernoulli trials, and Probabilistic
 network gives the following result (average, and variance when there is an
 analytical expression):
 
-| Measure      | Binary | Bernoulli trials  | Probabilistic     |
-|:-------------|:-------|:------------------|:------------------|
-| links        | 336    | $221.58\pm 57.57$ | $221.52\pm 57.25$ |
-| $\eta$       | 0.73   | 0.528             | 0.512             |
-| $\eta^{(R)}$ | 0.72   | 0.525             | 0.507             |
-| $\eta^{(C)}$ | 0.75   | 0.531             | 0.518             |
+| Measure                           | Binary | Bernoulli trials  | Probabilistic     |
+|:----------------------------------|:-------|:------------------|:------------------|
+| links                             | 336    | $221.58\pm 57.57$ | $221.52\pm 57.25$ |
+| $\eta$                            | 0.73   | 0.528             | 0.512             |
+| $\eta^{(R)}$                      | 0.72   | 0.525             | 0.507             |
+| $\eta^{(C)}$                      | 0.75   | 0.531             | 0.518             |
+| one consumer, two resources motif | 4784   | 2089              | 2110              |
+| two consumers, one resource motif | 4718   | 2116              | 2120              |
 
 As these results show, treating all interactions as having the same probability,
 *i.e.* removing the information about variability, (i) overestimates nestedness
-by $\approx 0.2$, and (ii) overestimates the number of links by 115. For the
-number of links, both the probabilistic measures and the average and variance of
-$10^4$ Bernoulli trials were in strong agreement (they differ only by the second
-decimal place).
+by $\approx 0.2$, (ii) overestimates the number of links by 115, and (iii)
+underestimate the number of motifs (we have limited our analysis to the two
+following motifs: one consumer sharing two resources, and two consumers
+competing for one resource). For the number of links, both the probabilistic
+measures and the average and variance of $10^4$ Bernoulli trials were in strong
+agreement (they differ only by the second decimal place). For the number of
+motifs, the difference was larger, but not overly so. It should be noted that,
+especially for computationally demanding operations such as motif-counting, the
+difference in runtime between the probabilistic and Bernoulli trials approaches
+can be extremely important.
 
 Using Bernoulli trials had the effect of slightly over-estimating nestedness.
 The overestimation is statistically significant from a purely frequentist point
@@ -585,33 +593,34 @@ average of nestedness (and presumably other properties).
 
 We measured the nestedness of the 59 (binary) networks, then generated the
 random networks under the four null models, and calculated the expected
-nestedness using the probabilistic measure. For each null model $i$, the
-difference $\Delta^{(i)}_N$ in nestedness $N$ is expressed as $\Delta^{(i)}_N =
-N-\mathcal{N}^{(i)}(N)$, where $\mathcal{N}^{(i)}(N)$ is the nestedness of null
-model $i$. Our results are presented in \autoref{f:app2}.
+nestedness using the probabilistic measure. Our results are presented in
+\autoref{f:app2}.
 
 \begin{figure}[bp]
    \begin{tikzpicture}
       \begin{groupplot}
       [group style={columns=2, horizontal sep=2cm},
       xmin=0, xmax=0.6, ymin=0, ymax=0.6]
-         \nextgroupplot[xlabel=$\Delta^{(1)}_N$, ylabel=$\Delta^{(2)}_N$]
+         \nextgroupplot[xlabel=$\Delta^{(I)}_\eta$, ylabel=$\Delta^{(II)}_\eta$]
          \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
          \addplot [only marks] table [x = d1, y = d2] {figures/app2.dat};
          \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{A}};
-         \nextgroupplot[xlabel=$\Delta^{(3i)}_N$, ylabel=$\Delta^{(3o)}_N$]
+         \nextgroupplot[xlabel=$\Delta^{(III in)}_\eta$, ylabel=$\Delta^{(III out)}_\eta$]
          \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
          \addplot [only marks] table [x = d3i, y = d3o] {figures/app2.dat};
          \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{B}};
       \end{groupplot}
    \end{tikzpicture}
 
-   \caption{Results of the null model analysis of 59 plant-pollination
-   networks. \textbf{A}. There is a consistent tendency for (i) both models I
-   and II to estimate less nestedness than in the empirical network, although
-   null model II yields more accurate estimates. \textbf{B}. Models III in
-   and III out also estimate less nestedness than the empirical network,
-   but neither has a systematic bias.}
+   \caption{Results of the null model analysis of 59 plant-pollination networks.
+   \textbf{A}. There is a consistent tendency for (i) both models I and II to
+   estimate less nestedness than in the empirical network, although null model
+   II yields more accurate estimates. \textbf{B}. Models III in and III out also
+   estimate less nestedness than the empirical network, but neither has a
+   systematic bias. For each null model $i$, the difference $\Delta^{(i)}_\eta$
+   in nestedness $\eta$ is expressed as $\Delta^{(i)}_\eta =
+   \eta-\mathcal{N}^{(i)}(\eta)$, where $\mathcal{N}^{(i)}(\eta)$ is the
+   nestedness of null model $i$.}
 
    \label{f:app2}
 \end{figure}
@@ -619,31 +628,32 @@ model $i$. Our results are presented in \autoref{f:app2}.
 There are two striking results. First, empirical data are consistently *more*
 nested than the null expectation, as evidenced by the fact that all $\Delta_N$
 values are strictly positive. Second, this underestimation is *linear* between
-null models I and II (in that it does not depends on how nested the empirical
-network is), although null model II is always closer to the nestedness of the
-empirical network (which makes sense, since null model II incorporates the
-higher order constraint of respecting the degree distribution of both levels).
-That the nestedness of the null model probability matrix is so strongly
+null models I and II, although null model II is always closer to the nestedness
+of the empirical network (which makes sense, since null model II incorporates
+the higher order constraint of respecting the degree distribution of both
+levels). That the nestedness of the null model probability matrix is so strongly
 determined by the nestedness of the empirical networks calls for a closer
 evaluation of how the results of null models are interpreted (especially since
-Bernoulli simulations revealed a very low variance in the simulated nestedness).
+networks generated using Bernoulli trials revealed a very low variance in their
+nestedness).
 
 There is a strong, and previously unaccounted for, circularity in this approach:
 empirical networks are compared to a null model which, as we show, has a
-systematic bias *and* a low variance (in simulations), meaning that differences
-in nestedness that are small (thus potentially ecologically irrelevant) have a
-good chance of being reported as significant. Interestingly, models III in and
-III out made overall *fewer* mistakes at estimating nestedness -- resp. $0.129$
-and $0.123$, compared to resp. $0.219$ and $0.156$ for model I and II. Although
-the error is overall sensitive to model type (Kruskal-Wallis $\chi^2$ = 35.80,
-d.f. = 3, $p \leq 10^{-4}$), the three pairs of models that where significantly
-different after controlling for multiple comparisons are I and II, I and III in,
-and I and III out (model II is not different from either models III in or out).
+systematic bias *and* a low variance (in the properties of the networks it
+generates), meaning that differences in nestedness that are small (thus
+potentially ecologically irrelevant) have a good chance of being reported as
+significant. Interestingly, models III in and III out made overall *fewer*
+mistakes at estimating nestedness -- respectively $0.129$ and $0.123$, compared
+to resp. $0.219$ and $0.156$ for model I and II. Although the error is overall
+sensitive to model type (Kruskal-Wallis $\chi^2$ = 35.80, d.f. = 3, $p \leq
+10^{-4}$), the three pairs of models that where significantly different after
+controlling for multiple comparisons are I and II, I and III in, and I and III
+out (model II is not different from either models III in or out).
 
 In short, this analysis reveals that (i) the null expectation of a network
 property under randomization scenarios can be obtained through the analysis of
 the probabilistic matrix, instead of the analysis of simulated Bernoulli
-networks; (ii) Different models have different systematic biases, with models of
+networks; (ii) different models have different systematic biases, with models of
 the type III performing overall better for nestedness than any other models.
 This can be explained by the fact that nestedness of a network, as expressed by
 @bast09, is the average of a row-wise and column-wise nestedness. These depend
@@ -721,7 +731,8 @@ overlooked one, driver of some measures of structure [@niel07; @chac11]. The
 probabilistic approach allows to estimate the *confidence interval* of the
 interaction probability, knowing the number of samples used for the estimation.
 Assuming normally distributed observational error (this can be generalized for
-other structure of error), the confidence interval around a probability $p$ estimated from $n$ samples is
+other structure of error), the confidence interval around a probability $p$
+estimated from $n$ samples is
 
 $$
 \epsilon = z \sqrt{\frac{1}{n}p(1-p)}
@@ -736,7 +747,7 @@ interaction from observational data is tremendously difficult to achieve, and
 the development of predictive models should be a research priority since it
 partly alleviates this difficulty.
 
-# Implementation
+## Implementation
 
 We provide these measures in a free and open-source (MIT license) library for
 the `julia` language, available at
@@ -747,6 +758,7 @@ undergoes automated testing and coverage analysis, the results of which can be
 accessed from the *GitHub* page given above.
 
 **Acknowledgements:** This work was funded by a CIEE working group grant to TP,
-DG, and DBS. TP is funded by a starting grant from the Université de Montréal.
+DG, and DBS. TP is funded by a starting grant from the Université de Montréal,
+and a Discovery grant from NSERC.
 
 # References
