@@ -16,7 +16,7 @@ ms/bib.keys: $(md)
 	grep @[-:_a-zA-Z0-9]* $(md) -oh --color=never | sort | uniq | sed 's/@//g' > ms/bib.keys
 
 diff.pdf: $(md)
-	wget -O sub1.md https://raw.githubusercontent.com/tpoisot/ms_proba_networks/master/ms/maintext.md
+	wget -O sub1.md https://raw.githubusercontent.com/tpoisot/ms_proba_networks/6efa7b8baca6308854622b8e1548a1b715dd0e15/ms/maintext.md
 	pandoc $< -o rev.tex $(pflags)
 	pandoc sub1.md -o sub.tex $(pflags)
 	latexdiff sub.tex rev.tex > diff.tex
