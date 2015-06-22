@@ -1,0 +1,29 @@
+\begin{figure}[bp]
+  \begin{tikzpicture}
+    \begin{axis}
+    [xmin=0, xmax=0.5, ymin=0, ymax=0.5, xlabel=Binary network, ylabel=Probabilistic network,
+    legend style={draw=none, font=\small, legend pos=north west}]
+
+      \addplot [only marks, black!40] table [x = bC, y = pC] {figures/app3.dat};
+      \addlegendentry{Connectance};
+
+      \addplot [only marks, mark=triangle*, blue!40] table [x = bN, y = pN] {figures/app3.dat};
+      \addlegendentry{Nestedness};
+
+      \addplot [only marks, mark=diamond*, red!50] table [x = bM, y = pM] {figures/app3.dat};
+      \addlegendentry{Modularity};
+
+      \addplot [black!10, no markers] coordinates {(0,0) (0.5, 0.5)};
+
+    \end{axis}
+  \end{tikzpicture}
+
+  \caption{Local network structure infered from the locally observed
+  interactions (x-axis) or the spatial probabilistic model (y-axis) in the
+  Canaria Island dataset. Although the binary networks slightly under-estimate
+  the properties studied here, there is a positive and linear relationship
+  between the empirical structure, and the structure predicted based on
+  probabilities of interactions derived from occurrence information.}
+
+  \label{f:app3}
+\end{figure}

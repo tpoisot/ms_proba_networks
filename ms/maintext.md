@@ -149,7 +149,7 @@ networks, this matrix should be made symmetric:
 $\mathbf{B}_{ij}=\mathbf{B}_{ji}$.
 
 We will also assume that all interactions are independent (so that
-$\text{P}(ij|kl) = \text{P}(ij)\text{P}(kl)$ for any species), and can be
+$\text{P}(ij \cap kl) = \text{P}(ij)\text{P}(kl)$ for any species), and can be
 represented as a series of Bernoulli trials (so that $0 \leq \text{P}(ij) \leq
 1$). A Bernoulli trial is simply the realization of a probability event, giving
 $1$ with probability $\text{P}(ij)$, and $0$ else. The latter condition allows
@@ -160,7 +160,13 @@ is the sum of their individual variances, and that the variance of
 multiplicative independent events is
 
 \begin{equation}
-\text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
+  \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
+\end{equation}
+
+As all $X_i$ are Bernouilli random variables ,
+
+\begin{equation}
+  \text{var}(X_1 X_2 ... X_n) = \prod_i p_i - \prod_i p_i^2
 \end{equation}
 
 As a final note, all of the measures described below can be applied on the
@@ -192,7 +198,7 @@ number of interactions. As all interactions in a probabilistic network are
 assumed to be independent, the expected value of $L$, is
 
 \begin{equation}
-\hat L = \sum A_{ij},
+\hat L = \sum_{i,j} A_{ij},
 \end{equation}
 
 and ${\hat{Co}} = \hat L / (R\times C)$. Likewise, the variance of the number of
@@ -248,29 +254,39 @@ let $\mathbf{m}$ be the vector such as $m_{g} = A_{ig}A_{gj}$ for all $g \notin
 $i$ and $j$ is
 
 \begin{equation}
-\hat{p}^{(2)}_{ij} = 1 - \prod (1-\mathbf{m}) .
+  \hat{p}^{(2)}_{ij} = 1 - \prod (1-\mathbf{m}) ,
 \end{equation}
 
-In most situations, one would be interested in knowing the probability of
-having a path of length 2 *without* having a path of length 1; this is simply
-expressed as $(1-A_{ij})\hat{p}^{(2)}_{ij}$. One can, by the same logic,
-generate the expression for having at least one path of length 3:
+which can also be noted
 
 \begin{equation}
-\hat{p}^{(3)}_{ij} = (1-A_{ij})(1-\hat{p}^{(2)}_{ij})\left(1 - \prod (1-\mathbf{m})\right)\prod_{x,y}\left((1-A_{iy})(1-A_{xj})\right),
+  \hat{p}^{(2)}_{ij} = 1 - \prod_g (1-A_{ig}A{gj}) .
 \end{equation}
 
-where $\mathbf{m}$ is the vector of all $A_{ix}A_{xy}A_{yj}$ for $x\notin
-(i,j), y\neq x$. This gives the probability of having at least one path from
-$i$ to $j$, passing through any pair of nodes $x$ and $y$, without having any
-shorter path. In theory, this approach can be generalized up to an arbitrary
-path length, but it becomes rapidly untractable.
+In most situations, one would be interested in knowing the probability of having
+a path of length 2 *without* having a path of length 1; this is simply expressed
+as $\hat{p}^{(2)*}_{ij}=(1-A_{ij})\hat{p}^{(2)}_{ij}$. These results can be
+expanded to any length $k$ in $[2,n-1]$. First one can, by the same logic,
+generate the expression for having at least one path of length $k$:
+
+\begin{equation}
+  \hat{p}^{(k)}_{ij} = 1 - \prod_{(g_1,g_2...,g_{k-1})} (1-A_{ig_1}A_{g_1g_2}...A_{g_{k-1}j})
+\end{equation}
+
+where $(g_1,g_2...,g_{k-1})$ are all the $(k-1)$-permutations of ${1,2,...,n}
+\backslash (i,j)$. Then having a path of length $k$ without having any smaller
+path is
+
+\begin{equation}
+  \hat{p}^{(k)*}_{ij} = (1 - A_{ji})(1-\hat{p}^{(2)})...(1-\hat{p}^{(k-1)})\hat{p}^{(k)}.
+\end{equation}
+
 
 ### Unipartite projection of bipartite networks
 
 The unipartite projection of a bipartite network is obtained by linking any two
 nodes of one mode that are connected through at least one node of the other
-mode; for example, to plants are connected if they share at least one
+mode; for example, two plants are connected if they share at least one
 pollinator. It is readily obtained using the formula in the *Path length*
 section. This yields either the probability of an edge in the unipartite
 projection (of the upper or lower nodes), or if using the matrix multiplication,
@@ -340,7 +356,7 @@ $j$ is $(\mathbf{A}^k)_{ij}$. Based on this, the expected centrality of species
 $i$ is
 
 \begin{equation}
-C_i = \sum_{j=1}^n \sum_{k=1}^\infty \alpha^k (\mathbf{A}^k)_{ji} .
+C_i = \sum_{j=1}^n \sum_{k=1}^{n-1} \alpha^k (\mathbf{A}^k)_{ji} .
 \end{equation}
 
 The parameter $\alpha \in [0;1]$ regulates how important long paths are. When
@@ -507,8 +523,8 @@ network. This is problematic because higher order structures involving rare
 events will be under-represented in the sample, and because most naive
 approaches (*i.e.* not controlling for species degree) are likely to generate
 species with no interactions, especially in sparsely connected networks
-frequently encountered in ecology [@milo03; @pois14a] -- on the other hand,
-non-naive approaches [*e.g.* based on swaps or quasi-swaps as explained in
+frequently encountered in ecology [@milo03; @pois14a; @chag15] -- on the other
+hand, non-naive approaches [*e.g.* based on swaps or quasi-swaps as explained in
 @jord13] break the assumption of independence between interactions.
 
 ## Comparison of probabilistic networks
@@ -596,34 +612,7 @@ random networks under the four null models, and calculated the expected
 nestedness using the probabilistic measure. Our results are presented in
 \autoref{f:app2}.
 
-\begin{figure}[bp]
-   \begin{tikzpicture}
-      \begin{groupplot}
-      [group style={columns=2, horizontal sep=2cm},
-      xmin=0, xmax=0.6, ymin=0, ymax=0.6]
-         \nextgroupplot[xlabel=$\Delta^{(I)}_\eta$, ylabel=$\Delta^{(II)}_\eta$]
-         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
-         \addplot [only marks] table [x = d1, y = d2] {figures/app2.dat};
-         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{A}};
-         \nextgroupplot[xlabel=$\Delta^{(III in)}_\eta$, ylabel=$\Delta^{(III out)}_\eta$]
-         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
-         \addplot [only marks] table [x = d3i, y = d3o] {figures/app2.dat};
-         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{B}};
-      \end{groupplot}
-   \end{tikzpicture}
-
-   \caption{Results of the null model analysis of 59 plant-pollination networks.
-   \textbf{A}. There is a consistent tendency for (i) both models I and II to
-   estimate less nestedness than in the empirical network, although null model
-   II yields more accurate estimates. \textbf{B}. Models III in and III out also
-   estimate less nestedness than the empirical network, but neither has a
-   systematic bias. For each null model $i$, the difference $\Delta^{(i)}_\eta$
-   in nestedness $\eta$ is expressed as $\Delta^{(i)}_\eta =
-   \eta-\mathcal{N}^{(i)}(\eta)$, where $\mathcal{N}^{(i)}(\eta)$ is the
-   nestedness of null model $i$.}
-
-   \label{f:app2}
-\end{figure}
+\input{figures/app2.tex}
 
 There are two striking results. First, empirical data are consistently *more*
 nested than the null expectation, as evidenced by the fact that all $\Delta_N$
@@ -665,6 +654,30 @@ important since, as demonstrated by @chag15, the generation of null
 randomization is subject to biases in the range of connectance where most
 ecological networks are. Our approach is essentially a bias-free, time-effective
 way of estimating the expected value of a network property.
+
+## Spatial-variation predicts local network structure
+
+In this final application, we re-analyze the data from @troj15, to investigate
+how spatial information can be used to derive probability of interactions. In
+the original dataset, fourteen locations have been sampled to describe the local
+plant-pollination network. There is both species and interaction variability across sampling locations. We define the overall probability of an interaction in the following way,
+
+\begin{equation}
+\text{P}(i \rightarrow j) = \frac{\mathbf{N}_{ij}}{\mathbf{O}_{ij}}\, ,
+\end{equation}
+
+where $\mathbf{O}_{ij}$ is the number of sampling locations in which both
+pollinator $i$ and plant $j$ co-occur, and $\mathbf{N}_{ij}$ is the number of
+sampling locations in which they interact. This takes values between 0 (no
+co-occurence *or* no interactions) and 1 (interaction observed every time there
+is co-occurrence).
+
+\input{figures/app3.tex}
+
+Based on this information, we compare the connectance, nestedness, and
+modularity, of each sampled network, to the expected values if interactions are
+well predicted by the probability given above. The results are presented in
+\autoref{f:app3}.
 
 # Discussion
 

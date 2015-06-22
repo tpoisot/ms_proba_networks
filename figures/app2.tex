@@ -1,0 +1,28 @@
+\begin{figure}[bp]
+   \begin{tikzpicture}
+      \begin{groupplot}
+      [group style={columns=2, horizontal sep=2cm},
+      xmin=0, xmax=0.6, ymin=0, ymax=0.6]
+         \nextgroupplot[xlabel=$\Delta^{(I)}_\eta$, ylabel=$\Delta^{(II)}_\eta$]
+         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
+         \addplot [only marks] table [x = d1, y = d2] {figures/app2.dat};
+         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{A}};
+         \nextgroupplot[xlabel=$\Delta^{(III in)}_\eta$, ylabel=$\Delta^{(III out)}_\eta$]
+         \addplot [black!10, no markers] coordinates {(0,0) (0.6,0.6)};
+         \addplot [only marks] table [x = d3i, y = d3o] {figures/app2.dat};
+         \node[black!80, below left] at (axis cs:0.1,0.55){\textbf{B}};
+      \end{groupplot}
+   \end{tikzpicture}
+
+   \caption{Results of the null model analysis of 59 plant-pollination networks.
+   \textbf{A}. There is a consistent tendency for (i) both models I and II to
+   estimate less nestedness than in the empirical network, although null model
+   II yields more accurate estimates. \textbf{B}. Models III in and III out also
+   estimate less nestedness than the empirical network, but neither has a
+   systematic bias. For each null model $i$, the difference $\Delta^{(i)}_\eta$
+   in nestedness $\eta$ is expressed as $\Delta^{(i)}_\eta =
+   \eta-\mathcal{N}^{(i)}(\eta)$, where $\mathcal{N}^{(i)}(\eta)$ is the
+   nestedness of null model $i$.}
+
+   \label{f:app2}
+\end{figure}

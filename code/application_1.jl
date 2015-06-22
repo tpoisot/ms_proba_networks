@@ -14,8 +14,8 @@ distr_nest = [A |> make_bernoulli |> nestedness for i in 1:1000]
 
 # Average nestedness
 mapslices(mean, hcat(distr_nest...), 2)
-
 # Motif 1
+
 b1 = make_unipartite([1.0 0.0; 0.0 1.0])
 b2 = make_unipartite([1.0 1.0; 0.0 1.0])
 b3 = make_unipartite([1.0 1.0; 1.0 1.0])

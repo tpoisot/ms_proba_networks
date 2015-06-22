@@ -1,4 +1,5 @@
-using Gadfly
+#! /usr/bin/env julia
+
 using DataFrames
 using ProbabilisticNetwork
 
