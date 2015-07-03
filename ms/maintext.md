@@ -91,22 +91,22 @@ the network is explicitly assumed to occur with probability 1. This leads to
 over-representation of some rare events, and increases the number of
 interactions; as a result, this changes the estimated value of different network
 properties, in a way that remains poorly understood. Issues are most likely to
-arise for connectances where the topological [@chag15] or permutational
-[@pois14a] space of random network is small, leading to over-replication or
-uncharacterized biases. An alternative is to consider only the interactions
-above a given threshold, which unfortunately leads to under-representation of
-rare events and decreases the effective number of interactions (in addition to
-the problem that there is no robust criterion to decide on a threshold). More
-importantly, this introduces the risk of removing species that establish a lot
-of interactions that individually have a low probability of occurring. Taken
-together, these considerations highlight the need to amend our current
-methodology for the description of ecological networks, in order to give more
-importance to the variation of individual interactions --- current measures
-neglect the variability of interactions, and are therefore discarding valuable
-ecological information. Because the methodological corpus available to describe
-ecological networks had first been crafted at a time when it was assumed that
-interactions were invariant, it is unsuited to address the questions that
-probabilistic networks allow us to ask.
+arise for the range of connectances where the topological [@chag15] or
+permutational [@pois14a] space of random network is small, leading to
+over-replication or uncharacterized biases. An alternative is to consider only
+the interactions above a given threshold, which unfortunately leads to
+under-representation of rare events and decreases the effective number of
+interactions (in addition to the problem that there is no robust criterion to
+decide on a threshold). More importantly, this introduces the risk of removing
+species that establish a lot of interactions that individually have a low
+probability of occurring. Taken together, these considerations highlight the
+need to amend our current methodology for the description of ecological
+networks, in order to give more importance to the variation of individual
+interactions --- current measures neglect the variability of interactions, and
+are therefore discarding valuable ecological information. Because the
+methodological corpus available to describe ecological networks had first been
+crafted at a time when it was assumed that interactions were invariant, it is
+unsuited to address the questions that probabilistic networks allow us to ask.
 
 The elements discussed above requires the considerable methodological adjustment
 of re-writing measures of network structure to account for the fact that
@@ -154,10 +154,10 @@ a series of Bernoulli trials (so that $0 \leq \text{P}(ij) \leq 1$). A Bernoulli
 trial is the realization of a probabilistic event that gives $1$ with
 probability $\text{P}(ij)$ and $0$ otherwise. The latter condition allows us to
 derive estimates for the *variance* ($\text{var}(X) = p(1-p)$), and expected
-values ($\text{E}(X)=p$). We can therefore estimate the variance of most
-properties, using the fact that the variance of additive independent events is
-the sum of their individual variances, and that the variance of multiplicative
-independent events is
+values ($\text{E}(X)=p$), of the network metrics. We can therefore estimate the
+variance of most properties, using the fact that the variance of additive
+independent events is the sum of their individual variances, and that the
+variance of multiplicative independent events is
 
 \begin{equation}
   \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
@@ -556,7 +556,7 @@ analytical expression):
 As these results show, treating all interactions as having the same probability,
 *i.e.* removing the information about variability, (i) overestimates nestedness
 by $\approx 0.2$, (ii) overestimates the number of links by 115, and (iii)
-underestimates the number of motifs (we have limited our analysis to the two
+overestimates the number of motifs (we have limited our analysis to the two
 following motifs: one consumer sharing two resources, and two consumers
 competing for one resource). For the number of links, both the probabilistic
 measures and the average and variance of $10^4$ Bernoulli trials were in strong
