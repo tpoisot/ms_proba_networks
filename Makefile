@@ -2,11 +2,14 @@ md=ms/maintext.md
 pdf=ms/probabilistic_measures.pdf
 refs=/home/tpoisot/.pandoc/default.bib
 csl=/home/tpoisot/.pandoc/styles/methods-in-ecology-and-evolution.csl
-pflags= --template=ms/template.tex --bibliography=$(refs) --csl=$(csl)
+pflags= --template=ms/template.tex --bibliography=$(refs) #--csl=$(csl)
 
 ALL: $(pdf) diff.pdf
 
-$(pdf): $(md)
+figures/app3.dat:
+	sed -i 's/"//g' $@
+
+$(pdf): $(md) figures/app3.dat
 	pandoc $< -o $@ $(pflags)
 
 $(refs): ms/bib.keys
@@ -15,7 +18,7 @@ $(refs): ms/bib.keys
 ms/bib.keys: $(md)
 	grep @[-:_a-zA-Z0-9]* $(md) -oh --color=never | sort | uniq | sed 's/@//g' > ms/bib.keys
 
-diff.pdf: $(md)
+diff.pdf: $(md) figures/app3.dat
 	wget -O sub1.md https://raw.githubusercontent.com/tpoisot/ms_proba_networks/6efa7b8baca6308854622b8e1548a1b715dd0e15/ms/maintext.md
 	pandoc $< -o rev.tex $(pflags)
 	pandoc sub1.md -o sub.tex $(pflags)

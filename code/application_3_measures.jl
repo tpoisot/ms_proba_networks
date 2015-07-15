@@ -28,5 +28,6 @@ mod_pro = map(mod, W)
 df = DataFrame(i=1:length(W),
     bC = conn_fix, pC = conn_pro, eC = conn_fix .- conn_pro,
     bN = nest_fix, pN = nest_pro, eN = nest_fix .- nest_pro,
-    bM = mod_fix, pM = mod_pro, eM = mod_fix .- mod_pro)
+    bM = mod_fix, pM = mod_pro, eM = mod_fix .- mod_pro
+)
 writetable("../figures/app3.dat", df, separator = '\t', header = true)

@@ -668,10 +668,12 @@ property.
 
 ## Spatial-variation predicts local network structure
 
-In this final application, we re-analyze the data from @troj15, to investigate
-how spatial information can be used to derive probability of interactions. In
-the original dataset, fourteen locations have been sampled to describe the local
-plant-pollination network. There is both species and interaction variability across sampling locations. We define the overall probability of an interaction in the following way,
+In this final application, we re-analyze data from a previous study by @troj15,
+to investigate how spatial information can be used to derive probability of
+interactions. In the original dataset, fourteen locations have been sampled to
+describe the local plant-pollination network. This dataset exhibits both species
+and interaction variability across sampling locations. We define the overall
+probability of an interaction in the following way,
 
 \begin{equation}
 \text{P}(i \rightarrow j) = \frac{\mathbf{N}_{ij}}{\mathbf{O}_{ij}}\, ,
@@ -681,14 +683,22 @@ where $\mathbf{O}_{ij}$ is the number of sampling locations in which both
 pollinator $i$ and plant $j$ co-occur, and $\mathbf{N}_{ij}$ is the number of
 sampling locations in which they interact. This takes values between 0 (no
 co-occurence *or* no interactions) and 1 (interaction observed every time there
-is co-occurrence).
+is co-occurrence). This represents a simple probabilistic model, in which it is
+assumed that our ability to observe the interaction is a proxy of how frequent
+it is.
 
 \input{figures/app3.tex}
 
 Based on this information, we compare the connectance, nestedness, and
 modularity, of each sampled network, to the expected values if interactions are
 well predicted by the probability given above. The results are presented in
-\autoref{f:app3}.
+\autoref{f:app3}. There is a clear linear, positive correlation (coeff. 0.89 for
+connectance, 0.76 for $\eta$, and 0.92 for modularity) between the observed
+network properties (binary matrices) and the predictions based on the
+probabilistic model. This analysis, although simple, suggest that the *local*
+structure of ecological networks can represent the outcome of a filtering of
+species interactions, the signature of which can be detected at the regional
+level by a variation in the probabilities of interactions.
 
 # Discussion
 
