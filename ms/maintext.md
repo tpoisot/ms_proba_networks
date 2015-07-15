@@ -42,8 +42,8 @@ ecosystem-level properties such as stability [@mcca14], coexistence [@bast09;
 @haer14], or ecosystem functioning [@duff02]. To a large extent, the description
 of ecological networks resulted in the emergence of questions about how
 functions and properties of communities emerged from their structure, and this
-stimulated the development of a rich methodological literature {==need refs==},
-defining a wide array of structural properties.
+stimulated the development of a rich methodological literature [see *e.g.*
+@jord13], defining a wide array of structural properties.
 
 Given a network (*i.e.* a structure where nodes, most often species, are linked
 by edges, representing ecological interactions) as input, measures of network
@@ -68,9 +68,9 @@ In the recent years, the interpretation of the properties of network structure
 challenged by the observation that network structure varies through space and
 time. This happens because, contrary to a long-standing assumption of network
 studies, species from the same pool do not interact in a consistent way
-[@pois12c]. Empirical and theoretical studies suggest that the network is not
-the right unit to understand this variation; rather, network variation is an
-emergent property of the response of ecological interactions to environmental
+[@pois12c; @troj15]. Empirical and theoretical studies suggest that the network
+is not the right unit to understand this variation; rather, network variation is
+an emergent property of the response of ecological interactions to environmental
 factors and chance events [see @pois15a for a review]. Interactions can vary
 because of local mismatching in phenology [@oles11a; @maru14; @vize14],
 populations fluctuations preventing the interaction [@cana14], or a combination
@@ -776,7 +776,9 @@ estimated from four samples, $[0.01; 0.58]$ when estimated from ten, and $[0.21;
 with the sampling of networks: a correct estimate of the probability of
 interaction from observational data is tremendously difficult to achieve, and
 the development of predictive models should be a research priority since it
-partly alleviates this difficulty.
+partly alleviates this difficulty. Note also that the above formula tends to
+perform poorly when $n < 30$, or when $p \in \{0, 1\}$; it nevertheless provides
+an *estimate*, in other situations, of how robust the probability estimate is.
 
 ## Implementation
 
