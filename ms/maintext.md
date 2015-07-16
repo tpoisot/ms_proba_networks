@@ -322,30 +322,18 @@ Modularity represents the extent to which networks are compartmentalized, *i.e.*
 the tendency for subsets of species to be strongly connected together, while
 they are weakly connected to the rest of the network [@stou11a]. Modularity is
 measured as the proportion of interactions between nodes of an arbitrary number
-of modules, as opposed to the random expectation. Assuming a vector $\mathbf{s}$
-which, for each node in the network, holds the value of the module it belongs
-to (an integer in $[1,c]$), @newm04a proposed a general measure of modularity, which is
+of modules, as opposed to the random expectation.The modularity as derived by
+@newm04a can be expressed as
 
 \begin{equation}
-\mathcal{Q} = \sum_{m=1}^{c}\left(e_{mm} - a_m^2\right)\,,
+\mathcal{Q} = \sum \left[\left(\frac{\mathbf{A}}{2\sum\mathbf{A}} - \frac{\sum_{i\cdot}\mathbf{A} \sum_{\cdot j}\mathbf{A}}{2\sum\mathbf{A}^2}\right)\delta\right]
 \end{equation}
 
-where $c$ is the number of modules,
-
-\begin{equation}
-e_{mm} = \sum_{ij}\frac{\mathbf{A}_{ij}}{2c} \delta(\mathbf{s}_i,\mathbf{s}_j)\,,
-\end{equation}
-
-and
-
-\begin{equation}
-a_m = \sum_{n}e_{mn}\,,
-\end{equation}
-
-with $\delta$ being Kronecker's function, returning $1$ if its arguments are
-equal, and $0$ otherwise. This formula can be *directly* applied to
-probabilistic networks. Modularity takes values in $[0;1]$, where $1$ indicates
-perfect modularity.
+where $\sum_{i\cdot}\mathbf{A}$ and $\sum_{\cdot j}\mathbf{A}$ are the sums of rows
+and columns of $\mathbf{A}$, and $\delta$ is a matrix, wherein $\delta_{ij}$ is
+$1$ if $i$ and $j$ belong to the same module, and $0$ otherwise.
+This formula can be *directly* applied to probabilistic networks. Modularity
+takes values in $[0;1]$, where $1$ indicates perfect modularity.
 
 ### Centrality
 
@@ -533,8 +521,8 @@ events will be under-represented in the sample, and because most naive
 approaches (*i.e.* not controlling for species degree) are likely to generate
 species with no interactions, especially in sparsely connected networks
 frequently encountered in ecology [@milo03; @pois14a; @chag15] -- on the other
-hand, non-naive approaches [*e.g.* based on swaps or quasi-swaps as explained in
-@REF] break the assumption of independence between interactions.
+hand, non-naive approaches (*e.g.* based on swaps or quasi-swaps) break the
+assumption of independence between interactions.
 
 ## Comparison of probabilistic networks
 
