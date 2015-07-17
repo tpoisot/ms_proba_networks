@@ -1,7 +1,7 @@
 md=ms/maintext.md
 pdf=ms/probabilistic_measures.pdf
 refs=/home/tpoisot/.pandoc/default.bib
-csl=/home/tpoisot/.pandoc/styles/methods-in-ecology-and-evolution.csl
+csl=ms/mee.csl
 pflags= --template=ms/template.tex --bibliography=$(refs) #--csl=$(csl)
 
 ALL: $(pdf) diff.pdf

@@ -1,10 +1,12 @@
 % The structure of probabilistic networks
 % T. Poisot \and A.R. Cirtwill \and K. Cazelles \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
-% Mar. 2015
+% July 17, 2015
 
 \clearpage
 
 # Abstract
+
+\small
 
 1. There is a growing realization among community ecologists that interactions
 between species vary across space and time, and that this variation needs be
@@ -23,17 +25,19 @@ the same results as their non-probabilistic formulations, meaning that they can
 be generally applied.
 
 3. We present three case studies that highlight how these measures can be used,
-(i) in re-analyzing data that experimentally measured the variability of
-interactions, (ii) to alleviate the computational demands of permutation-based
-approaches, and (iii) to use the frequency at which interactions are observed
-over several locations to infer the structure of local networks. We provide a
-free and open-source implementation of these measures.
+in re-analyzing data that experimentally measured the variability of
+interactions, to alleviate the computational demands of permutation-based
+approaches, and to use the frequency at which interactions are observed over
+several locations to infer the structure of local networks. We provide a free
+and open-source implementation of these measures.
 
 4. We discuss how both sampling and data representation of ecological networks
 can be adapted to allow the application of a fully probabilistic numerical
 network approach.
 
 **Keywords:** ecological networks, species interactions, connectance, degree distribution, nestedness, modularity
+
+\normalsize
 
 \clearpage
 
@@ -185,17 +189,17 @@ network represented in a probabilistic or binary way. The approach outlined here
 differs from using *weighted* networks, in that it answers a different
 ecological question. Probabilistic networks describe the probability that any
 interaction will happen, whereas weighted networks describe some measure of the
-effect of the interaction when it happens [@berlow_review]; weighted networks
-therefore assume that the interaction happen. Although there are several
-measures for weighted ecological networks [@bers02], in which interactions
-happen but with different outcomes, these are not relevant for probabilistic
-networks; they do not account for the fact that interactions display a variance
-that will cascade up to the network level. Instead, the weight of each
-interaction is best viewed as a second modeling step focusing on the non-zero
-cases (*i.e.* the interactions that are realized); this is similar to the method
-now frequently used in species distribution models, where the species presence
-is modeled first, and its abundance second, using a (possibly) different set of
-ecological predictors [@boul12a].
+effect of the interaction when it happens [@berl09]; weighted networks therefore
+assume that the interaction happen. Although there are several measures for
+weighted ecological networks [@bers02], in which interactions happen but with
+different outcomes, these are not relevant for probabilistic networks; they do
+not account for the fact that interactions display a variance that will cascade
+up to the network level. Instead, the weight of each interaction is best viewed
+as a second modeling step focusing on the non-zero cases (*i.e.* the
+interactions that are realized); this is similar to the method now frequently
+used in species distribution models, where the species presence is modeled
+first, and its abundance second, using a (possibly) different set of ecological
+predictors [@boul12a].
 
 ## Direct network properties
 
@@ -367,7 +371,7 @@ important. As $C_i$ is sensitive to the size of the matrix, we suggest
 normalizing by $\mathbf{C} = \sum C$ so that
 
 \begin{equation}
-C_i = \frac{C_i}{\mathbf{C}}\,.
+<C_i> = \frac{C_i}{\mathbf{C}}\,.
 \end{equation}
 
 This results in the *expected relative centrality* of each node in the
