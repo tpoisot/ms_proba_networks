@@ -2,30 +2,36 @@
 % T. Poisot \and A.R. Cirtwill \and K. Cazelles \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
 % Mar. 2015
 
+\clearpage
+
 # Abstract
 
 1. There is a growing realization among community ecologists that interactions
-between species vary in space and time, and that this variation needs be
-quantified. Yet, our current numerical framework to analyze the structure of
-species interactions, largely based on graph-theoretical approaches, is unsuited
-to probabilistic approaches. Since the variation of species interactions holds
-valuable ecological information, there is a need to develop new metrics to
-exploit it.
+between species vary across space and time, and that this variation needs be
+quantified. Our current numerical framework to analyze the structure of species
+interactions, based on graph-theoretical approaches, usually do not consider the
+variability of interactions. Since this variability has been show to hold
+valuable ecological information, there is a need to adapt the current measures
+of network structure so that they can exploit it.
 
-2. We present analytical expressions of key network metrics, using a
-probabilistic framework. Our approach is based on modeling each interaction as a
-Bernoulli event, and using basic calculus to express the expected value, and
-when mathematically tractable, its variance. We provide a free and open-source
-implementation of these measures.
+2. We present analytical expressions of key measures of network structured,
+adapted so that they account for the variability of ecological interactions. We
+do so by modeling each interaction as a Bernoulli event; using basic calculus
+allows expressing the expected value, and when mathematically tractable, its
+variance. When applied to non-probabilistic data, the measures we present give
+the same results as their non-probabilistic formulations, meaning that they can
+be generally applied.
 
-3. We show that our approach allows us to overcome limitations of both
-neglecting the variation of interactions (over-estimation of rare events) and
-using simulations (extremely high computational demand). We present a few case
-studies that highlight how these measures can be used.
+3. We present three case studies that highlight how these measures can be used,
+(i) in re-analyzing data that experimentally measured the variability of
+interactions, (ii) to alleviate the computational demands of permutation-based
+approaches, and (iii) to use the frequency at which interactions are observed
+over several locations to infer the structure of local networks. We provide a
+free and open-source implementation of these measures.
 
-4. We conclude by discussing how the sampling and data representation of
-ecological networks can be adapted to better allow the application of a fully
-probabilistic numerical network framework.
+4. We discuss how both sampling and data representation of ecological networks
+can be adapted to allow the application of a fully probabilistic numerical
+network approach.
 
 **Keywords:** ecological networks, species interactions, connectance, degree distribution, nestedness, modularity
 
@@ -33,97 +39,97 @@ probabilistic numerical network framework.
 
 # Introduction
 
-Ecological networks are an efficient way to represent biotic interactions
-between individuals, populations, or species. Historically, their study focused
-on describing their structure, with a particular attention on food webs
-[@dunn06] and plant-pollinator interactions [@basc03; @jord87]. The key result
-of this line of research was linking network structure to community or
-ecosystem-level properties such as stability [@mcca14], coexistence [@bast09;
-@haer14], or ecosystem functioning [@duff02]. To a large extent, the description
-of ecological networks resulted in the emergence of questions about how
-functions and properties of communities emerged from their structure, and this
-stimulated the development of a rich methodological literature [see *e.g.*
-@jord13], defining a wide array of structural properties.
+Ecological networks efficiently represent biotic interactions between
+individuals, populations, or species. Historically, their study focused on
+describing their structure, with a particular attention on food webs [@dunn06]
+and plant-pollinator interactions [@basc03; @jord87]. This established that
+network structure is linked to community or ecosystem-level properties such as
+stability [@mcca14], coexistence [@bast09; @haer14], or ecosystem functioning
+[@duff02]. The description of ecological networks resulted in the emergence of
+questions about how functions and properties of communities emerged from their
+structure, and this stimulated the development of a wide array of measures for
+key network properties [@jord13; @bers02; @bana04].
 
 Given a network (*i.e.* a structure where nodes, most often species, are linked
 by edges, representing ecological interactions) as input, measures of network
 structure return a *property* based on one or several *units* (*e.g.* nodes,
-links, or groups thereof) from this network. Some of the properties are *direct*
-properties (they only require knowledge of the unit on which they are applied),
-whereas others are *emergent* (they require knowledge of, and describe,
-higher-order structures). For example, connectance, the realized proportion of
-potential interactions, is a direct property of a network. The degree of a node
-(how many interactions it is involved in) is a direct property of the node. The
-nestedness of a network (that is, the extent to which specialists and
-generalists overlap), on the other hand, is an emergent property that is not
-directly predictable from the degree of all nodes. Though the difference may
-appear to be semantics, establishing a difference between direct and emergent
-properties is important when interpreting their values; direct properties are
-conceptually equivalent to means, in that they tend to be the first moment of
-network units, whereas emergent properties are conceptually equivalent to
-variances, higher-order moments, or probability distributions.
+links, or groups thereof) from this network, either directly measured, of after
+an optimization process. Some of the properties are *direct* properties (they
+only require knowledge of the unit on which they are applied), whereas others
+are *emergent* (they require knowledge of, and describe, higher-order
+structures). For example, connectance, the realized proportion of potential
+interactions, is a direct property of a network, since it can be derived from
+the number of nodes and edges only. The degree of a node (how many interactions
+it is involved in) is a direct property of the node. The nestedness of a network
+(that is, the extent to which specialists and generalists overlap), is an
+emergent property, as it is not directly predictable from the degree of all
+nodes. The difference is no mere semantics: the difference between direct and
+emergent properties is important when interpreting their values. Direct
+properties are conceptually equivalent to means, in that they tend to be the
+first moment of network units, whereas emergent properties are conceptually
+equivalent to variances, higher-order moments, or probability distributions.
 
-In the recent years, the interpretation of the properties of network structure
-(as indicators of the action of ecological or evolutionary processes) has been
-challenged by the observation that network structure varies through space and
-time. This happens because, contrary to a long-standing assumption of network
-studies, species from the same pool do not interact in a consistent way
-[@pois12c; @troj15]. Empirical and theoretical studies suggest that the network
-is not the right unit to understand this variation; rather, network variation is
-an emergent property of the response of ecological interactions to environmental
-factors and chance events [see @pois15a for a review]. Interactions can vary
-because of local mismatching in phenology [@oles11a; @maru14; @vize14],
-populations fluctuations preventing the interaction [@cana14], or a combination
-of both [@olit14; @cham14]. For example, @olit14 showed that accounting for
-neutral (population-size driven) and trait-based effects allows the prediction
-of the cumulative change in network structure, but not of the change at the
-level of individual interactions. In addition, @cars14 showed that not all
-interactions are equally variable within a meta-community: some are highly
-consistent, whereas others are extremely rare. These empirical results all point
-to the fact that species interactions cannot always be adequately represented as
-yes-no events; since it is well established that they do vary, it is necessary
-to represent them as probabilities. We should therefore replace the question of
-*Do these two species interact?* by *How likely is it that they will interact?*.
+The interpretation of the measures of network structure as indicators of the
+action of ecological or evolutionary processes must now account for the numerous
+observations that network structure varies through space and time. In addition
+to the already well-established variation in the composition of the local
+species poll [@have92], networks vary because species do not interact in a
+consistent way [@pois12c]. Empirical evidence suggests that the network is not
+the right unit to understand this variation; rather, network variation emerges
+from the response of interactions to environmental factors and chance events
+[see @pois15a for a review]. Interactions can vary for multiple (non-exclusive)
+reasons. Local mismatching in phenology creates *forbiden links* [@oles11a;
+@maru14; @vize14]. Local variations in abundance prevent the species from
+encountering one another [@cana14]. The joint action of neutral, phenologic, and
+behavioral effects, creates complex and hard to predict responses [@olit14;
+@cham14; @troj15]. For example, @olit14 showed that accounting for neutral
+(population-size driven) and trait-based effects allows the prediction of the
+cumulative change in network structure, but not of the change at the level of
+individual interactions. In addition, @cars14 showed that not all interactions
+are equally variable within a meta-community: some are highly consistent,
+whereas others are extremely rare. These results suggest that species
+interactions, because they vary, cannot be adequately represented as yes-no
+events; it is therefore necessary to represent them as probabilities. We should
+replace the question of *Do these two species interact?* by *How likely is it
+that they will interact?*.
 
-The current way of dealing with probabilistic interactions are either to ignore
-variability entirely or to generate random networks. Probabilistic measures of
-network structure are a mathematically rigorous alternative to both. When
-ignoring the probabilistic nature of interactions (henceforth *binary*
+Yet the current way of dealing with probabilistic interactions are either to
+ignore variability entirely, or to generate networks with yes/no interactions
+based on the measured probabilities. Both approaches incur a net loss of
+information, and measures of network structure that explicitly account for
+interaction variability are a much needed mathematically rigorous alternative.
+When ignoring the probabilistic nature of interactions (henceforth *binary*
 networks), every non-zero element of the network is explicitly assumed to occur
-with probability 1. This leads to over-representation of some rare events, and
-increases the number of interactions; as a result, this changes the estimated
-value of different network properties, in a way that remains poorly understood.
-Issues are most likely to arise for the range of connectances where the
-topological [@chag15] or permutational [@pois14a] space of random network is
-small, leading to over-replication or uncharacterized biases. An alternative is
-to consider only the interactions above a given threshold, which unfortunately
-leads to under-representation of rare events and decreases the effective number
-of interactions (in addition to the problem that there is no robust criterion to
-decide on a threshold). More importantly, the use of thresholds introduces the
-risk of removing species that have a lot of interactions that individually have
-a low probability of occurring. Taken together, these considerations highlight
-the need to amend our current methodology for the description of ecological
-networks, in order to give more importance to the variation of individual
-interactions --- current measures neglect the variability of interactions, and
-are therefore discarding valuable ecological information. Because the
-methodological corpus available to describe ecological networks had first been
-crafted at a time when it was assumed that interactions were invariant, extent
-measures of network structure are unsuited to address the questions that
-probabilistic networks would allow us to address.
+with probability 1. This over-represents rare events, and increases the number
+of interactions; as a result, this changes the estimated value of different
+network properties, in a way that remains poorly understood. The generation of
+random binary networks based on probabilities also suffers from biases,
+especially in the range of connectance within which most ecological systems
+lies. These biases are (i) pseudo-replication when the permutational space is
+small [@pois14a], and (ii) systematic biases in the emergent properties at low
+connectances [@chag15]. An alternative is to consider only the interactions
+above a given threshold, which unfortunately leads to under-representation of
+rare events and decreases the effective number of interactions. The use of
+thresholds also notably introduces the risk of removing species that have a lot
+of interactions that individually have a low probability of occurring. These
+considerations highlight the need to amend our current methodology for the
+description of ecological networks, in order to give more importance to the
+variation of individual interactions.
 
-The elements discussed above requires the considerable methodological adjustment
-of re-writing measures of network structure to account for the fact that
-interactions are not consistent; in this paper, we re-develop a unified toolkit
-of measures to characterize the structure of probabilistic interaction networks.
-Several direct and emergent core properties of ecological networks (both
-bipartite and unipartite) can be re-formulated in a probabilistic context. We
-conclude by showing how this methodology can be applied to exploit the
-information contained in the variability of networks, and to reduce the
-computational burden of current methods in network analysis.
+Yet the extant methodological corpus is well accepted, and the properties it
+describes are well understood. Rather than suggesting measures, we argue that it
+is more productive to re-express those we already have, in a way that do not
+loses information when applied to probabilistic networks. We contribute to this
+effort by re-developing a unified toolkit of measures to characterize the
+structure of probabilistic interaction networks. Several direct and emergent
+core properties of ecological networks (both bipartite and unipartite) can be
+re-formulated in a probabilistic context. We illustrate this toolkit through
+several case studies, and discuss how the current challenges in the (i)
+measurement and (ii) analysis of probabilistic interaction networks.
 
 # Suite of probabilistic network metrics
 
-Throughout this paper, we use the following notation. $\mathbf{A}$ is a matrix
+We use the following notation throughout the paper. $\mathbf{A}$ is a matrix
 where each element $A_{ij}$ gives $\text{P}(ij)$, *i.e.* the probability that
 species $i$ establishes an interaction with species $j$. If $\mathbf{A}$
 represents a unipartite network (*e.g.* a food web), it is a square matrix and
@@ -136,7 +142,7 @@ the measures defined below can be applied on a bipartite network that has been
 made unipartite.
 
 The unipartite transformation of a bipartite matrix $\mathbf{A}$ is the block
-matrix $\mathbf{A}$:
+matrix $\mathbf{B}$:
 
 \begin{equation}
 \mathbf{B} =
@@ -151,46 +157,45 @@ filled with $0$s, etc. Note that for centrality to be relevant in bipartite
 networks, this matrix should be made symmetric:
 $\mathbf{B}_{ij}=\mathbf{B}_{ji}$.
 
-We will also assume that all interactions are independent (so that $\text{P}(ij
-\cap kl) = \text{P}(ij)\text{P}(kl)$ for any species), and can be represented as
-a series of Bernoulli trials (so that $0 \leq \text{P}(ij) \leq 1$). A Bernoulli
-trial is the realization of a probabilistic event that gives $1$ with
-probability $\text{P}(ij)$ and $0$ otherwise. The latter condition allows us to
-derive estimates for the *variance* ($\text{var}(X) = p(1-p)$), and expected
-values ($\text{E}(X)=p$), of the network metrics. We can therefore estimate the
-variance of most network properties, using the fact that the variance of additive
-independent events is the sum of their individual variances, and that the
-variance of multiplicative independent events is
+We assume that all interactions are independent (so that $\text{P}(ij \cap kl) =
+\text{P}(ij)\text{P}(kl)$ for any species), and can be represented as a series
+of Bernoulli trials (so that $0 \leq \text{P}(ij) \leq 1$). A Bernoulli trial is
+the realization of a probabilistic event that gives $1$ with probability
+$\text{P}(ij)$ and $0$ otherwise. The latter condition allows us to derive
+estimates for both the *variance* ($\text{var}(X) = p(1-p)$) and expected values
+($\text{E}(X)=p$) of the network measures. The variance of additive independent
+events is the sum of their individual variances, and the variance of
+multiplicative independent events is
 
 \begin{equation}
-  \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2
+  \text{var}(X_1 X_2 ... X_n) = \prod_i \left(\text{var}(X_i) + [\text{E}(X_i)]^2\right) - \prod_i [\text{E}(X_i)]^2\,.
 \end{equation}
 
-As all $X_i$ are Bernouilli random variables ,
+As all $X_i$ are Bernoulli random variables ,
 
 \begin{equation}
-  \text{var}(X_1 X_2 ... X_n) = \prod_i p_i - \prod_i p_i^2
+  \text{var}(X_1 X_2 ... X_n) = \prod_i p_i - \prod_i p_i^2 \,.
 \end{equation}
 
 As a final note, all of the measures described below can be applied on the
 binary (0/1) versions of the networks in which case they converge on the
 non-probabilistic version of the measure as usually calculated. This property is
-particularly desirable as it allows our framework to be used on any network,
-whether they are represented in a probabilistic or binary way. Nonetheless, the
-approach outlined here differs from using *weighted* networks, in that it
-answers a completely different question [@kolaczyk_2009]. Probabilistic networks describe the
-probability that any interaction will happen, whereas weighted networks describe
-the effect of the interaction when it happens [@berlow_review]. Although there
-are several measures for *quantitative* networks [@bers02], in which
-interactions happen but with different outcomes, these are not relevant for
-probabilistic networks, which require accounting for the fact that interactions
-are probabilistic event, *i.e.* they display a variance that will cascade up to
-the network level. Instead, the weight of each interaction is best viewed as a
-second modeling step that focuses solely on the non-zero cases (*i.e.* the
-interactions that are realized); this is similar to the method now frequently
-used in species distribution models, where the species presence is modeled
-first, and its abundance second, using a (possibly) different set of predictors
-[@boul12a].
+particularly desirable as it allows our framework to be used on any unweighted
+network represented in a probabilistic or binary way. The approach outlined here
+differs from using *weighted* networks, in that it answers a different
+ecological question. Probabilistic networks describe the probability that any
+interaction will happen, whereas weighted networks describe some measure of the
+effect of the interaction when it happens [@berlow_review]; weighted networks
+therefore assume that the interaction happen. Although there are several
+measures for weighted ecological networks [@bers02], in which interactions
+happen but with different outcomes, these are not relevant for probabilistic
+networks; they do not account for the fact that interactions display a variance
+that will cascade up to the network level. Instead, the weight of each
+interaction is best viewed as a second modeling step focusing on the non-zero
+cases (*i.e.* the interactions that are realized); this is similar to the method
+now frequently used in species distribution models, where the species presence
+is modeled first, and its abundance second, using a (possibly) different set of
+ecological predictors [@boul12a].
 
 ## Direct network properties
 
@@ -508,7 +513,15 @@ measure $\beta_{WN}$, one must expand the two matrices so that they have the
 same species at the same place, and give a weight of 0 to the added
 interactions.
 
-# Applications
+## Implementation
+
+We provide these measures of probabilistic network structure in a free and
+open-source (MIT licensed) library for the `julia` language, available at
+`http://github.com/PoisotLab/ProbabilisticNetwork.jl`. The code can be cited
+using the following DOI: **(given upon acceptance)**. A user guide, including
+examples, resides at `http://probabilisticnetworkjl.readthedocs.org/`.
+
+# Case studies
 
 In this section, we contrast the use of probabilistic measures to the current
 approaches of either using binary networks, or working with null models through
@@ -671,34 +684,37 @@ where $\mathbf{O}_{ij}$ is the number of sampling locations in which both
 pollinator $i$ and plant $j$ co-occur, and $\mathbf{N}_{ij}$ is the number of
 sampling locations in which they interact. This takes values between 0 (no
 co-occurence *or* no interactions) and 1 (interaction observed every time there
-is co-occurrence). This represents a simple probabilistic model, in which it is
-assumed that our ability to observe the interaction is a proxy of how frequent
-it is.
+is co-occurrence, including single observations of an interacting species pair).
+This represents a simple probabilistic model, in which it is assumed that our
+ability to observe the interaction is a proxy of how frequent it is.
 
 \input{figures/app3.tex}
 
 Based on this information, we compare the connectance, nestedness, and
-modularity, of each sampled network, to the expected values if interactions are
-well predicted by the probability given above. The results are presented in
-\autoref{f:app3}. There is a clear linear, positive correlation (coeff. 0.89 for
-connectance, 0.76 for $\eta$, and 0.92 for modularity) between the observed
-network properties (binary matrices) and the predictions based on the
-probabilistic model. This analysis, although simple, suggest that the *local*
-structure of ecological networks can represent the outcome of a filtering of
-species interactions, the signature of which can be detected at the regional
-level by a variation in the probabilities of interactions.
+modularity, of each sampled (binary) network, to the expected values if
+interactions are well predicted by the probability given above. The results are
+presented in \autoref{f:app3}. There is a clear linear, positive correlation
+(coeff. 0.89 for connectance, 0.76 for $\eta$, and 0.92 for modularity) between
+the observed network properties (binary matrices) and the predictions based on
+the probabilistic model. This analysis, although simple, suggest that the
+*local* structure of ecological networks can represent the outcome of a
+filtering of species interactions, the signature of which can be detected at the
+regional level by a variation in the probabilities of interactions. Note however
+that this approach *does not* allows predicting the structure of any arbitrary
+species pool, since it cannot know the probability of an interaction between two
+species that never co-occured.
 
 # Discussion
 
 Understanding the structure of ecological networks, and whether it relates to
-emergent ecosystem properties, is a key challenge for community ecology. A
-proper estimation of this structure requires tools that address all forms of
-complexity, the most oft-neglected yet pervasive of which is the fact that
-interactions are variable. Through the suite of measures we present here, we
-allow future analyses of network structure to account for this phenomenon. There
-are two main considerations highlighted by this methodological development.
-First, in what way are probabilistic data are actually independent, and second,
-what are the implications for data collection.
+emergent ecosystem properties, is a strong research agenda for community
+ecology. A proper estimation of this structure requires tools that address all
+forms of complexity, the most oft-neglected yet pervasive of which is the fact
+that interactions are variable. Through the suite of measures we present here,
+we allow future analyses of network structure to account for this phenomenon.
+There are two main considerations highlighted by this methodological
+development. First, in what way are probabilistic data are actually independent?
+Second, what are the implications for data collection?
 
 ## Non-independance of interactions
 
@@ -733,13 +749,13 @@ outcome of experiments) can be combined to estimate the probability that
 interactions will happen in empirical communities.
 
 Another way to obtain approximation of the probability of interactions is to use
-spatially replicated sampling. Some studies [@tyli07; @cars14; @olit14; @troj15]
-surveyed the existence of interactions at different locations, and a simple
-approach of dividing the number of observations of an interaction by the number
-of co-occurence of the species involved will provide a (somewhat crude) estimate
-of the probability of this interaction. This approach requires extensive
-sampling, especially since interactions are harder to observe than species
-[@pois12c; @gila14a], yet it enables the re-analysis of existing datasets in a
+replicated sampling. Some studies [@tyli07; @cars14; @olit14; @troj15] surveyed
+the existence of interactions at different locations, and a simple approach of
+dividing the number of observations of an interaction by the number of
+co-occurence of the species involved will provide a (somewhat crude) estimate of
+the probability of this interaction. This approach requires extensive sampling,
+especially since interactions are harder to observe than species [@pois12c;
+@gila14a], yet it enables the re-analysis of existing datasets in a
 probabilistic context.
 
 ## Implications for data collection
@@ -753,37 +769,27 @@ number of samples used for the estimation. Assuming normally distributed
 observational error (this can be generalized for other structure of error), the
 confidence interval around a probability $p$ estimated from $n$ samples is
 
-$$
-\epsilon = z \sqrt{\frac{1}{n}p(1-p)}
-$$
+\begin{equation}
+  \epsilon = z \sqrt{\frac{1}{n}p(1-p)} \,.
+\end{equation}
 
 For a 95% confidence interval, $z \approx 1.96$. If an interaction is estimated
 to happen at $p = 0.3$, its 95% confidence interval is $[0; 0.74]$ when
 estimated from four samples, $[0.01; 0.58]$ when estimated from ten, and $[0.21;
 0.38]$ when estimated from a hundred. This points out to a fundamental issue
 with the sampling of networks: a correct estimate of the probability of
-interaction from observational data is tremendously difficult to achieve, and
+interactions from observational data is tremendously difficult to achieve, and
 the development of predictive models should be a research priority since it
 partly alleviates this difficulty. Note also that the above formula tends to
-perform poorly when $n < 30$, or when $p \in \{0, 1\}$; it nevertheless provides
-an *estimate*, in other situations, of how robust the probability estimate is.
-
-## Implementation
-
-We provide these measures of probabilistic network structure in a free and
-open-source (MIT license) library for the `julia` language, available at
-`http://github.com/PoisotLab/ProbabilisticNetwork.jl`. The code can be cited
-using the following DOI: **TODO**. A user guide, and API reference, can be found
-at `http://probabilisticnetworkjl.readthedocs.org/en/latest/`. The code library
-undergoes automated testing and coverage analysis, the results of which can be
-accessed from the *GitHub* page given above.
+perform poorly when $n < 30$, and do not applies when $p \in \{0, 1\}$; it
+nevertheless provides an *estimate* of how robust the probability estimate is.
 
 **Acknowledgements:** This work was funded by a CIEE working group grant to TP,
 DG, and DBS. TP is funded by a starting grant from the Université de Montréal,
-and a Discovery grant from NSERC. DBS acknowledges support from a Marsden Fund
+and a Discovery Grant from NSERC. DBS acknowledges support from a Marsden Fund
 Fast-Start grant (UOC-1101) and Rutherford Discovery Fellowship, both
 administered by the Royal Society of New Zealand. The idea of network measures
-as direct/emergent properties was first discussed during the *Web of Life*
-meeting, held in Montpellier in 2012.
+as direct/emergent properties of network units was first discussed during the
+*Web of Life* meeting, held in Montpellier in 2012.
 
 # References

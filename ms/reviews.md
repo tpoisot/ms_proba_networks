@@ -17,7 +17,8 @@ vagrag pyrnere, rfcrpvnyyl va gur vagebqhpgvba; (vv) pynevsl gur sbezhyngvba bs
 fbzr bs gur zrnfherf; (vvv) qvfphff zber va qrcgu gur pbafrdhraprf, rfcrpvnyyl
 sbe fnzcyvat, bs bhe jbex. Jr ubcr gung gur znahfpevcg, va erivfrq sbez, zrrgf
 gur pevgrevn sbe choyvpngvba va *Zrgubqf va Rpbybtl & Ribyhgvba*. Cyrnfr abgr
-gung nyy cntr/yvar ahzoref ersre gb gur genpx-punatrq irefvba bs gur znahfpevcg.
+gung nyy cntr/yvar ahzoref, vapyhqvat ersreraprf gb gur bevtvany fhozvffvba,
+ersre gb gur genpx-punatrq irefvba bs gur erivfrq znahfpevcg.
 
 
 # Erivrjre(f)' Pbzzragf gb Nhgube
@@ -40,15 +41,15 @@ ertneq, vs abg va gur znva grkg, gura creuncf nf n fhccyrzrag (V qvq abg svaq
 nal fhccyrzragny zngrevny sbe gur fhozvffvba).
 
 > Jr nccerpvngr guvf pbaprea, ohg fvapr gur erivrjre qrpvqrq gb tvir vg gung
-zhpu rzcunfvf, jr unir gb envfr gjb cbvagf. Svefg, guvf vf abg fbsgjner cncre,
+zhpu rzcunfvf, jr unir gb envfr gjb cbvagf. Svefg, guvf vf abg n fbsgjner cncre,
 naq jr qb abg guvax gung gur pbqr fubhyq vzcnpg gur rinyhngvba bs gur zrevg bs
 gur zrgubqbybtvpny nqinapr jr nppbzcyvfurq. Frpbaq, gur erivrjre vf abg
 pevgvpvmvat pbqr dhnyvgl, ohg ynathntr pubvpr, juvpu jr qb abg guvax vf n
 eryrinag zrnfher bs zrevg. Arireguryrff, jr unir nqqrq n fubeg frpgvba ng gur
-raq bs gur cncre, jvgu n yvax gb gur qbphzragngvba naq hfre thvqr. Gur pbqr jr
-cebivqr vf gubebhtuyl grfgrq, nhgbzngvpnyyl inyvqngrq, naq qbphzragrq. Jr ner
-pbasvqrag gung nyy bs gur ryrzragf ner urer gb nyybj n zbgvingrq erfrnepure gb
-nccyl bhe zrgubqf gb gurve qngn.
+raq bs gur cncre, jvgu n yvax gb gur qbphzragngvba naq hfre thvqr (juvpu
+vapyhqrf rknzcyrf). Gur pbqr jr cebivqr vf gubebhtuyl grfgrq, nhgbzngvpnyyl
+inyvqngrq, naq qbphzragrq. Jr ner pbasvqrag gung nyy bs gur ryrzragf ner urer gb
+nyybj nal erfrnepure gb nccyl bhe zrgubqf gb gurve qngn.
 
 Frpbaq, V guvax gur nhgubef arrq gb thvqr gur ernqre n ovg zber. Jung cerpvfryl
 vf gur trareny qvssrerapr orgjrra gur cebcbfrq sbezhynf naq rkvfgvat barf gb
@@ -56,14 +57,11 @@ pnyphyngr argjbex cebcregvrf? Sbe vafgnapr, jul pna gur bevtvany zrgevpf abg or
 ernqvyl hfrq va gur cebonovyvfgvp senzrjbex. Gel gb rkcynva guvf va n fragrapr
 be gjb gb gur (creuncf fxrcgvpny) svefg gvzr ernqre.
 
-> Jr unir nqqrq n srj fragraprf ng **K** naq **L** gb rzcunfvmr ba gur
-qvssreraprf. Vg jnf bhe vzcerffvba gung gur svefg gjb fragraprf bs gur bevtvany
-frpbaq-gb-ynfg cnentencu bs gur vagebqhpgvba rfgnoyvfurq gur arrq sbe
-cebonovyvfgvp zrnfherf pyrneyl: "Gur pheerag jnl bs qrnyvat jvgu cebonovyvfgvp
-vagrenpgvbaf ner rvgure gb vtaber inevnovyvgl ragveryl be gb trarengr enaqbz
-argjbexf. Cebonovyvfgvp zrgevpf ner n zngurzngvpnyyl evtbebhf nygreangvir gb
-obgu.". Nf vg jnf boivbhfyl abg fhssvpvrag, jr unir nqqrq n fragrapr orsber, gb
-rkcynva gung n zbqvsvpngvba va gur zrgubqbybtl vf arrqrq.
+> Jr unir nqqrq n srj fragraprf ng **K** gb rzcunfvmr ba gur snpg gung gur
+zrnfherf jr cebcbfr ner abg *arj*; vafgrnq, gurl ner ersbezhyngvbaf bs rkvfgvat
+zrnfherf gung nyybj cebonovyvfgvp qngn gb or hfrq jvgubhg vasbezngvba ybff.
+Fvapr guvf erznex znl fgrz sebz n ynpx bs pynevgl nobhg jul gur inevnovyvgl bs
+vagrenpgvbaf znggre, jr unir nqqrq n whfgvsvpngvba ng **K**.
 
 Guveq, gur birenyy vzcbegnag dhrfgvba bs ubj gb rfgvzngr gur cebonovyvgl bs
 vagrenpgvbaf erznvaf hanafjrerq. V nz abg fnlvat gung gur cncre fubhyq svaq gur
@@ -115,15 +113,15 @@ jung.
 > Jr unir nqqrq n pynevsvpngvba ng **K**. Gb fbzr rkgrag, 0/1 argjbexf ner
 cebonovyvfgvp argjbexf, jurer nyy aba-mreb vagrenpgvbaf unccra jvgu cebonovyvgl
 havgl. Guvf vf n fgeratgu bs bhe nccebnpu, gung obgu ovanel naq cebonovyvfgvp
-qngn pna or nanylmrq. Jr unir nyfb rzcunfvmrq guvf cbvag va gur vagebqhpgvba.
+qngn pna or nanylmrq. Jr unir nyfb rzcunfvmrq guvf cbvag va gur vagebqhpgvba
+(**K**).
 
 C5Y11-12: Fb gurfr zrgevpf ner bayl nccyvpnoyr ba havcnegvgr argjbexf? Cyrnfr
 znxr guvf pyrne gb gur ernqre.
 
-> Jr rkcynvarq va gur bevtvany fhozvffvba, va gur frpbaq cnentencu "Fhvgr bs
-cebonovyvfgvp argjbex zrgevpf", ubj gb znxr ovcnegvgr argjbexf havcnegvgr va
-pnfr gur zrnfher erdhverf vg. Jr unir ercuenfrq guvf fragrapr gb znxr vg
-pyrnere.
+> Gurl ner abg. Jr rkcynvarq va gur bevtvany fhozvffvba (**K**) ubj gb znxr ovcnegvgr argjbexf
+havcnegvgr va pnfr gur zrnfher erdhverf vg. Jr unir ercuenfrq guvf fragrapr gb
+znxr vg pyrnere (**K**).
 
 C6Y1-4: Abg pyrne gb zr jung vf zrnag. Jung vf “gur rknpg inyhr bs gur
 aba-cebonovyvfgvp zrnfher”?
@@ -159,7 +157,7 @@ C10Y3: Va = vf
 C10Y10-11: V jbhyq guvax gung n fcrpvrf jvgu ab bhgtbvat yvaxf jbhyq or n gbc
 cerqngbe (vs rqtr qverpgvba fubjf gur sybj bs raretl)?
 
-> Gur pbairagvba vf hfhnyyl gb fubj yvaxf nf vagrenpgvbaf, fb fcrpvrf jvgu ab
+> Bar pbairagvba vf hfhnyyl gb yvaxf nf vagrenpgvbaf, fb fcrpvrf jvgu ab
 bhgtbvat yvaxf rfgnoyvfu ab vagrenpgvbaf (ohg vg vf gehr gung fbzr nhgubef
 ercerfrag yvaxf nf sybj bs raretl, va juvpu pnfr gur qverpgvba bs gur "neebj" vf
 erirerfrq). Va nal pnfr, nf jr abj rkcyvpvgyl zragvba **K**, bar fubhyq or
@@ -177,7 +175,7 @@ C15Y2: npdhverq?
 
 C17Y12: Pnsrgrevn rkcrevzragf?
 
-> Jr unir nqqrq na rkcynangvba.
+> Jr unir nqqrq na rkcynangvba (**K**).
 
 Svther 1: Na rkcynangvba bs gur nkrf jbhyq or avpr gb unir va gur yrtraq.
 
@@ -209,29 +207,30 @@ gur zf, naq cbgragvny yvzvgngvbaf bs gur cebcbfrq zrgevpf.
 
 ### ZNWBE PBZZRAGF
 
-1. Zber onpxtebhaq vasbezngvba arrqf gb or tvira va gur vagebqhpgvba ertneqvat
-gur pbaprcghny senzrjbex zbgvingvat gur qrirybczrag bs gurfr cebonovyvfgvp
-zrgevpf (guvf unf orra qrirybcrq ryfrjurer: r.t. Cbvfbg rg ny. 2015, Bvxbf).
-Irel yvggyr bs guvf onpxtebhaq vf cebivqrq va gur vagebqhpgvba, naq vf bayl
-oevrsyl qvfphffrq va gur 'Vzcyvpngvbaf sbe qngn pbyyrpvgba' fhofrpgvba ng gur
-raq bs gur zf. Guvf znqr vg qvssvphyg gb sbyybj ubj bar jbhyq trarengr n
-cebonovyvgl zbqry gung gurfr zrgevpf pbhyq or nccebcevngr sbe, naq gurersber jul
-jr jbhyq arrq cebonovyvfgvp zrgevpf va gur svefg cynpr. Na va-qrcgu rkcybengvba
-bs guvf onpxtebhaq vfa’g arprffnel be nccebcevngr, ohg n pyrne naq pbapvfr
-rkcynangvba fubhyq or tvira gb uryc pynevsl gur zbgvingvba sbe qrirybcvat gur
-zrgevpf qrfpevorq va gur zf. Gb vzcebir pynevgl, V jbhyq nyfb erpbzzraq gung gur
+Zber onpxtebhaq vasbezngvba arrqf gb or tvira va gur vagebqhpgvba ertneqvat gur
+pbaprcghny senzrjbex zbgvingvat gur qrirybczrag bs gurfr cebonovyvfgvp zrgevpf
+(guvf unf orra qrirybcrq ryfrjurer: r.t. Cbvfbg rg ny. 2015, Bvxbf). Irel yvggyr
+bs guvf onpxtebhaq vf cebivqrq va gur vagebqhpgvba, naq vf bayl oevrsyl
+qvfphffrq va gur 'Vzcyvpngvbaf sbe qngn pbyyrpvgba' fhofrpgvba ng gur raq bs gur
+zf. Guvf znqr vg qvssvphyg gb sbyybj ubj bar jbhyq trarengr n cebonovyvgl zbqry
+gung gurfr zrgevpf pbhyq or nccebcevngr sbe, naq gurersber jul jr jbhyq arrq
+cebonovyvfgvp zrgevpf va gur svefg cynpr. Na va-qrcgu rkcybengvba bs guvf
+onpxtebhaq vfa’g arprffnel be nccebcevngr, ohg n pyrne naq pbapvfr rkcynangvba
+fubhyq or tvira gb uryc pynevsl gur zbgvingvba sbe qrirybcvat gur zrgevpf
+qrfpevorq va gur zf. Gb vzcebir pynevgl, V jbhyq nyfb erpbzzraq gung gur
 rknzcyrf cebivqrq va gur ‘Nccyvpngvbaf’ frpgvba fgneg ol qrfpevovat ubj gur
 cebonovyvgl nqwnprapl zngevk N vf orvat rfgvzngrq sebz qngn, naq fgngvat
 fcrpvsvpnyyl jung nfcrpgf bs gurfr zrgevpf’ cresbeznapr rnpu rknzcyr vf
 qrzbafgengvat.
 
-> Jr unir erjbexrq obgu gur vagebqhpgvba naq gur "qngn pbyyrpgvba" cnegf, naq jr
-ner pbasvqrag gung gur erivfrq znahfpevcg vagebqhprf obgu gur pbaprcgf naq gur
-arrq sbe n arj zrgubqbybtl va n zber pbaivapvat jnl. Jr unir nqqrq gur erdhverq
-vasbezngvba ba gur rfgvzngvba bs vavgvny nqwnprapl zngevprf ng **k**.
+> Jr unir erjbexrq obgu gur vagebqhpgvba (frr rfcrpvnyyl **KK**) naq gur "qngn
+pbyyrpgvba" (frr rfcrpvnyyl **K**) cnegf, naq jr ner pbasvqrag gung gur erivfrq
+znahfpevcg vagebqhprf obgu gur pbaprcgf naq gur arrq sbe n arj zrgubqbybtl va n
+zber pbaivapvat jnl. Jr unir nqqrq gur erdhverq vasbezngvba ba gur rfgvzngvba bs
+vavgvny nqwnprapl zngevprf ng **K**.
 
-2. Pna gur vagrenpgvba cebonovyvgl zbqryf, naq gur nffbpvngrq zrgevpf, qrfpevor
-gur cebonovyvgl bs vagrenpgvba serdhrapvrf/engrf? Gung vf, pna gurl qrfpevor
+Pna gur vagrenpgvba cebonovyvgl zbqryf, naq gur nffbpvngrq zrgevpf, qrfpevor gur
+cebonovyvgl bs vagrenpgvba serdhrapvrf/engrf? Gung vf, pna gurl qrfpevor
 inevngvba va dhnagvgngvir argjbex fgehpgher? Guebhtubhg gur zf, gur nhgubef
 ersre gb ovanel argjbexf, ohg arire fgngr rkcyvpvgyl jurgure gurve zrgubqf ner
 yvzvgrq gb gur ovanel pnfr, be vs gurl pna or trarenyvmrq gb qrny jvgu nqwnprapl
@@ -248,11 +247,11 @@ zragvbavat gurz nf n angheny qverpgvba sbe shgher qrirybczrag.
 
 > Nf jr rkcynva va gur ercyl gb ersrerr 1, jr qb abg guvax gur serdhrapl/engr bs
 vagrenpgvba vf nzranoyr gb bhe senzrjbex (naq jr cebivqr n engvbanyr jul ng
-**k**). Guvf orvat fnvq, jr nterr gung guvf vf n pyrne arkg fgrc sbe erfrnepu,
+**K**). Guvf orvat fnvq, jr nterr gung guvf vf n pyrne arkg fgrc sbe erfrnepu,
 naq vqragvsl bar cbgragvny nccebnpu sebz fcrpvrf qvfgevohgvba zbqryf gb chefhr
 vg.
 
-3. Va gur vagebqhpgvba [c.3, Y.2-12] gur nhgubef pvgr fghqvrf juvpu unir
+Va gur vagebqhpgvba [c.3, Y.2-12] gur nhgubef pvgr fghqvrf juvpu unir
 qrzbafgengrq gung znal bs gur fnzr argjbex zrgevpf gurl er-qrevir pna or
 cerqvpgrq ol cebonovyvfgvp naq yvxryvubbq onfrq zbqryf vapbecbengvat zvavzny
 vasbezngvba nobhg fcrpvrf eryngvir nohaqnaprf naq genvg qvfgevohgvbaf. Gur
@@ -267,15 +266,16 @@ zngevprf? Va n svryq gung vf oheqrarq jvgu znal erqhaqnag zrgevpf, na negvpyr
 qrfpevovat n fhvgr bs er-qrevirq zrgevpf fubhyq cebivqr pyrne ernfbavat sbe jul
 jr arrq zber.
 
-> Jr unir rqvgrq gur vagebqhpgvba gb fubj jul gurfr zrnfherf ner arrqrq -- gur
-cebonovyvfgvp nccebnpu gb argjbexf vf tnvavat genpgvba, nf vf pyrne sebz ernqvat
-gur yvgrengher, naq gur pheerag zrgevpf ner abg noyr gb hfr guvf vasbezngvba. Nf
-jr zragvba va **L**, gur zrnfherf jr cebcbfr urer ner abg arj, ohg engure gurl
-ner n er-rkcerffvba bs jryy-rfgnoyvfurq barf va n cebonovyvfgvp pbagrkg.
+> Jr unir rqvgrq gur vagebqhpgvba (**K**) gb fubj jul gurfr zrnfherf ner arrqrq --
+gur cebonovyvfgvp nccebnpu gb argjbexf vf tnvavat genpgvba, nf vf pyrne sebz
+ernqvat gur yvgrengher, naq gur pheerag zrgevpf ner abg noyr gb hfr guvf
+vasbezngvba. Nf jr abj rkcyvpvgyl zragvba (**L**), gur zrnfherf jr cebcbfr urer
+ner abg arj, ohg engure gurl ner er-rkcerffvbaf bs jryy-rfgnoyvfurq barf va n
+cebonovyvfgvp pbagrkg.
 
 ### ZVABE PBZZRAGF
 
-1. [c.3, Y.13-24]: Gur svefg fragrapr bs guvf cnentencu vqragvsvrf obgu gur
+c.3, Y.13-24: Gur svefg fragrapr bs guvf cnentencu vqragvsvrf obgu gur
 nffhzcgvba bs vainevnag vagrenpgvbaf naq zbagr-pneyb grpuavdhrf nf pheeragyl
 hafngvfsnpgbel zrgubqf sbe qrnyvat jvgu vaureragyl inevnoyr fcrpvrf
 vagrenpgvbaf. Gur nhgubef cebivqr rknzcyrf bs ceboyrzf gung pna nevfr jura hfvat
@@ -288,14 +288,13 @@ ng yrnfg sberfunqbj jul gurfr nccebnpurf znl or ceboyrzngvp va gur vagebqhpgvba.
 > Guvf vf pbeerpg, naq jr unir nqqrq n fubeg fragrapr ng **K**, pvgvat gjb
 erprag fghqvrf gung sbphfrq ba gurfr vffhrf va rpbybtvpny argjbexf.
 
-2. [c.12, Y.10]: Cyrnfr rkcynva gur qvnzbaq bcrengbe.
+c.12, Y.10: Cyrnfr rkcynva gur qvnzbaq bcrengbe.
 
 > Svkrq.
 
-3. [c.12, Y.25-28]: Ubj rknpgyl jnf gur nqwnprapl zngevk N rfgvzngrq sebz gurfr
-qngn?
+c.12, Y.25-28: Ubj rknpgyl jnf gur nqwnprapl zngevk N rfgvzngrq sebz gurfr qngn?
 
-> Jr unir nqqrq na rkcynangvba ng **L**.
+> Jr unir nqqrq na rkcynangvba ng **K**.
 
 4. [c.13, Gnoyr]: Fubhyq guvf gnoyr or ahzorerq? Jung vf gur reebe zrnfherzrag
 orvat ercbegrq? Fnzcyr inevnapr? Zbagr-Pneyb P.V.? Nanylgvp Inevnapr? Guvf
@@ -303,9 +302,10 @@ vasbezngvba fubhyq or cebivqrq, rvgure va gur pbyhza gvgyrf, be nf n abgr ng gur
 sbbg bs gur gnoyr.
 
 > Jr guvax gung guvf gnoyr vf fznyy rabhtu gung vg pna or xrcg vayvar, ohg jvyy
-qrsre gb gur rqvgbe sbe guvf qrpvfvba. Jr unir nqqrq gur erdhverq vasbezngvba.
+qrsre gb gur rqvgbe sbe guvf qrpvfvba. Jr unir nqqrq gur erdhverq vasbezngvba
+(**K**).
 
-5. [c.13. Y. 1-2, Gnoyr 1?]: Gurfr 4 zrgevpf cebivqr n cerggl yvzvgrq zrnfher bs
+c.13. Y. 1-2, Gnoyr 1? Gurfr 4 zrgevpf cebivqr n cerggl yvzvgrq zrnfher bs
 argjbex ‘fgehpgher’ (2 bs gur arfgrqarff zrgevpf ner aba-vaqrcraqrag, naq gur
 3eq vf n shapgvba bs gur bgure gjb). Vg vfa’g arprffnel gb ercbeg pbzcnevfbaf bs
 nyy gur cebcbfrq zrgevpf gung pna or pnyphyngrq sbe guvf argjbex, ohg vg jbhyq
@@ -320,9 +320,9 @@ cebonovyvfgvp argjbexf naq zrgevpf.
 
 > Jr unir nqqrq na rknzcyr hfvat zbgvs pbhagvat, naq qvfphff jul, rira va gur
 nofrapr bs fgebat qvssreraprf, gur cebonovyvfgvp nccebnpu fubhyq or cersreerq
-bire Oreabhyyv gevnyf.
+bire Oreabhyyv gevnyf (**K**).
 
-6. [c.13, Y.14]:  Gur novyvgl gb qverpgyl pnyphyngr rkcrpgrq inevnaprf sbe
+c.13, Y.14: Gur novyvgl gb qverpgyl pnyphyngr rkcrpgrq inevnaprf sbe
 vagrenpgvbaf naq argjbex zrgevpf frrzf yvxr n irel vagrerfgvat naq abiry
 nccyvpngvba bs gurfr zrgubqf. Ohg V jbaqre vs 0 be ybj inevnaprf, nf ercbegrq va
 guvf pnfr fghql, ner yvxryl gb or n pbzzba erfhyg jura vagrenpgvba cebonovyvgvrf
@@ -331,33 +331,33 @@ yvxryl gb or gur pnfr tvira gur cenpgvpny punyyratrf bs ercyvpngrq vagrenpgvba
 fnzcyvat sbe rpbybtvpny argjbexf yvxr sbbq-jrof naq cbyyvangvba argjbexf).
 
 > Jr nterr jvgu gur ersrerr, naq jbhyq engure abg fcrphyngr ba guvf va gur
-nofrapr bs qngn. Jr nqqrq n frpgvba gb gur qvfphffvba, gung rkcynvaf ubj gur
-pbasvqrapr vagreiny nebhaq rnpu cebonovyvgl pna or rfgvzngrq sebz gur fnzcyr
+nofrapr bs qngn. Jr nqqrq n frpgvba gb gur qvfphffvba (**K**), gung rkcynvaf ubj
+gur pbasvqrapr vagreiny nebhaq rnpu cebonovyvgl pna or rfgvzngrq sebz gur fnzcyr
 fvmr. Gurfr ner, vaqrrq, yvxryl gb or uvtu, juvpu ervasbeprf gur arrq sbe
 cerqvpgvir zbqryf va nqqvgvba gb bofreingvbany qngn.
 
-7. [c.14, Y.17-21]:  Gur zrgubqf qrfpevorq urer sbe rinyhngvat gur cresbeznapr
-bs cebonovyvfgvp argjbex zrgevpf va gur pbagrkg bs ahyy zbqry ulcbgurfvf grfgvat
+c.14, Y.17-21:  Gur zrgubqf qrfpevorq urer sbe rinyhngvat gur cresbeznapr bs
+cebonovyvfgvp argjbex zrgevpf va gur pbagrkg bs ahyy zbqry ulcbgurfvf grfgvat
 arrq gb or pynevsvrq. Nf jevggra, vg vf hapyrne jung pbzcnevfbaf ner orvat znqr,
 naq yrff pyrne jung gur pbzcnevfbaf bs vagrerfg ner be fubhyq or. N pbhcyr
 fcrpvsvp cbvagf gung arrq pynevslvat:
 
-1) Jung vf ‘A’? Guvf vf bayl rire qrsvarq nf ‘arfgrqarff’, ohg qbrf abg nccrne
+Jung vf ‘A’? Guvf vf bayl rire qrsvarq nf ‘arfgrqarff’, ohg qbrf abg nccrne
 naljurer va gur rneyvre fhofrpgvba qrfpevovat gur cebonovyvfgvp zrnfher bs
 arfgrqarff (vqragvsvrq ol gur Terrx yrggre rgn). Vf guvf gur arfgrqarff (rgn) bs
 gur rzcvevpny argjbex?
 
 > Gur yrtraq unf orra svkrq.
 
-2) Jul ner enaqbz argjbexf orvat trarengrq sbe guvf nanylfvf (Y.17)? V gubhtug
+Jul ner enaqbz argjbexf orvat trarengrq sbe guvf nanylfvf (Y.17)? V gubhtug
 vg jnf cbffvoyr gb pnyphyngr rgn qverpgyl sebz gur cebonovyvgl zngevk
 pbeerfcbaqvat gb rnpu ahyy zbqry. Vf arfgrqarff orvat pnyphyngrq sbe gurfr
 enaqbz argjbexf, naq gur qvfgevohgvba pbzcnerq gb rgn? Vs fb, vg vf hapyrne
 jurer guvf svg vagb gur nanylfvf.
 
 > Nf jr abj fnl va guvf cneg (**K**), naq va gur vagebqhpgvba bs gur
-nccyvpngvbaf frpgvba, jr ner vagrerfgrq va pbzcnevat cebonovyvfgvp zrnfherf gb
-gur qvfgevohgvbaf trarengrq ol ahyy zbqryf.
+nccyvpngvbaf frpgvba (**K**), jr ner vagrerfgrq va pbzcnevat cebonovyvfgvp
+zrnfherf gb gur qvfgevohgvbaf be enaqbz argjbexf trarengrq ol ahyy zbqryf.
 
 Nf vg ernqf, naq sebz Svther 1, vg fbhaqf yvxr gur nhgubef ner cerfragvat 2
 pbzcnevfbaf bs gur qvssrerapr orgjrra rgn sbe na rzcvevpny argjbex, naq n ahyy
@@ -368,13 +368,13 @@ vagrerfg, bgure guna qrzbafgengvat gung cebonovyvfgvp zrgevpf pna vaqrrq or
 pnyphyngrq sbe obgu rzcvevpny argjbexf naq cebonovyvgl zngevprf trarengrq ol
 ahyy-zbqryf.
 
-> Nf jr abj fgngr va **l**, gur xrl erfhyg sebz guvf pbzcnevfba vf gung gur
+> Nf jr abj fgngr va **K**, gur xrl erfhyg sebz guvf pbzcnevfba vf gung gur
 nccyvpngvba bs cebonovyvfgvp zrnfherf erirny n cbgragvny ovnf va gur bhgchg bs
 ahyy zbqryf -- jr unir nyfb ersreerq gb cerivbhf yvgrengher va fhccbeg bs guvf
 pynvz.
 
-8. [c.14, Y.23-25]: V’z abg fher V haqrefgnaq guvf cneragurgvpny fgngrzrag.
-Gurer vf ab vasbezngvba tvira ertneqvat gur arfgrqarff inyhrf pnyphyngrq sbe gur
+c.14, Y.23-25: V’z abg fher V haqrefgnaq guvf cneragurgvpny fgngrzrag. Gurer vf
+ab vasbezngvba tvira ertneqvat gur arfgrqarff inyhrf pnyphyngrq sbe gur
 rzcvevpny argjbexf. Ubjrire, fvapr nyy qrygn-A inyhrf ner cbfvgvir, gur
 rzcvevpny argjbexf gung erghea ynetr qrygn-A’f zhfg arprffnevyl nyfb unir uvtu
 arfgrqarff inyhrf (nygubhtu gur erirefr vf abg arprffnevyl gehr sbe argjbexf
@@ -384,87 +384,85 @@ VV, vg frrzf hafhecevfvat gung guvf yvarne eryngvba rkvfgf.
 
 > Jr unir qryrgrq guvf fgngrzrag.
 
-9. [c.15, Y.1-3; Svt. 1]: Guvf frrzf yvxr na rknzcyr bs gur fgebat (naq jryy
-xabja) pbinevnapr orgjrra pbaarpgnapr naq arfgrqarff (naq bgure zrgevpf; Xnl &
-Fpurzfxr 2004, Ireznng rg ny. 2009, Wnzrf rg ny. 2011) engure guna na
-vyyhfgengvba bs jul jr arrq gb er-guvax ubj ahyy zbqryf ner orvat vagrecergrq.
-Vs n ahyy-zbqry vf orvat pbafgehpgrq hfvat pbafgenvagf onfrq ba gur pbaarpgnapr
-bs gur rzcvevpny argjbex, vg sbyybjf gung vg jvyy erghea arfgrqarff inyhrf gung
-ersyrpg guvf aba-vaqrcraqrapr.
+c.15, Y.1-3; Svt. 1: Guvf frrzf yvxr na rknzcyr bs gur fgebat (naq jryy xabja)
+pbinevnapr orgjrra pbaarpgnapr naq arfgrqarff (naq bgure zrgevpf; Xnl & Fpurzfxr
+2004, Ireznng rg ny. 2009, Wnzrf rg ny. 2011) engure guna na vyyhfgengvba bs jul
+jr arrq gb er-guvax ubj ahyy zbqryf ner orvat vagrecergrq. Vs n ahyy-zbqry vf
+orvat pbafgehpgrq hfvat pbafgenvagf onfrq ba gur pbaarpgnapr bs gur rzcvevpny
+argjbex, vg sbyybjf gung vg jvyy erghea arfgrqarff inyhrf gung ersyrpg guvf
+aba-vaqrcraqrapr.
 
 > Gur rkvfgrapr bs n pbinevnapr vf ernfba rabhtu gb er-guvax bhe vagrecergngvba
-bs ahyy zbqryf, va bhe bcvavba. Jr unir nqqrq ersreraprf ng bgure cynprf (**k**)
+bs ahyy zbqryf, va bhe bcvavba. Jr unir nqqrq ersreraprf ng bgure cynprf (**K**)
 gung fhccbeg guvf cbvag bs ivrj.
 
-10. [c.15, Y.5-6]: Jung fvzhyngvbaf? V qba’g frr nal erfhygf ercbegrq sbe
-fvzhyngvbaf va gur ‘Ahyy-zbqry onfrq ulcbgurfvf grfgvat’ fho-frpgvba. Ner gur
-nhgubef ersreevat gb gurve erfhygf sebz gur ‘Pbzcnevfba bs cebonovyvfgvp
-argjbexf’ fhofrpgvba? Vs fb, gurl ercbeg fgebat nterrzrag orgjrra gur
-cebonovyvfgvp zrgevpf pnyphyngrq qverpgyl sebz gur cebonovyvgl zngevprf naq
-Oreabhyyv gevnyf (Gnoyr 1), naq gur ovnf-gb-inevnapr engvb orgjrra gur Oreabhyyv
-Gevnyf & Cebonovyvfgvp pbyhzaf nccrnef gb or zvavfphyr sbe gur ‘Yvaxf’ zrgevp,
-rira jvgu 10^4 Oreabhyyv gevnyf. Nf sne nf V pna frr, gurer vf ab qrevingvba sbe
-gur inevnapr bs gur cebonovyvfgvp arfgrqarff zrgevpf tvira rneyvre va gur zf,
-naq ab inevnapr ercbegrq sbe gur Oreabhyyv Gevnyf nanylfvf bs arfgrqarff, fb ab
+c.15, Y.5-6: Jung fvzhyngvbaf? V qba’g frr nal erfhygf ercbegrq sbe fvzhyngvbaf
+va gur ‘Ahyy-zbqry onfrq ulcbgurfvf grfgvat’ fho-frpgvba. Ner gur nhgubef
+ersreevat gb gurve erfhygf sebz gur ‘Pbzcnevfba bs cebonovyvfgvp argjbexf’
+fhofrpgvba? Vs fb, gurl ercbeg fgebat nterrzrag orgjrra gur cebonovyvfgvp
+zrgevpf pnyphyngrq qverpgyl sebz gur cebonovyvgl zngevprf naq Oreabhyyv gevnyf
+(Gnoyr 1), naq gur ovnf-gb-inevnapr engvb orgjrra gur Oreabhyyv Gevnyf &
+Cebonovyvfgvp pbyhzaf nccrnef gb or zvavfphyr sbe gur ‘Yvaxf’ zrgevp, rira jvgu
+10^4 Oreabhyyv gevnyf. Nf sne nf V pna frr, gurer vf ab qrevingvba sbe gur
+inevnapr bs gur cebonovyvfgvp arfgrqarff zrgevpf tvira rneyvre va gur zf, naq ab
+inevnapr ercbegrq sbe gur Oreabhyyv Gevnyf nanylfvf bs arfgrqarff, fb ab
 pbzcnevfba pna or znqr urer.
 
 > Jr unir svkrq guvf fragrapr.
 
-11. [c.15, Y.7-12]: Vg jbhyq or urycshy gb cerfrag gurfr erfhygf va n gnoyr.
-Vg’f hapyrne jung gur eryrinapr bs gurfr pbzcnevfbaf vf, bgure guna gb
-qrzbafgengr gung cebonovyvfgvp zrgevpf pna or pnyphyngrq sbe Ahyy zbqryf. Vg
-frrzf gung n zber vagrerfgvat naq hfrshy qrzbafgengvba bs gur fpbcr bs gurfr
-zrgevpf’ pncnovyvgvrf jbhyq or gb fubj 1) ubj n cebonovyvgl zbqry vapbecbengvat
-n pbzovangvba bs fcrpvrf eryngvir nohaqnaprf naq genvg
-qvfgevohgvbaf/rkcrevzragny qngn pna or pbafgehpgrq naq punenpgrevmrq hfvat
-cebonovyvfgvp zrgevpf, naq gura 2) pbzcnerq jvgu nygreangvir naq/be ahyy zbqryf.
+c.15, Y.7-12: Vg jbhyq or urycshy gb cerfrag gurfr erfhygf va n gnoyr. Vg’f
+hapyrne jung gur eryrinapr bs gurfr pbzcnevfbaf vf, bgure guna gb qrzbafgengr
+gung cebonovyvfgvp zrgevpf pna or pnyphyngrq sbe Ahyy zbqryf. Vg frrzf gung n
+zber vagrerfgvat naq hfrshy qrzbafgengvba bs gur fpbcr bs gurfr zrgevpf’
+pncnovyvgvrf jbhyq or gb fubj 1) ubj n cebonovyvgl zbqry vapbecbengvat n
+pbzovangvba bs fcrpvrf eryngvir nohaqnaprf naq genvg qvfgevohgvbaf/rkcrevzragny
+qngn pna or pbafgehpgrq naq punenpgrevmrq hfvat cebonovyvfgvp zrgevpf, naq gura
+2) pbzcnerq jvgu nygreangvir naq/be ahyy zbqryf.
 
 > Gur fhttrfgvba znqr ol gur ersrerr vf sne orlbaq gur fpbcr bs guvf cncre. Jr
 unir vafgrnq nqqrq n oebnqre rkcynangvba bs jung guvf rknzcyr qrzbafgengr ng
-**k** -- anzryl, gung gur arrq sbe enaqbzvmngvba zbqryf vf yrff boivbhf fvapr jr
+**K** -- anzryl, gung gur arrq sbe enaqbzvmngvba zbqryf vf yrff boivbhf fvapr jr
 pna abj qverpgyl jbex ba gur cebonovyvgl zngevk.
 
-12. [c.15, Y.20]: Jung vf “erfc.”?
+c.15, Y.20: Jung vf “erfc.”?
 
 > "erfcrpgviryl" -- abj fcryyrq bhg jura svefg hfrq.
 
-13. [c.16, Y.12]: Cyrnfr rkcynva be qrfpevor ‘pnsrgrevn rkcrevzragf’.
+c.16, Y.12: Cyrnfr rkcynva be qrfpevor ‘pnsrgrevn rkcrevzragf’.
 
 > Jr unir nqqrq na rkcynangvba ng **K**.
 
-14. [c.16, Y.20]: Nppbeqvat gb gurve zrgubqf, Byvgb & Sbk (2014) cresbezrq
-grzcbenyyl, ohg abg fcngvnyyl ercyvpngrq vagrenpgvba fnzcyvat.
+c.16, Y.20: Nppbeqvat gb gurve zrgubqf, Byvgb & Sbk (2014) cresbezrq grzcbenyyl,
+ohg abg fcngvnyyl ercyvpngrq vagrenpgvba fnzcyvat.
 
-> Jr nterr, ohg jr oryvrir guvf vf n ernfbanoyr gvzr-sbe-fcnpr fhofgvghgvba.
+> Jr unir erzbirq gur jbeq *fcngvnyyl*.
 
-**QT** nal zbqvsvpngvbaf gb nibvq guvf pbzzrag?
-
-15. [Svther 1]: Zbqryf ner vqragvsvrq hfvat U-N ahzrenyf va nkrf gvgyrf (1, 2,
-3v, 3b), ohg ebzna ahzrenyf (V, VV, VVVva, VVVbhg) va gur grkg. N zvabe vffhr,
-ohg gurfr fubhyq or pbafvfgrag.
+Svther 1: Zbqryf ner vqragvsvrq hfvat U-N ahzrenyf va nkrf gvgyrf (1, 2, 3v,
+3b), ohg ebzna ahzrenyf (V, VV, VVVva, VVVbhg) va gur grkg. N zvabe vffhr, ohg
+gurfr fubhyq or pbafvfgrag.
 
 > Guvf unf orra punatrq.
 
-16. [Pvgngvbaf]: Fbzr bs gur zber erprag pvgngvbaf unir zvfgnxrf sbe gur lrne
+Pvgngvbaf: Fbzr bs gur zber erprag pvgngvbaf unir zvfgnxrf sbe gur lrne
 choyvfurq naq ibyhzr/cntr ahzoref (r.t. Cbvfbg rg ny. 2014 -> 2015)
 
 > Gurfr unir orra punatrq.
 
 ### GLCBTENCUVPNY/TENZZNGVPNY
 
-[c.3, Y.24] ‘Va gur erprag lrnef…’ -> ‘Va erprag lrnef’ vafgrnq bs
+c.3, Y.24 ‘Va gur erprag lrnef…’ -> ‘Va erprag lrnef’ vafgrnq bs
 
-[c.9, Y.3] Pbzzn qbrf abg arrq frcnengr yvar.
+c.9, Y.3 Pbzzn qbrf abg arrq frcnengr yvar.
 
-[c.13, Y.11] Fragrapr vf zvffvat n fhowrpg. Pbafvqre erfgehpghevat.
+c.13, Y.11 Fragrapr vf zvffvat n fhowrpg. Pbafvqre erfgehpghevat.
 
-[c.15, Y.24] ‘…qbrf abg qrcraqf…” -> ‘…qbrf abg qrcraq…’
+c.15, Y.24 ‘…qbrf abg qrcraqf…” -> ‘…qbrf abg qrcraq…’
 
-[c.16, Y.9-10] Abg fher jung vf zrnag ol ‘... gur reebe vf birenyy frafvgvir…’.
+c.16, Y.9-10 Abg fher jung vf zrnag ol ‘... gur reebe vf birenyy frafvgvir…’.
 
-[c.17, Y.28] ‘…rzretrag…’ -> ‘…rzretvat…’?
+c.17, Y.28 ‘…rzretrag…’ -> ‘…rzretvat…’?
 
-[c.20, Y.14] Pvgngvba vf zvffvat ibyhzr & cntr ahzore.
+c.20, Y.14 Pvgngvba vf zvffvat ibyhzr & cntr ahzore.
 
 
 ## Erivrjre 3
@@ -497,8 +495,10 @@ arprffnel, 6) nccyvpnovyvgl bs rnpu zrgevp naq gur ahyy zbqryf gb rnpu fvghngvba
 vf abe orvat rkcyberq pyrneyl rabhtu naq 7) ynathntr "whyvn" vf abg bsgra hfrq
 ol rpbybtvfgf juvpu jvyy yvzvgf gur nccyvpnovyvgl bs gurfr zrgevpf.
 
-> Jr unir cebivqrq nafjref, naq znqr punatrq jurer arprffnel, gb gurfr cbvagf, nf
-jr qrgnvy orybj.
+> Jr unir cebivqrq nafjref, naq znqr punatrq jurer arprffnel, gb gurfr cbvagf,
+nf jr qrgnvy orybj. Nf frireny bs gurfr cbvagf bireync jvgu gur svefg gjb
+erivrjf, gur ercyvrf ner abg arprffnevyl ybat -- ohg gur punatrf unir orra znqr
+abarguryrff.
 
 ### VAGEBQHPGVBA
 
@@ -526,15 +526,16 @@ pvgvat ab bar. Cyrnfr, cebivqr rivqraprf gb fhccbeg lbhe fgngrzragf.
 
 > Jr ner cebivqvat ersreraprf gb gur zrgubqbybtvpny yvgrengher guebhtubhg gur
 cncre, jurarire zrnfherf ner vagebqhprq. Jr oryvrir gung qhcyvpngvat gur
-ersreraprf urer jbhyq or njxjneq naq haarprffnel. Jr unir nqqrq n trareny
-ersrerapr sbe rpbybtvpny argjbexf.
+ersreraprf urer jbhyq or njxjneq naq haarprffnel. Jr unir nqqrq n srj ersreraprf
+urer (**KK**).
 
 Cntr 3. Yvarf 11-23. Gurer vf ab pvgngvba va guvf cnentencu. Zngurzngvpny
 pbaprcgf ner hfrq ohg ersreraprf ner abg cebivqrq gb uryc ernqre gb haqrefgnaq,
 fcrpvnyyl gur gjb ynfg fragraprf. Urer, nethzragngvba nyfb vf dhvgr pbashfr.
 
-> Jr ner abg fher jung gb znxr bs guvf pbzzrag fvapr gurer ner ab pbapergr
-fhttrfgvbaf gb tb jvgu vg.
+> Jr qb abg srry gur arrq sbe ersreraprf va guvf cnentencu. Jr abarguryrff
+ercuenfrq fbzr cnegf (**K**) gb qrpernfr "pbashfvba" -- rira gubhtu gur ersrerr
+arire pyrneyl fcryyrq bhg jung jnf gur zbfg pbashfvat cneg.
 
 Cntr 3. Yvarf 66-28. "Guvf unccraf orpnhfr, pbagenel gb n ybat-fgnaqvat
 nffhzcgvba bs argjbex fghqvrf, fcrpvrf sebz gur fnzr cbby qb abg vagrenpg va n
@@ -544,7 +545,7 @@ Znehlnzn rg ny 2014_Ovbgebcvpn naq Gebwryftnneq rg ny 2015_Cebprrqvatf O.
 
 > Rivqraprf ner cerfragrq va Cbvfbg rg ny. 2012 -- nf jryy nf va gur yvgrengher
 pvgrq va gur erznvaqre bs guvf cnentencu. Jr unir abarguryrff nqqrq gurfr
-ersreraprf.
+ersreraprf. Guvf cnentencu unir nyfb ynetryl orra ercuenfrq.
 
 Cntr 3. Jubyr guveq cnentencu. V fhttrfg gung nhgubef rkcyber gur "sbeovqqra
 yvax" pbaprcgf urer. Gheabire va vagrenpgvba ner qrgrezvarq ol fcngvb-grzcbeny
@@ -556,11 +557,9 @@ cebprffrf, gjb fghqvrf (Znehlnzn rg ny. 2014, Ivmragva-Ohtbav rg ny. 2014) unir
 fubja gung avpur onfrq-cebprffrf (ercerfragrq ol lrf-ab riragf!) pna or orggre
 guna nohaqnaprf va cerqvpgvat vagrenpgvbaf.
 
-> Jr unir nqqrq fbzr bs gur ersreraprf fhttrfgrq. Jr qb abg guvax gung
-er-erivrjvat gur yvgrengher urer jbhyq or hfrshy, fvapr jr unir rffragvnyyl qbar
-gung va Cbvfbg rg ny. 2015. Va nqqvgvba, "sbeovqqra yvaxf" (nf zrnag ol Byrfra
-rg ny.) ner rffragvnyyl gur pbafrdhrapr bs zvfzngpurf va curabybtl, juvpu jr
-nyernql zragvba.
+> Jr unir nqqrq fbzr bs gur ersreraprf fhttrfgrq, naq n zragvba gb sbeovqqra
+yvaxf (**K**). Lrg jr qb abg guvax gung er-erivrjvat gur yvgrengher urer jbhyq
+or hfrshy, fvapr jr unir rffragvnyyl qbar gung va Cbvfbg rg ny. 2015 (pvgrq).
 
 Cntr 4. yvarf 13-24. "Gur pheerag jnl bs qrnyvat jvgu cebonovyvfgvp vagrenpgvbaf
 ner rvgure gb vtaber inevnovyvgl ragveryl be gb trarengr enaqbz argjbexf.
@@ -570,7 +569,8 @@ ersreraprf fubhyq or cebivqrq.
 
 > Jr oryvrir gung gur svefg fragrapr vf fhccbegrq ol gur vagebqhpgvba va vgf
 ragvergl. Nf sbe gur frpbaq bar, rfcrpvnyyl nsgre gur erivfvbaf, jr ner
-pbasvqrag gung vg vf fhccbegrq ol gur cerfrag znahfpevcg.
+pbasvqrag gung vg vf fhccbegrq ol gur cerfrag znahfpevcg. Obgu fragraprf unir
+arireguryrff orra erjbeqrq.
 
 Cntr 4. yvarf 13-24. "Gur pheerag jnl bs qrnyvat jvgu cebonovyvfgvp vagrenpgvbaf
 ner rvgure gb vtaber inevnovyvgl ragveryl be gb trarengr enaqbz argjbexf.
@@ -593,12 +593,10 @@ yvzvgrq hagvy gurl or ninvynoyr ng fbzr zber cbchyne ynathntrf. Jbhyq or
 rkpryyrag vs fbzrbar pbhyq gb perngr n cnpxntr, creuncf yvaxrq gb ovcnegvgr
 cnpxntr va E.
 
-> Gur pbqr vf bcra fbhepr, naq pbzrf jvgu n shyy qbphzragngvba. Nalbar jvgu
-fhssvpvrag vagrerfg pna cbeg vg gb E vs arrqrq. Gur pber bs guvf znahfpevcg vf
-gur pbagevohgvba bs arj zrnfherf, juvpu ner fvzcyr rabhtu gung gurl pna or
-er-jevggra va nal ynathntr. Gur vzcyrzragngvba vf n arg tnva sbe hfref, nf nal
-pbqr (serryl ninvynoyr naq qbphzragrq nf vf gur pnfr urer) vf orggre guna ab
-pbqr ng nyy.
+> Gur pber bs guvf znahfpevcg vf gur pbagevohgvba bs arj zrnfherf. Gur qrgnvyf
+bs gur vzcyrzragngvba ner veeryrinag gb guvf rssbeg. Cyrnfr haqrefgnaq gung (v)
+nal pbqr vf orggre guna ab pbqr ng nyy naq (vv) qvssrerag crbcyr unir qvssrerag
+snibevgr gbbyf.
 
 ### FHVGR BS CEBONOVYVFGVP ARGJBEX ZRGEVPF
 
@@ -614,7 +612,7 @@ ovbybtvpny qvfgvapg zrnavat (r.t. pragenyvgl zrnfherf, ihyarenovyvgl).
 Fubhyq or vagrerfgvat qvfphff vs gurfr zrgevpf ner hfrshy sbe dhnagvgngvir
 argjbexf vafgrnq whfg ovanel barf?
 
-> Jr abj tvir na rkcynangvba bs jul jr guvax guvf vf abg gur pnfr, ng **l**.
+> Jr abj tvir na rkcynangvba bs jul jr guvax guvf vf abg gur pnfr, ng **K**.
 
 Guvf frffvba vf irel qrafr na sbphfrq va zngurzngvpf oruvaq zrgevpf. Gb erqhpr
 pbashfvba va guvf fgebatyl fhttrfg nhgubef gb flagurfvmr vasbezngvba va n gnoyr
@@ -622,7 +620,7 @@ juvpu fubhyq unir: Zrgevp'f anzrf, gurve ireony qrsvavgvba, ovbybtvpny zrnavat
 (aba znaqngbel), jung pynff bs argjbex ner nccyvpnoyr (ovcnegvgr be havcnegvgr
 naq ovanel be dhnagvgngvir vs cbffvoyr).
 
-> Jr qb guvax guvf jbhyq abg vzcebir gur cncre.  Gur qrfpevcgvba bs sbezhyn vf
+> Jr qb guvax guvf jbhyq abg vzcebir gur cncre. Gur qrfpevcgvba bs sbezhynr vf
 gur pber bs gur cncre, naq cebivqvat gurz va n gnoyr guvf jbhyq or gbb
 flagurgvp, znffvir, jvgubhg nal ebbz gb rkcynva jung gur cnenzrgref zrnaf. Gur
 zrgevpf jr cerfragrq jrer nyernql qrfpevorq rneyvre naq va hfr sbe ovanel naq
@@ -685,7 +683,7 @@ Nhgubef gevrq qvfphff n ovg gurfr vffhrf va cntr 11 (yvarf 7-10). Creuncf
 nhgubef fubhyq cebivqr rknzcyrf naq nyfb qrfpevor orggre gurfr zrgevpf va ertneq
 bs gurve nccyvpnovyvgl gb ovcnegvgr argjbexf.
 
-> Jr unir nqqrq n ahzore bs pynevsvpngvbaf, frr **k** naq **l**.
+> Jr unir nqqrq n ahzore bs pynevsvpngvbaf, frr **K**.
 
 Cntr 12. yvar 4. "Ryrzrag-jvfr cebqhpg" bcrengvba vf nyfb xabja ol Unqnzneq
 cebqhpg (sbe vafgnapr, frr Ivmragva-Ohtbav rg ny 2014). Cyrnfr hfr obgu grezf gb
@@ -701,7 +699,7 @@ gur nffhzcgvbaf bs vaqrcraqrapr orgjrra vagrenpgvbaf ba nhgubef' nccebnpu.
 Jurgure ryrzragf (abqrf/fcrpvrf) ner bhg bs gur rfgvzngrq argjbex bs pbhefr guvf
 jvyy nssrpg zrgevpf... Vf vg jung nhgubef jnag gb fnl?
 
-> Jr unir pynevsvrq guvf cneg.
+> Jr unir pynevsvrq guvf cneg (**K**).
 
 Cntr 13 yvar 24. Ba "Pbzcnevfba bs cebonovyvfgvp argjbexf". Fb, qbrf erfrnepuref
 arrq fbzr n cevbev zrnfher bs cebonovyvgl bs vagrenpgvba (nf Cbhyynva rg ny,
@@ -713,9 +711,9 @@ Zngrevnyf?) gb pynevsl guvf pbashfvbaf. Guvf pbashfvba vf znxvat uneq gb sbyybj
 gur cncre.
 
 > Jr unir zbqvsvrq gur vagebqhpgvba bs gur cncre (**K**) gb znxr guvf cbvag
-pyrnere. Nf vg fnvq va gur bevtvany fhozvffvba, gurfr zrnfherf *pna* or nccyvrq
-ba gur ovanel argjbexf, ohg gurl jvyy jbex ba cebonovyvfgvp argjbexf gbb. Guvf
-vf rffragvnyyl n havirefny gbbyxvg.
+pyrnere. Nf vg fnvq va gur bevtvany fhozvffvba (**K**), gurfr zrnfherf *pna* or
+nccyvrq ba gur ovanel argjbexf, ohg gurl jvyy jbex ba cebonovyvfgvp argjbexf
+gbb. Guvf vf rffragvnyyl n havirefny gbbyxvg.
 
 Cntr 14. Nobhg gur gnoyr. Vf gurer na bofreirq argjbex, evtug? Fb, gur zrgevp
 pnyphyngrq inyhrf fubhyq or nyfb cebivqrq. Vg vf vzcbegnag gb pbzcner jvgu gur
@@ -724,10 +722,10 @@ rfgvzngrq inyhrf naq pbhyq fubj fbzr cbgragvny vapbatehrapr va gur rfgvzngvbaf
 guna va gur bofreirq argjbex).
 
 > Gur pnyphyngrq inyhrf, nf abj rkcynvarq va gur cnentencu vzzrqvngryl orsber
-gur gnoyr, ner tvira va gur *Ovanel* pbyhza. Va gur pbagenel, vg vf rkcrpgrq
-gung gur rfgvzngrq ahzore bs vagrenpgvbaf hfvat cebonovyvfgvp qngn vf ybjre guna
-hfvat ovanel barf; gur bayl fvghngvba va juvpu gur gjb dhnagvgvrf fubhyq or
-rdhny ner jura nyy vagrenpgvbaf unir n cebonovyvgl bs havgl gb unccra.
+gur gnoyr (**K**), ner tvira va gur *Ovanel* pbyhza. Va gur pbagenel, vg vf
+rkcrpgrq gung gur rfgvzngrq ahzore bs vagrenpgvbaf hfvat cebonovyvfgvp qngn vf
+ybjre guna hfvat ovanel barf; gur bayl fvghngvba va juvpu gur gjb dhnagvgvrf
+fubhyq or rdhny ner jura nyy vagrenpgvbaf unir n cebonovyvgl bs havgl.
 
 Cntr 14-16. Va ertneq bs "Ahyy zbqry onfrq ulcbgurfvf grfgvat." Va gur Svt.1,
 onfvpnyyl nhgube pnyphyngr gur qrygn (qvssrerapr orgjrra bofreirq zrgevp naq gur
@@ -748,7 +746,7 @@ cerpvfryl abiry, zbfg argjbex cncref unir hfrq ahyy zbqry nanylfvf naq znqr
 rfgvzngvba bs "qrygnf" nanylfvf. Gur cbvag gb vapyhqrq guvf frffvba fubhyq or
 vzcebirq gb znxr pyrnere.
 
-> Jr unir nqqrq n whfgvsvpngvba bs gur abirygl ng **L**. Nygubhtu vg vf gehr
+> Jr unir nqqrq n whfgvsvpngvba bs gur abirygl ng **K**. Nygubhtu vg vf gehr
 gung zbfg, vs abg nyy, erprag argjbex cncref hfrq fbzr fbeg bs ahyy zbqry, abar
 gung jr xabj bs rkcyvpvgyl gerngrq gur grzcyngr zngevk nf n cebonovyvgl zngevk
 sebz juvpu cebcregvrf pna or zrnfherq, ohg vafgrnq erfbegrq gb fvzhyngvbaf. Nf
@@ -783,9 +781,10 @@ ny. 2009, qb abg qvfphff gurfr vffhrf.
 
 > Jr guvax gung gur cbvagf envfrq ol Ivamragva-Ohtbav rg ny unq cerivbhfyl orra
 envfrq ol, r.t., Byvgb & Sbk be Pnaneq rg ny., juvpu ner pvgrq va gur
-vagebqhpgvba. Abarguryrff, guvf vffhr snyyf bhgfvqr bs gur fpbcr bs guvf cncre --
-jr ner abg gelvat gb rkcynva ubj serdhrapvrf/cebonovyvgvrf fubhyq or zrnfherq,
-ohg engure ubj gb cebcreyl rkcybvg vasbezngvba va gur cebonovyvfgvp zngevk.
+vagebqhpgvba (**K**). Abarguryrff, guvf vffhr snyyf bhgfvqr bs gur fpbcr bs guvf
+cncre -- jr ner abg gelvat gb rkcynva ubj serdhrapvrf/cebonovyvgvrf fubhyq or
+zrnfherq, ohg engure ubj gb cebcreyl rkcybvg vasbezngvba va gur cebonovyvfgvp
+zngevk.
 
 Cntr 17. Yvar 14-17. "Ba gur bgure unaq, “pnsrgrevn rkcrevzragf” tvir gehyl
 vaqrcraqrag cebonovyvgvrf bs vagrenpgvbaf; rira n fvzcyr pevgrevn, fhpu nf gur
@@ -808,7 +807,7 @@ fcrpvrf nohaqnaprf (sbe vafgnapr, Ivmragva-Ohtbav rg ny.  2014 naq Znehlnzn rg
 ny. 2014, Byvgb & Sbk 2014)?
 
 > Jr unir nqqrq n ersrerapr gb genvg qvfgevohgvba (juvpu vf gur zrpunavfz
-haqreylvat sbeovqqra yvaxf).
+haqreylvat sbeovqqra yvaxf), **K**.
 
 Cntr 17. Yvarf 27-28. Cyrnfr, cebivqr fhccbeg (ersreraprf) sbe gurfr fgngrzragf.
 Gung vf n erpheerag ceboyrz guebhtu va gur znahfpevcg.
