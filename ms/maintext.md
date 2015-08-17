@@ -1,6 +1,9 @@
-% The structure of probabilistic networks
-% T. Poisot \and A.R. Cirtwill \and K. Cazelles \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
-% July 17, 2015
+---
+title: The structure of probabilistic networks
+author: T. Poisot \and A.R. Cirtwill \and K. Cazelles \and D. Gravel \and M.-J. Fortin \and D.B. Stouffer
+bibliography: /home/tpoisot/.pandoc/default.bib
+csl: ms/mee.csl
+---
 
 \clearpage
 
@@ -57,7 +60,7 @@ key network properties [@jord13; @bers02; @bana04].
 Given a network (*i.e.* a structure where nodes, most often species, are linked
 by edges, representing ecological interactions) as input, measures of network
 structure return a *property* based on one or several *units* (*e.g.* nodes,
-links, or groups thereof) from this network, either directly measured, of after
+links, or groups thereof) from this network, either directly measured, or after
 an optimization process. Some of the properties are *direct* properties (they
 only require knowledge of the unit on which they are applied), whereas others
 are *emergent* (they require knowledge of, and describe, higher-order
@@ -77,7 +80,7 @@ The interpretation of the measures of network structure as indicators of the
 action of ecological or evolutionary processes must now account for the numerous
 observations that network structure varies through space and time. In addition
 to the already well-established variation in the composition of the local
-species poll [@have92], networks vary because species do not interact in a
+species pool [@have92], networks vary because species do not interact in a
 consistent way [@pois12c]. Empirical evidence suggests that the network is not
 the right unit to understand this variation; rather, network variation emerges
 from the response of interactions to environmental factors and chance events
@@ -108,9 +111,9 @@ with probability 1. This over-represents rare events, and increases the number
 of interactions; as a result, this changes the estimated value of different
 network properties, in a way that remains poorly understood. The generation of
 random binary networks based on probabilities also suffers from biases,
-especially in the range of connectance within which most ecological systems
-lies. These biases are (i) pseudo-replication when the permutational space is
-small [@pois14a], and (ii) systematic biases in the emergent properties at low
+especially in the range of connectance within which most ecological systems lie.
+These biases are (i) pseudo-replication when the permutational space is small
+[@pois14a], and (ii) systematic biases in the emergent properties at low
 connectances [@chag15]. An alternative is to consider only the interactions
 above a given threshold, which unfortunately leads to under-representation of
 rare events and decreases the effective number of interactions. The use of
@@ -122,8 +125,8 @@ variation of individual interactions.
 
 Yet the extant methodological corpus is well accepted, and the properties it
 describes are well understood. Rather than suggesting measures, we argue that it
-is more productive to re-express those we already have, in a way that do not
-loses information when applied to probabilistic networks. We contribute to this
+is more productive to re-express those we already have, in a way that does not
+lose information when applied to probabilistic networks. We contribute to this
 effort by re-developing a unified toolkit of measures to characterize the
 structure of probabilistic interaction networks. Several direct and emergent
 core properties of ecological networks (both bipartite and unipartite) can be
@@ -519,7 +522,7 @@ interactions.
 
 ## Implementation
 
-We provide these measures of probabilistic network structure in a free and
+We provide these measures of probabilistic networks structure in a free and
 open-source (MIT licensed) library for the `julia` language, available at
 `http://github.com/PoisotLab/ProbabilisticNetwork.jl`. The code can be cited
 using the following DOI: **(given upon acceptance)**. A user guide, including
@@ -630,16 +633,16 @@ nestedness using the probabilistic measure. Our results are presented in
 \input{figures/app2.tex}
 
 There are two striking results. First, empirical data are consistently *more*
-nested than the null expectation, as evidenced by the fact that all $\Delta_N$
-values are strictly positive. Second, this underestimation is *linear* between
-null models I and II, although null model II is always closer to the nestedness
-of the empirical network (which makes sense, since null model II incorporates
-the higher order constraint of approximating the degree distribution of both
-levels). That the nestedness of the null model probability matrix is so strongly
-determined by the nestedness of the empirical networks calls for a closer
-evaluation of how the results of null models are interpreted (especially since
-networks generated using Bernoulli trials revealed a very low variance in their
-nestedness).
+nested than the null expectation, as evidenced by the fact that all
+$\Delta_\eta$ values are strictly positive. Second, this underestimation is
+*linear* between null models I and II, although null model II is always closer
+to the nestedness of the empirical network (which makes sense, since null model
+II incorporates the higher order constraint of approximating the degree
+distribution of both levels). That the nestedness of the null model probability
+matrix is so strongly determined by the nestedness of the empirical networks
+calls for a closer evaluation of how the results of null models are interpreted
+(especially since networks generated using Bernoulli trials revealed a very low
+variance in their nestedness).
 
 There is a strong, and previously unaccounted for, circularity in this approach:
 empirical networks are compared to a null model which, as we show, has a
@@ -658,18 +661,17 @@ In short, this analysis reveals that (i) the null expectation of a network
 property under randomization scenarios can be obtained through the analysis of
 the probabilistic matrix, instead of the analysis of simulated Bernoulli
 networks; (ii) different models have different systematic biases, with models of
-the type III performing overall better for nestedness than any other models.
-This can be explained by the fact that nestedness of a network, as expressed by
-@bast09, is the average of a row-wise and column-wise nestedness. These depend
-on the species degree, and as such should be well predicted by models III. The
-true novelty of the approach outlined here is that, rather than having to
-calculate the measure for thousands of replicates, an *unbiased* estimate of its
-mean can be obtained in a fraction of the time using the measures described
-here. This is particularly important since, as demonstrated by @chag15, the
-generation of null randomization is subject to biases in the range of
-connectance where most ecological networks fall. Our approach aims to provide a
-bias-free, time-effective way of estimating the expected value of a network
-property.
+the type III performing better for nestedness than any other models. This can be
+explained by the fact that nestedness of a network, as expressed by @bast09, is
+the average of a row-wise and column-wise nestedness. These depend on the
+species degree, and as such should be well predicted by models III. The true
+novelty of the approach outlined here is that, rather than having to calculate
+the measure for thousands of replicates, an *unbiased* estimate of its mean can
+be obtained in a fraction of the time using the measures described here. This is
+particularly important since, as demonstrated by @chag15, the generation of null
+randomization is subject to biases in the range of connectance where most
+ecological networks fall. Our approach aims to provide a bias-free,
+time-effective way of estimating the expected value of a network property.
 
 ## Spatial-variation predicts local network structure
 
@@ -704,7 +706,7 @@ the probabilistic model. This analysis, although simple, suggest that the
 *local* structure of ecological networks can represent the outcome of a
 filtering of species interactions, the signature of which can be detected at the
 regional level by a variation in the probabilities of interactions. Note however
-that this approach *does not* allows predicting the structure of any arbitrary
+that this approach *does not* allow predicting the structure of any arbitrary
 species pool, since it cannot know the probability of an interaction between two
 species that never co-occured.
 
@@ -732,10 +734,10 @@ reality, where interactions have effects on one another [@golu11; @sand12;
 reasonable. There is a strong methodological argument for which the
 non-independance of interactions cannot currently be robustly accounted for:
 analytical expectations for non-independant Bernoulli events require knowledge
-the full dependence structure. Not only does this severely limit the ability to
-provide measures of network structure, it requires a far more extensive sampling
-that what is needed to obtain an estimate of the probability of interactions one
-by one.
+of the full dependence structure. Not only does this severely limit the ability
+to provide measures of network structure, it requires a far more extensive
+sampling that what is needed to obtain an estimate of the probability of
+interactions one by one.
 
 ## Estimates of interaction probabilities
 
@@ -745,16 +747,19 @@ species changes all probabilities in the network. They are not Bernoulli events
 either, as the sum of all probabilities derived this way sums to unity. On the
 other hand, "cafeteria experiments" (in which individuals from two species are
 directly exposed to one another to observe whether or not an interaction occurs)
-give truly independent probabilities of interactions; even a simple criteria,
-such as the frequency of interactions when the two species are put together, is
-a way of estimating probability. Using the approach outlined by @pois15a,
+give truly independent probabilities of interactions---although this approach is
+limited to systems with a small number of species, and that are amenable to
+microcosms or mesocosms experiments. Using the approach outlined by @pois15a,
 different sources of information (species abundance, trait distribution, and the
 outcome of experiments) can be combined to estimate the probability that
 interactions will happen in empirical communities.
 
 Another way to obtain approximation of the probability of interactions is to use
-replicated sampling. Some studies [@tyli07; @cars14; @olit14; @troj15] surveyed
-the existence of interactions at different locations, and a simple approach of
+spatially and temporally replicated sampling (assuming that replicates are done
+in environments that can be assumed to be comparably homogeneous); in this
+context, it is not the interactions that are repeatedly sampled, but the network
+as a whole. Some studies [@tyli07; @cars14; @olit14; @troj15] surveyed the
+existence of interactions at different locations, and a simple approach of
 dividing the number of observations of an interaction by the number of
 co-occurence of the species involved will provide a (somewhat crude) estimate of
 the probability of this interaction. This approach requires extensive sampling,
@@ -767,11 +772,12 @@ probabilistic context.
 An important outcome is that, when estimating probabilities from observational
 data, it becomes possible to have an estimate of how robust the sampling is. How
 completely a network is sampled is a key, yet often-overlooked, driver of some
-measures of structure [@niel07; @chac11]. The probabilistic approach allows to
-estimate the *confidence interval* of the interaction probability, knowing the
-number of samples used for the estimation. Assuming normally distributed
-observational error (this can be generalized for other structure of error), the
-confidence interval around a probability $p$ estimated from $n$ samples is
+measures of structure [@niel07; @chac11; @frun15]. The probabilistic approach
+allows to estimate the *confidence interval* of the interaction probability,
+knowing the number of samples used for the estimation. Assuming normally
+distributed observational error (this can be generalized for other error
+distributions), the confidence interval around a probability $p$ estimated from
+$n$ samples is
 
 \begin{equation}
   \epsilon = z \sqrt{\frac{1}{n}p(1-p)} \,.
@@ -780,13 +786,21 @@ confidence interval around a probability $p$ estimated from $n$ samples is
 For a 95% confidence interval, $z \approx 1.96$. If an interaction is estimated
 to happen at $p = 0.3$, its 95% confidence interval is $[0; 0.74]$ when
 estimated from four samples, $[0.01; 0.58]$ when estimated from ten, and $[0.21;
-0.38]$ when estimated from a hundred. This points out to a fundamental issue
-with the sampling of networks: a correct estimate of the probability of
-interactions from observational data is tremendously difficult to achieve, and
-the development of predictive models should be a research priority since it
-partly alleviates this difficulty. Note also that the above formula tends to
+0.38]$ when estimated from a hundred. Note that the above formula tends to
 perform poorly when $n < 30$, and do not applies when $p \in \{0, 1\}$; it
 nevertheless provides an *estimate* of how robust the probability estimate is.
+
+The quantification, and integration, of uncertainty in the probability of
+interaction, is a subject that remains to be worked out. To develop a coarse
+understanding of how it affects the estimate of network properties, one can (for
+example) sample the interaction probability within its 95% confidence interval.
+This points to a fundamental issue with the sampling of networks: a precise
+estimate of the probability of interactions from observational data is
+tremendously difficult to achieve. Although the development of predictive models
+partly alleviates this difficulty, estimating confidence intervals around the
+probability of an interaction guide empirical research efforts to (i) either
+collect additional replicates or (ii) provide additional data to improve the
+performance of predictive models.
 
 **Acknowledgements:** This work was funded by a CIEE working group grant to TP,
 DG, and DBS. TP is funded by a starting grant from the Université de Montréal,
