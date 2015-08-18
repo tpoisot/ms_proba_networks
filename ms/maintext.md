@@ -522,11 +522,11 @@ interactions.
 
 ## Implementation
 
-We provide these measures of probabilistic networks structure in a free and
+We provide these measures of probabilistic network structure in a free and
 open-source (MIT licensed) library for the `julia` language, available at
-`http://github.com/PoisotLab/ProbabilisticNetwork.jl`. The code can be cited
-using the following DOI: **(given upon acceptance)**. A user guide, including
-examples, resides at `http://probabilisticnetworkjl.readthedocs.org/`.
+`http://github.com/PoisotLab/EcologicalNetwork.jl`. The code can be cited using
+the following DOI: `10.5281/zenodo.28317` (version 1.0.1). A user guide,
+including examples, resides at `http://ecologicalnetworkjl.readthedocs.org/`.
 
 # Case studies
 
