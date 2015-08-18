@@ -7,8 +7,12 @@
 \usepackage{geometry}
 \geometry{verbose,letterpaper,margin=2.0cm}
 
-\usepackage{pgfplots,pgfplotstable}
+\usepackage{tikz,pgfplots,pgfplotstable}
 \usetikzlibrary{pgfplots.groupplots}
+
+\usetikzlibrary{external}
+\tikzexternalize
+\tikzset{external/mode=graphics if exists}
 
 \usepackage[full]{textcomp}
 \usepackage[T1]{fontenc}

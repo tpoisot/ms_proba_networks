@@ -9,7 +9,7 @@ figures/app3.dat:
 	sed -i 's/"//g' $@
 
 $(pdf): $(md) figures/app3.dat
-	pandoc $< -o $@ $(pflags)
+	pandoc $< -o $@ $(pflags) --latex-engine-opt="-shell-escape"
 
 $(refs): ms/bib.keys
 	python ms/extractbib.py ms/bib.keys /home/tpoisot/.pandoc/default.bib $(refs)
@@ -22,10 +22,11 @@ diff.pdf: $(md) figures/app3.dat
 	pandoc $< -o rev.tex $(pflags)
 	pandoc sub1.md -o sub.tex $(pflags)
 	latexdiff sub.tex rev.tex > diff.tex
-	pdflatex diff
-	pdflatex diff
+	pdflatex -shell-escape diff
+	pdflatex -shell-escape diff
 	rm *.tex
 	rm sub1.md
 	rm diff.aux
+	rm diff.auxlock
 	rm diff.log
 	rm diff.out

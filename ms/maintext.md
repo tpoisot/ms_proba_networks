@@ -88,8 +88,8 @@ from the response of interactions to environmental factors and chance events
 reasons. Local mismatching in phenology creates *forbiden links* [@oles11a;
 @maru14; @vize14]. Local variations in abundance prevent the species from
 encountering one another [@cana14]. The joint action of neutral, phenologic, and
-behavioral effects, creates complex and hard to predict responses [@olit14;
-@cham14; @troj15]. For example, @olit14 showed that accounting for neutral
+behavioral effects, creates complex and hard to predict responses [@olit15;
+@cham14; @troj15]. For example, @olit15 showed that accounting for neutral
 (population-size driven) and trait-based effects allows the prediction of the
 cumulative change in network structure, but not of the change at the level of
 individual interactions. In addition, @cars14 showed that not all interactions
@@ -742,7 +742,7 @@ interactions one by one.
 ## Estimates of interaction probabilities
 
 Estimating interaction probabilities based on species abundances [@cana14;
-@olit14] do not yield independent probabilities: changing the abundance of one
+@olit15] do not yield independent probabilities: changing the abundance of one
 species changes all probabilities in the network. They are not Bernoulli events
 either, as the sum of all probabilities derived this way sums to unity. On the
 other hand, "cafeteria experiments" (in which individuals from two species are
@@ -758,13 +758,13 @@ Another way to obtain approximation of the probability of interactions is to use
 spatially and temporally replicated sampling (assuming that replicates are done
 in environments that can be assumed to be comparably homogeneous); in this
 context, it is not the interactions that are repeatedly sampled, but the network
-as a whole. Some studies [@tyli07; @cars14; @olit14; @troj15] surveyed the
+as a whole. Some studies [@tyli07; @cars14; @olit15; @troj15] surveyed the
 existence of interactions at different locations, and a simple approach of
 dividing the number of observations of an interaction by the number of
 co-occurence of the species involved will provide a (somewhat crude) estimate of
 the probability of this interaction. This approach requires extensive sampling,
 especially since interactions are harder to observe than species [@pois12c;
-@gila14a], yet it enables the re-analysis of existing datasets in a
+@gila15], yet it enables the re-analysis of existing datasets in a
 probabilistic context.
 
 ## Implications for data collection
@@ -772,7 +772,7 @@ probabilistic context.
 An important outcome is that, when estimating probabilities from observational
 data, it becomes possible to have an estimate of how robust the sampling is. How
 completely a network is sampled is a key, yet often-overlooked, driver of some
-measures of structure [@niel07; @chac11; @frun15]. The probabilistic approach
+measures of structure [@niel07; @chac12; @frun15]. The probabilistic approach
 allows to estimate the *confidence interval* of the interaction probability,
 knowing the number of samples used for the estimation. Assuming normally
 distributed observational error (this can be generalized for other error
